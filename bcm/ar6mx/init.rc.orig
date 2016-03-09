@@ -1,0 +1,197 @@
+import init.${ro.hardware}.usb.rc
+#import init.superuser.rc
+
+on init
+    start watchdogd
+
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage/emulated 0555 root root
+
+    export EXTERNAL_STORAGE /storage/emulated/legacy
+    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+    export EMULATED_STORAGE_TARGET /storage/emulated
+
+    # Support legacy paths
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /mnt/sdcard
+    symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+
+on boot
+
+    # Set permission for IIM node
+    symlink /dev/mxs_viim /dev/mxc_mem
+
+    # Set GPS serial and reset GPIO pin
+    setprop ro.kernel.android.gps /dev/athrnmea
+    setprop persist.gps.oacmode @f
+    symlink /dev/ttymxc2 /dev/gpsdevice
+    write /sys/class/gpio/export 60
+    write /sys/class/gpio/gpio60/direction "out"
+    write /sys/class/gpio/gpio60/value 1
+
+    # Enable Tethering in the Settings
+    setprop ro.tether.denied false
+
+    # 3D acceleration property
+    setprop debug.sf.showfps    0
+    setprop debug.sf.enable_hgl 1
+    setprop debug.egl.hw	1
+
+    setprop hwc.stretch.filter  1
+    setprop hwc.enable_dither   1
+
+    # fsl omx graphic manager media framework property
+    setprop media.omxgm.enable-player 1
+    setprop media.omxgm.enable-record 1
+    setprop media.omxgm.enable-scan 1
+    setprop rw.VIDEO_RENDER_NAME video_render.surface
+
+    #Define the config for dual camera
+    #For landscape mode, orient is 0
+    #For portrait mode, orient is 90
+    #the android before honycomb are all in portrait mode
+    setprop back_camera_name uvc,ov5640_mipi
+    setprop back_camera_orient 0
+    setprop front_camera_name ov5642
+    setprop front_camera_orient 0
+
+    # Set OpenGLES version
+    setprop ro.opengles.version 131072
+
+    # Set rotation to 270 to cofigure as portrait mode
+    setprop ro.sf.hwrotation 0
+
+    # Set the density to 160dpi, default 128dpi is not good
+    setprop ro.sf.lcd_density 160
+
+    # hdmi audio output
+    setprop ro.HDMI_AUDIO_OUTPUT 1
+
+    # Set video overlay display mode
+    setprop sys.VIDEO_OVERLAY_DISPLAY 1
+# change for FSL specific service
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chmod 0440 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+    chown root system /sys/devices/system/cpu/cpu0/online
+    chmod 0664 /sys/devices/system/cpu/cpu0/online
+    chown root system /sys/devices/system/cpu/cpu1/online
+    chmod 0664 /sys/devices/system/cpu/cpu1/online
+    chown root system /sys/devices/system/cpu/cpu2/online
+    chmod 0664 /sys/devices/system/cpu/cpu2/online
+    chown root system /sys/devices/system/cpu/cpu3/online
+    chmod 0664 /sys/devices/system/cpu/cpu3/online
+    chmod 0750 /system/etc/load_wifi_module.sh
+    start load_wifi_module
+    start console
+
+    # Default backlight device
+    setprop hw.backlight.dev "pwm-backlight.0"
+    # Chmod/chown FSL specific sys entry
+    chown system system /sys/class/backlight/pwm-backlight.0/brightness
+    chmod 0660 /sys/class/backlight/pwm-backlight.0/brightness
+
+    # Set light sensor sysfs path and light sensor threshold lux value
+    setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
+    setprop ro.lightsensor.threshold  20
+
+    # No bluetooth hardware present
+    setprop hw.bluetooth 0
+    setprop wlan.interface wlan0
+
+on post-fs-data
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/system/ 0770 system system
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp wifi
+    chmod 0660 /system/etc/wifi/wpa_supplicant.conf
+    chown wifi wifi /system/etc/wifi/wpa_supplicant.conf
+#   this should not be created in order to use the global iface
+#   mkdir /data/system/wpa_supplicant 0770 wifi wifi
+    chmod 0660 /data/misc/wifi/p2p_supplicant.conf
+
+# mount the debugfs
+    mount debugfs none /sys/kernel/debug/
+
+# for wifi
+service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/data/misc/wifi/wpa_supplicant.conf -dt
+    class main
+    socket wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -d -aABKL -f /system/etc/dhcpcd/android.conf
+    class main
+    group wifi root system net_admin net_raw
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service p2p_supplicant /system/bin/wpa_supplicant \
+    -dt -i wlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -g@android:wpa_wlan0 \
+    -m/system/etc/wifi/p2p_supplicant.conf \
+    -O/data/misc/wifi/sockets
+    class main
+    socket wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd_p2p /system/bin/dhcpcd -aABKL
+   disabled
+   oneshot
+
+service iprenew_p2p /system/bin/dhcpcd -n
+   disabled
+   oneshot
+
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd
+
+on property:wlan.driver.status=ok
+    ifup wlan0
+
+
+# magd daemon
+service magd /system/bin/magd
+    class main
+    user system
+    group input
+    oneshot
+
+# Orion InG
+service ing /system/bin/ingsvcd -c /system/etc/gps/Orion.ini
+    socket athrkv9988    stream 666 system system
+    socket athrshmsocket stream 666 system system
+    socket athrsupl59991 stream 666 system system
+    class late_start
+    user root
+    group gps
+    oneshot
+
+service eGTouchD /system/bin/eGTouchD
+    class main
+    user root
+    group root
+    oneshot
+
+service load_wifi_module /system/bin/sh /system/etc/load_wifi_module.sh
+    disabled
+    oneshot
+
+
+on fs
+# mount ext4 partitions
+    mount_all /fstab.freescale

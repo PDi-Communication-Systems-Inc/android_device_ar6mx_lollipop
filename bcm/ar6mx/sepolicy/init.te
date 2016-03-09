@@ -1,0 +1,4 @@
+allow init su:process { transition siginh rlimitinh };
+allow init self:capability sys_module;
+allow init_shell self:capability sys_module;
+allow init_shell su_exec:file { read execute execute_no_trans open };
