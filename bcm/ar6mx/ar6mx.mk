@@ -75,11 +75,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
 #SUPERUSER_PACKAGE := com.bcm.superuser
-SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
+#SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
 
-SUPERUSER_EMBEDDED := true
+#SUPERUSER_EMBEDDED := true
 
-PRODUCT_PACKAGES += IWLWIFI \
-	su \
-	Superuser \
-	iwlwifi.ko
+#PRODUCT_PACKAGES += IWLWIFI \
+#	su \
+#	Superuser \
+#	iwlwifi.ko

@@ -94,6 +94,29 @@ IMX_CAMERA_HAL_V2 := true
 #define consumer IR HAL support
 IMX6_CONSUMER_IR_HAL := true
 
+# Filesystem and partitioning
+BOARD_RECOVERY_PARTITION_SIZE           := 104900000
+BOARD_CACHEIMAGE_PARTITION_SIZE         := 256000000
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE       := ext4
+
+ifeq ($(EMMC_SIZE),STANDARD)
+   BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
+   BOARD_USERDATAIMAGE_PARTITION_SIZE := 3900000000
+else
+   BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912
+   BOARD_USERDATAIMAGE_PARTITION_SIZE := 536870912
+endif
+
+BOARD_FLASH_BLOCK_SIZE := 4096
+
+# Boot animation optimizations
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
+# Perform JIT-ready optimizations of jar/apks at compile time
+# Should reduce first-run boot but will increase compile times
+WITH_DEXPREOPT=true
+
 TARGET_BOOTLOADER_CONFIG := 6q:ar6mxqandroid_config 6dl:ar6mxdlandroid_config 6solo:ar6mxsandroid_config
 TARGET_BOARD_DTS_CONFIG := 6q:imx6q-ar6mx.dtb 6dl:imx6dl-ar6mx.dtb
 
