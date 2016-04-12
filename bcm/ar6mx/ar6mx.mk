@@ -31,12 +31,12 @@ PRODUCT_COPY_FILES +=	\
 # setup dm-verity configs.
 ifneq ($(BUILD_TARGET_DEVICE),sd)
   PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk3p5
- $(info Setting system verity partition to mmcblk3p5\n)
- $(call inherit-product, build/target/product/verity.mk)
+$(warning Setting system verity partition to mmcblk3p5)
+$(call inherit-product, build/target/product/verity.mk)
 else 
  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk2p5
- $(info Setting system verity parition to mmblk2p5\n)
- $(call inherit-product, build/target/product/verity.mk)
+$(warning Setting system verity parition to mmblk2p5)
+$(call inherit-product, build/target/product/verity.mk)
 endif
 
 #endif

@@ -10,10 +10,10 @@ include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 BUILD_TARGET_FS = ext4
 # AR6MX default target device(change to emmc for emmc boot)
 ifeq ($(MAKE_SD_CARD),T)
-   $(info Setting target device to sd)
+$(warning Setting target device to sd)
    BUILD_TARGET_DEVICE = sd
 else
-   $(info Setting target device to emmc)
+$(warning Setting target device to emmc)
    BUILD_TARGET_DEVICE = emmc
 endif
 
