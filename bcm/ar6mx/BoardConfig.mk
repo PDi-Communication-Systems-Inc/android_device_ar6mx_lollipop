@@ -9,7 +9,13 @@ include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 # AR6MX default target for EXT4
 BUILD_TARGET_FS = ext4
 # AR6MX default target device(change to emmc for emmc boot)
-BUILD_TARGET_DEVICE = sd
+ifeq ($(MAKE_SD_CARD),T)
+   $(info Setting target device to sd)
+   BUILD_TARGET_DEVICE = sd
+else
+   $(info Setting target device to emmc)
+   BUILD_TARGET_DEVICE = emmc
+endif
 
 include device/fsl/imx6/imx6_target_fs.mk
 
@@ -82,7 +88,7 @@ BOARD_KERNEL_CMDLINE +=  mtdparts=gpmi-nand:16m(bootloader),16m(bootimg),128m(re
 endif
 
 # atheros 3k BT
-BOARD_USE_AR3K_BLUETOOTH := true
+BOARD_USE_AR3K_BLUETOOTH := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/bcm/ar6mx/bluetooth
 
 USE_ION_ALLOCATOR := false

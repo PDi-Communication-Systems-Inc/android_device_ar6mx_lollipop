@@ -27,13 +27,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6q.bin:system/lib/firmware/vpu/vpu_fw_imx6q.bin
+
 # setup dm-verity configs.
-#ifneq ($(BUILD_TARGET_DEVICE),sd)
-# PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk3p5
-# $(call inherit-product, build/target/product/verity.mk)
-#else 
- PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk2p5
+ifneq ($(BUILD_TARGET_DEVICE),sd)
+  PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk3p5
+ $(info Setting system verity partition to mmcblk3p5\n)
  $(call inherit-product, build/target/product/verity.mk)
+else 
+ PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/mmcblk2p5
+ $(info Setting system verity parition to mmblk2p5\n)
+ $(call inherit-product, build/target/product/verity.mk)
+endif
 
 #endif
 
