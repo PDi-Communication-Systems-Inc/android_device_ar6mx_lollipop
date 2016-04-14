@@ -1,4 +1,6 @@
-allow init su:process { transition siginh rlimitinh };
+userdebug_or_eng(`
+   allow init su:process { transition siginh rlimitinh };
+   allow init_shell su_exec:file { read execute execute_no_trans open };
+')
 allow init self:capability sys_module;
 allow init_shell self:capability sys_module;
-allow init_shell su_exec:file { read execute execute_no_trans open };
