@@ -14,3 +14,4 @@ allow init_shell powerctl_prop:property_service {set};
 allow init_shell fuse:dir {search read open write};
 allow init_shell fuse:file {getattr read open write};
 allow init_shell kernel:system { syslog_mod syslog_read};
+allow init_shell labeledfs:filesystem remount;
