@@ -66,7 +66,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += AudioRoute							\
 		    AdobeReader 						\
 		    org.jtb.alogcat_43						\
-		    com.replica.replicaisland					\
+		    ReplicaIsland						\
 		    org.wikipedia						\
 		    net.micode.fileexplorer 					\
 		    com.mobilepearls.sokoban					\
