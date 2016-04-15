@@ -63,7 +63,18 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml
 
-PRODUCT_PACKAGES += AudioRoute
+PRODUCT_PACKAGES += AudioRoute							\
+		    AdobeReader 						\
+		    org.jtb.alogcat_43						\
+		    com.replica.replicaisland					\
+		    org.wikipedia						\
+		    net.micode.fileexplorer 					\
+		    com.mobilepearls.sokoban					\
+		    com.example.puzzlegame					\
+		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget	\
+		    com.pdiarm.pdicinchwidgets.pdixplain			\
+		    org.moire.opensudoku.game					\
+		    com.mobilepearls.memory
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
