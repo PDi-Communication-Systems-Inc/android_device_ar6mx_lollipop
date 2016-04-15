@@ -8,6 +8,7 @@ include device/fsl/imx6/BoardConfigCommon.mk
 include device/fsl-proprietary/gpu-viv/fsl-gpu.mk
 # AR6MX default target for EXT4
 BUILD_TARGET_FS = ext4
+
 # AR6MX default target device(change to emmc for emmc boot)
 ifeq ($(MAKE_SD_CARD),T)
 $(warning Setting target device to sd)
@@ -35,7 +36,6 @@ endif # BUILD_TARGET_DEVICE
 
 
 TARGET_BOOTLOADER_BOARD_NAME := AR6MX
-PRODUCT_MODEL := AR6MX
 
 BOARD_WPA_SUPPLICANT_DRIVER  := NL80211
 BOARD_HOSTAPD_DRIVER         := NL80211
@@ -155,4 +155,10 @@ BOARD_SEPOLICY_UNION := \
        recovery.te \
        device.te \
        wpa.te \
-       zygote.te \
+       zygote.te
+
+# Other Recovery Options
+TARGET_NO_RECOVERY                      := false
+TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
+# TODO: Allow OTA to update bootloader
+#TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx

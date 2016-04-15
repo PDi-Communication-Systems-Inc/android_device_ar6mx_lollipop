@@ -4,17 +4,15 @@
 $(call inherit-product, device/fsl/imx6/imx6.mk)
 $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
-#ifneq ($(wildcard device/bcm/ar6mx/fstab_nand.freescale),)
-#$(shell touch device/bcm/ar6mx/fstab_nand.freescale)
-#endif
-
-#ifneq ($(wildcard device/bcm/ar6mx/fstab.freescale),)
-#$(shell touch device/bcm/ar6mx/fstab.freescale)
-#endif
-
-# Overrides
+# Overrides -- These values are not to be changed
 PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
+PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
+PRODUCT_BRAND := PDi-Tab
+PRODUCT_MODEL := PD403-008
+
+PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
+PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
 
 PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/init.rc:root/init.freescale.rc \
