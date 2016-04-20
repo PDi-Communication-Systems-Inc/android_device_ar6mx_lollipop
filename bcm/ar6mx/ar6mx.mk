@@ -63,6 +63,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml
 
+# PDi Core Packages
 PRODUCT_PACKAGES += AudioRoute							\
 		    AdobeReader 						\
 		    org.jtb.alogcat_43						\
@@ -74,7 +75,11 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget	\
 		    com.pdiarm.pdicinchwidgets.pdixplain			\
 		    org.moire.opensudoku.game					\
-		    com.mobilepearls.memory
+		    com.mobilepearls.memory					\
+		    maxtouch							\
+		    libmaxtouch-jni						\
+		    libusbdroid							\
+		    mxt-app
 
 # for Compat driver
 PRODUCT_COPY_FILES += \

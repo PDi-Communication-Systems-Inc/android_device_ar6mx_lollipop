@@ -17,10 +17,9 @@ PRODUCT_PACKAGES += \
         LegacyCamera                            \
 	Email					\
 	FSLOta					\
-	CactusPlayer                            \
 	WfdSink                                 \
 	wfd                                     \
-    A2dpSinkApp                             \
+	A2dpSinkApp                             \
 	ethernet                                \
 	libfsl_wfd.so                           \
 	fsl.imx.jar                             \
@@ -44,9 +43,9 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant				\
 	rtl_wpa_supplicant			\
 	wpa_supplicant.conf			\
-	p2p_supplicant_overlay.conf			\
-	wpa_supplicant_overlay.conf			\
-    p2p_supplicant_advance_overlay.conf \
+	p2p_supplicant_overlay.conf		\
+	wpa_supplicant_overlay.conf		\
+   	p2p_supplicant_advance_overlay.conf 	\
 	dispd					\
 	ts_calibrator				\
 	libion                                  \
