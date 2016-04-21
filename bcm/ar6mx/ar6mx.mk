@@ -85,7 +85,13 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-		    libusb1.0
+		    libusb1.0							\
+		    i2c-tools							\
+		    i2cdetect							\
+		    i2cget							\
+		    i2cset							\
+		    i2cdump
+
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
