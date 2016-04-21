@@ -155,7 +155,8 @@ BOARD_SEPOLICY_UNION := \
        recovery.te \
        device.te \
        wpa.te \
-       zygote.te
+       zygote.te \
+       pdi_ts_script.te
 
 # Other Recovery Options
 TARGET_NO_RECOVERY                      := false

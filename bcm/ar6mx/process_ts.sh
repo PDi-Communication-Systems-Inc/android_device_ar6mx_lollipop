@@ -104,7 +104,13 @@ if [ $I2CDETECTCMD == "4a" ];
       echo "Done with touchscreen processing $PROP"
 elif [ $I2CDETECTCMD == "UU" ] 
      then
-         echo "Driver already loaded"
+         # indicate the i2c touchscreen has been setup via properties
+         NAME=`cat /sys/bus/i2c/devices/1-004a/name`
+         echo "found touchscreen $NAME"
+         setprop pdiarm.touchscreen $NAME
+         PROP="$("$BIN"/getprop pdiarm.touchscreen)"
+         echo "Done with touchscreen processing $PROP"
+
          DONE=true
 	 exit 126
 else
