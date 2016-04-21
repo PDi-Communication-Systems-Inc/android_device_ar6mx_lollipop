@@ -79,7 +79,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    maxtouch							\
 		    libmaxtouch-jni						\
 		    libusbdroid							\
-		    mxt-app
+		    mxt-app							\
+		    usbreset							\
+		    libusb1.0
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
