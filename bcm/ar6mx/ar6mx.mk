@@ -63,6 +63,10 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml
 
+#PDi additions
+PRODUCT_COPY_FILES += \
+ 	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh
+
 # PDi Core Packages
 PRODUCT_PACKAGES += AudioRoute							\
 		    AdobeReader 						\
