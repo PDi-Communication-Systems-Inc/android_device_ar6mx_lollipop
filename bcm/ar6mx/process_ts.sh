@@ -79,7 +79,7 @@ if [ $DONE == "true" ];
 fi
 
 # if nothing found assume i2c touchscreen
-I2CDETECTCMD=`i2cdetect -y 1 0x4a 0x4a | busybox cut -d : -f2 | busybox tail +6 | busybox xargs`
+I2CDETECTCMD=`i2cdetect -y 1 0x4a 0x4a | busybox cut -d : -f2 | busybox tail +6 | busybox tr -d '[[:space:]]'`
 echo Result of i2c detection is $I2CDETECTCMD
 if [ $I2CDETECTCMD == "4a" ];
    then
