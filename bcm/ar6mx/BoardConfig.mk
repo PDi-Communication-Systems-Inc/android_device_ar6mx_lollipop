@@ -156,7 +156,8 @@ BOARD_SEPOLICY_UNION := \
        device.te \
        wpa.te \
        zygote.te \
-       pdi_ts_script.te
+       pdi_ts_script.te \
+       eGTouchD.te
 
 # Other Recovery Options
 TARGET_NO_RECOVERY                      := false

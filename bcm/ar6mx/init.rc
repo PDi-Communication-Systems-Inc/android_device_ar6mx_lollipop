@@ -163,6 +163,12 @@ service load_wifi_module /system/bin/sh /system/etc/load_wifi_module.sh
     disabled
     oneshot
 
+service eGTouchD /system/bin/eGTouchD
+    class core
+    user root
+    group root
+    oneshot
+
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     user root
     group root
