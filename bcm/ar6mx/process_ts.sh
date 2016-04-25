@@ -68,11 +68,11 @@ if [ $COUNT -ge "1" ];
        echo "$COUNT eGalax Touchscreen discovered, resetting usb controller"
        # Reset entire controller touchscreen is connected to
        # vid=0x58f Alcor Micro controller, pid=6254 -- generic USB Hub
-       usbreset 058f:6254
+       (sleep 10; usbreset 058f:6254) &
 
        echo "Resetting touchscreen device"
        # Reset device itself 0x0eef=eGalax, 0xa04d USB Touchscreen Controller
-       usbreset 0eef:a04d
+       (sleep 15; usbreset 0eef:a04d) &
 
        setprop pdiarm.touchscreen eGalax
        DONE=true
