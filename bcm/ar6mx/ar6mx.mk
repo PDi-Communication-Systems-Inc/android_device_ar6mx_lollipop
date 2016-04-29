@@ -114,7 +114,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #SUPERUSER_EMBEDDED := true
 
-#PRODUCT_PACKAGES += IWLWIFI \
-#	su \
-#	Superuser \
-#	iwlwifi.ko
+PRODUCT_PACKAGES += IWLWIFI \
+	iwlwifi.ko
