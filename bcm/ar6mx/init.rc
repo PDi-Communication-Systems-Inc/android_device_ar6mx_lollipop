@@ -168,10 +168,6 @@ service magd /system/bin/magd
 service charger /charger
     class charger
 
-service load_wifi_module /system/bin/sh /system/etc/load_wifi_module.sh
-    disabled
-    oneshot
-
 service eGTouchD /system/bin/eGTouchD
     class core
     user root
