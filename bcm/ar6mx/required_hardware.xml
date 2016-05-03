@@ -19,14 +19,9 @@
 -->
 <permissions>
     <feature name="android.hardware.camera.any" />
-    <feature name="android.hardware.camera" />
     <feature name="android.hardware.camera.front" />
-    <feature name="android.hardware.camera.flash" />
-    <feature name="android.hardware.location" />
-    <feature name="android.hardware.location.network" />
-    <feature name="android.hardware.sensor.accelerometer" />
-    <feature name="android.hardware.sensor.compass" />
     <feature name="android.hardware.bluetooth" />
+    <feature name="android.hardware.bluetooth_le" />
     <feature name="android.hardware.touchscreen" />
     <feature name="android.hardware.touchscreen.multitouch" />
     <feature name="android.hardware.touchscreen.multitouch.distinct" />
@@ -38,6 +33,8 @@
     <feature name="android.software.input_methods" />
     <!-- Feature to specify if the device supports adding device admins. -->
     <feature name="android.software.device_admin" />
+    <feature name="android.hardware.wifi" />
+    <feature name="android.hardware.wifi.direct" />
 
     <!-- This is added by FSL. -->
     <feature name="android.software.live_wallpaper" />
