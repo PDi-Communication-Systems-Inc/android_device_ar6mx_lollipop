@@ -130,6 +130,12 @@ on charger
 
 
 # for wifi
+service load_wifi_module /system/bin/logwrapper -k /system/etc/load_wifi_module.sh
+    user root
+    group root
+    class main
+    oneshot
+
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/data/misc/wifi/wpa_supplicant.conf -dt
     class main
     socket wpa_wlan0 dgram 660 wifi wifi

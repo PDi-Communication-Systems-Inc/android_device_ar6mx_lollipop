@@ -95,7 +95,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    i2cdetect							\
 		    i2cget							\
 		    i2cset							\
-		    i2cdump
+		    i2cdump							\
+		    pdiarm.com.camerapreview
 
 
 # for Compat driver
