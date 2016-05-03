@@ -50,12 +50,12 @@ WIFI_DRIVER_MODULE_PATH                  ?= auto
 
 BOARD_MODEM_VENDOR := AMAZON
 
-USE_ATHR_GPS_HARDWARE := true
+USE_ATHR_GPS_HARDWARE := false
 USE_QEMU_GPS_HARDWARE := false
 
 #for accelerator sensor, need to define sensor type here
-BOARD_HAS_SENSOR := true
-SENSOR_MMA8451 := true
+BOARD_HAS_SENSOR := false
+SENSOR_MMA8451 := false
 
 # for recovery service
 TARGET_SELECT_KEY := 28
