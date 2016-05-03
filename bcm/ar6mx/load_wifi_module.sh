@@ -2,6 +2,7 @@
     # generic wireless
     insmod /system/lib/modules/compat.ko
     insmod /system/lib/modules/cfg80211.ko
+    insmod /system/lib/modules/mac80211.ko
 
     # intel wifi
     insmod /system/lib/modules/iwlwifi.ko
