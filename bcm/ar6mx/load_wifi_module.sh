@@ -25,6 +25,3 @@
     /system/bin/busybox sleep 2
     insmod /system/lib/modules/btusb.ko
     /system/bin/busybox sleep 2
-    insmod /system/lib/modules/hci_uart.ko
-    /system/bin/busybox sleep 2
-    hciconfig hci0 up
