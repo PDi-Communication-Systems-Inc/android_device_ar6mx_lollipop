@@ -115,5 +115,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #SUPERUSER_EMBEDDED := true
 
-PRODUCT_PACKAGES += IWLWIFI \
-	iwlwifi.ko
+# Wireless packages
+PRODUCT_PACKAGES += IWLWIFI 			\
+	            iwlwifi.ko			\
+		    hcitool			\
+		    hciconfig			\
+		    rctest			\
+		    l2ping			\
+		    l2test			\
+		    btmgmt
