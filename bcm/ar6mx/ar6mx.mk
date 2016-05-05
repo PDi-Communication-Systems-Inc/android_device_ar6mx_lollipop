@@ -70,7 +70,7 @@ PRODUCT_COPY_FILES += \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
 	kernel_imx/drivers/input/touchscreen/atmel_mxt_ts.ko:/system/lib/modules/atmel_mxt_ts.ko \
-	device/bcm/ar6mx/common/input/atmel_mxt_ts_T100_touchscreen.idc:system/usr/idc/atmel_mxt_ts_T100_touchscreen.idc
+	device/bcm/ar6mx/common/input/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc
 
 # PDi Core Packages
 PRODUCT_PACKAGES += AudioRoute							\
