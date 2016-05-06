@@ -111,10 +111,14 @@ $(call inherit-product,$(LOCAL_PATH)/firmware.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
-#SUPERUSER_PACKAGE := com.bcm.superuser
-#SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
-
-#SUPERUSER_EMBEDDED := true
+ifeq ( $(ANDROID_BUILD_MODE),eng)
+$(warning Engineering build...including Koush superuser package)
+   SUPERUSER_PACKAGE := com.bcm.superuser
+   SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
+   SUPERUSER_EMBEDDED := true
+else
+$(warning Not an engineering build, not including Koush superuser package)
+endif
 
 # Wireless packages
 PRODUCT_PACKAGES += IWLWIFI 			\
