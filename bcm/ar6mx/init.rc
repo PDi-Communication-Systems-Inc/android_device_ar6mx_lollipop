@@ -109,6 +109,13 @@ on boot
     # Set WiFi Display Source VideoBitRate Adaptive
     setprop media.wfd.video-bitrate 3000000
 
+# Program the Atmel Touchscreen with configuration file
+service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
+    class core
+    user root
+    group root
+    oneshot
+
 # mount the debugfs
     mount debugfs none /sys/kernel/debug/
 
