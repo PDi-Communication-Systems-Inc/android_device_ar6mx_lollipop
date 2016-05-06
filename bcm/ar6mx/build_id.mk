@@ -18,5 +18,26 @@
 # (like "CRB01").  It must be a single word, and is
 # capitalized by convention.
 
-export BUILD_ID=2.0.0-rc2
-export BUILD_NUMBER=20150123
+#export BUILD_ID=2.0.0-rc2
+#export BUILD_NUMBER=20150123
+
+buildnum := $(shell date +%Y%m%d.%H%M%S)
+builddtonly := $(shell date +%Y%m%d)
+export BUILD_NUMBER=${buildnum}
+export BUILD_DATE_ONLY=${builddtonly}
+
+ifeq (${PDI_SOLO},T)
+   export CORE_TYPE=S
+else
+   export CORE_TYPE=Q
+endif
+
+
+ifeq (${ANDROID_BUILD_MODE},user)
+   $(warning Generating user build)
+   export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+else
+   $(warning Generating enginnering build)
+export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+endif
+$(warning the finalized build id is defined to be ${BUILD_ID})
