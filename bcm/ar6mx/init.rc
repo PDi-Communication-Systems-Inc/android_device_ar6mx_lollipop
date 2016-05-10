@@ -21,6 +21,9 @@ on init
 
 on boot
 
+    # emmulate battery property
+    setprop sys.emulated.battery 1
+
     # Set permission for IIM node
     symlink /dev/mxs_viim /dev/mxc_mem
 
@@ -106,6 +109,13 @@ on boot
     # Set WiFi Display Source VideoBitRate Adaptive
     setprop media.wfd.video-bitrate 3000000
 
+# Program the Atmel Touchscreen with configuration file
+service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
+    class core
+    user root
+    group root
+    oneshot
+
 # mount the debugfs
     mount debugfs none /sys/kernel/debug/
 
@@ -127,6 +137,12 @@ on charger
 
 
 # for wifi
+service load_wifi_module /system/bin/logwrapper -k /system/etc/load_wifi_module.sh
+    user root
+    group root
+    class main
+    oneshot
+
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/data/misc/wifi/wpa_supplicant.conf -dt
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
@@ -159,8 +175,10 @@ service magd /system/bin/magd
 service charger /charger
     class charger
 
-service load_wifi_module /system/bin/sh /system/etc/load_wifi_module.sh
-    disabled
+service eGTouchD /system/bin/eGTouchD
+    class core
+    user root
+    group root
     oneshot
 
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh

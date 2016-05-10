@@ -1,0 +1,10 @@
+type eGTouchD, domain;
+type eGTouchD_exec, exec_type, file_type;
+
+allow eGTouchD self:capability sys_module;
+allow eGTouchD self:capability { setuid setgid };
+allow eGTouchD self:capability sys_admin;
+allow eGTouchD shell_exec:file rx_file_perms;;
+init_daemon_domain(eGTouchD)
+
+permissive_or_unconfined(eGTouchD)

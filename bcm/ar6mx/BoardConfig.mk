@@ -50,12 +50,12 @@ WIFI_DRIVER_MODULE_PATH                  ?= auto
 
 BOARD_MODEM_VENDOR := AMAZON
 
-USE_ATHR_GPS_HARDWARE := true
+USE_ATHR_GPS_HARDWARE := false
 USE_QEMU_GPS_HARDWARE := false
 
 #for accelerator sensor, need to define sensor type here
-BOARD_HAS_SENSOR := true
-SENSOR_MMA8451 := true
+BOARD_HAS_SENSOR := false
+SENSOR_MMA8451 := false
 
 # for recovery service
 TARGET_SELECT_KEY := 28
@@ -105,12 +105,18 @@ BOARD_RECOVERY_PARTITION_SIZE           := 104900000
 BOARD_CACHEIMAGE_PARTITION_SIZE         := 256000000
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE       := ext4
 
-ifeq ($(EMMC_SIZE),STANDARD)
+ifeq ($(EMMC_SIZE),PRODUCTION)
    BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1258291200
    BOARD_USERDATAIMAGE_PARTITION_SIZE := 3900000000
-else
-   BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 786432000
+$(warning Production build -- Setting system size to $BOARD_SYSTEMIMAGE_PARTITION_SIZE and data size to $BOARD_USERDATAIMAGE_PARTITION_SIZE)
+else ifeq($(EMMC_SIZE),TESTING)
+   BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 838860800
    BOARD_USERDATAIMAGE_PARTITION_SIZE := 256000000
+$(warning Testing build -- Setting system size to $BOARD_SYSTEMIMAGE_PARTITION_SIZE and data size to $BOARD_USERDATAIMAGE_PARTITION_SIZE)
+else
+   BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 838860800
+   BOARD_USERDATAIMAGE_PARTITION_SIZE := 256000000
+$(warning EMMC_SIZE not defined, using TESTING -- Setting system size to $BOARD_SYSTEMIMAGE_PARTITION_SIZE and data size to $BOARD_USERDATAIMAGE_PARTITION_SIZE)
 endif
 
 BOARD_FLASH_BLOCK_SIZE := 4096
@@ -155,7 +161,9 @@ BOARD_SEPOLICY_UNION := \
        recovery.te \
        device.te \
        wpa.te \
-       zygote.te
+       zygote.te \
+       pdi_ts_script.te \
+       eGTouchD.te
 
 # Other Recovery Options
 TARGET_NO_RECOVERY                      := false

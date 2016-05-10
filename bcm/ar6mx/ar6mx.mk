@@ -65,7 +65,13 @@ PRODUCT_COPY_FILES += \
 
 #PDi additions
 PRODUCT_COPY_FILES += \
- 	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh
+ 	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
+        device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
+        device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
+        device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
+	kernel_imx/drivers/input/touchscreen/atmel_mxt_ts.ko:/system/lib/modules/atmel_mxt_ts.ko \
+	device/bcm/ar6mx/common/input/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc \
+	device/bcm/ar6mx/common/input/touchscreen.xcfg:/system/etc/touchscreen.xcfg
 
 # PDi Core Packages
 PRODUCT_PACKAGES += AudioRoute							\
@@ -85,8 +91,20 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
+<<<<<<< HEAD
 		    libusb1.0                                                   \
                     pdiarm.com.camerapreview
+=======
+		    libusb1.0							\
+		    i2c-tools							\
+		    i2cdetect							\
+		    i2cget							\
+		    i2cset							\
+		    i2cdump							\
+		    pdiarm.com.camerapreview
+
+
+>>>>>>> da620c9339dfe71e026ad52faac33290c65b2f08
 # for Compat driver
 PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
@@ -98,12 +116,21 @@ $(call inherit-product,$(LOCAL_PATH)/firmware.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
-#SUPERUSER_PACKAGE := com.bcm.superuser
-#SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
+ifeq ( $(ANDROID_BUILD_MODE),eng)
+$(warning Engineering build...including Koush superuser package)
+   SUPERUSER_PACKAGE := com.bcm.superuser
+   SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
+   SUPERUSER_EMBEDDED := true
+else
+$(warning Not an engineering build, not including Koush superuser package)
+endif
 
-#SUPERUSER_EMBEDDED := true
-
-#PRODUCT_PACKAGES += IWLWIFI \
-#	su \
-#	Superuser \
-#	iwlwifi.ko
+# Wireless packages
+PRODUCT_PACKAGES += IWLWIFI 			\
+	            iwlwifi.ko			\
+		    hcitool			\
+		    hciconfig			\
+		    rctest			\
+		    l2ping			\
+		    l2test			\
+		    btmgmt

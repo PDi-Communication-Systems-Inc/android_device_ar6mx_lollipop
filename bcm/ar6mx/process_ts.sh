@@ -65,7 +65,15 @@ fi
 COUNT=`$BIN/lsusb | $BIN/grep -i egalax | $BIN/busybox wc -l`
 if [ $COUNT -ge "1" ];
    then
-       echo "$COUNT eGalax Touchscreen discovered"
+       echo "$COUNT eGalax Touchscreen discovered, resetting usb controller"
+       # Reset entire controller touchscreen is connected to
+       # vid=0x58f Alcor Micro controller, pid=6254 -- generic USB Hub
+       (sleep 10; usbreset 058f:6254) &
+
+       echo "Resetting touchscreen device"
+       # Reset device itself 0x0eef=eGalax, 0xa04d USB Touchscreen Controller
+       (sleep 15; usbreset 0eef:a04d) &
+
        setprop pdiarm.touchscreen eGalax
        DONE=true
 fi
@@ -79,8 +87,8 @@ if [ $DONE == "true" ];
 fi
 
 # if nothing found assume i2c touchscreen
-I2CDETECTCMD=`i2cdetect -y 1 0x4a 0x4a | busybox cut -d : -f2 | busybox tail +6 | busybox xargs`
-echo Result of i2c detection is $I2CDETECTCMD
+I2CDETECTCMD=`i2cdetect -y 1 0x4a 0x4a | busybox cut -d : -f2 | busybox tail +6 | busybox tr -d '[[:space:]]'`
+echo "Result of i2c detection is $I2CDETECTCMD"
 if [ $I2CDETECTCMD == "4a" ];
    then
       # load i2c touchscreen 
@@ -100,11 +108,17 @@ if [ $I2CDETECTCMD == "4a" ];
       NAME=`cat /sys/bus/i2c/devices/1-004a/name`
       echo "found touchscreen $NAME"
       setprop pdiarm.touchscreen $NAME
-      PROP="$("$BIN"/getprop pdiarm.touchscreen)"
+      PROP=`$BIN"/getprop pdiarm.touchscreen`
       echo "Done with touchscreen processing $PROP"
 elif [ $I2CDETECTCMD == "UU" ] 
      then
-         echo "Driver already loaded"
+         # indicate the i2c touchscreen has been setup via properties
+         NAME=`cat /sys/bus/i2c/devices/1-004a/name`
+         echo "found touchscreen $NAME"
+         setprop pdiarm.touchscreen $NAME
+         PROP=`$BIN/getprop pdiarm.touchscreen`
+         echo "Done with touchscreen processing $PROP"
+
          DONE=true
 	 exit 126
 else
