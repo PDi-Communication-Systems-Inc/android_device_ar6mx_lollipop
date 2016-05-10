@@ -85,8 +85,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-		    libusb1.0
-
+		    libusb1.0                                                   \
+                    pdiarm.com.camerapreview
 # for Compat driver
 PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
