@@ -91,20 +91,14 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-<<<<<<< HEAD
-		    libusb1.0                                                   \
                     pdiarm.com.camerapreview
-=======
 		    libusb1.0							\
 		    i2c-tools							\
 		    i2cdetect							\
 		    i2cget							\
 		    i2cset							\
-		    i2cdump							\
-		    pdiarm.com.camerapreview
+		    i2cdump							
 
-
->>>>>>> da620c9339dfe71e026ad52faac33290c65b2f08
 # for Compat driver
 PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
