@@ -26,8 +26,8 @@
         launcher:screen="2"
         launcher:x="0"
         launcher:y="0"
-        launcher:spanX="3"
-        launcher:spanY="4" />
+        launcher:spanX="5"
+        launcher:spanY="3" />
 
     <folder 
         launcher:title="@string/pdi_games_folder_name"  
