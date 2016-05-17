@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
 	ip-up-ppp0				\
 	ip-down-ppp0				\
 	wpa_supplicant				\
+	wpa_cli					\
 	rtl_wpa_supplicant			\
 	wpa_supplicant.conf			\
 	p2p_supplicant_overlay.conf		\
