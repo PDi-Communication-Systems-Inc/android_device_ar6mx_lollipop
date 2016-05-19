@@ -102,7 +102,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    MagicSmokeWallpapers					\
 		    VisualizationWallpapers					\
 		    NoiseField							\
-		    PhaseBeam
+		    PhaseBeam							\
+		    WebViewDream
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
