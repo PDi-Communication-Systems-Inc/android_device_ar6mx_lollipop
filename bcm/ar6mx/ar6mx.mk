@@ -96,7 +96,13 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    i2cdetect							\
 		    i2cget							\
 		    i2cset							\
-		    i2cdump							
+		    i2cdump							\
+		    HoloSpiralWallpaper						\
+		    Galaxy4							\
+		    MagicSmokeWallpapers					\
+		    VisualizationWallpapers					\
+		    NoiseField							\
+		    PhaseBeam
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
