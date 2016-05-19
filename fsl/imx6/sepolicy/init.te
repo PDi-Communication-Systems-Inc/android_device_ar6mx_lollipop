@@ -1,1 +1,2 @@
 allow init ppp_exec:file { execute_no_trans };
+allow init logd:process signull;

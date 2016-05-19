@@ -15,3 +15,5 @@ allow init_shell fuse:dir {search read open write};
 allow init_shell fuse:file {getattr read open write};
 allow init_shell kernel:system { syslog_mod syslog_read};
 allow init_shell labeledfs:filesystem remount;
+allow init_shell self:udp_socket create;
+allow init_shell self:udp_socket ioctl;
