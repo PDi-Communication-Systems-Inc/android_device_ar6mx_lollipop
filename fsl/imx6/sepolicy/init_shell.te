@@ -17,3 +17,5 @@ allow init_shell kernel:system { syslog_mod syslog_read};
 allow init_shell labeledfs:filesystem remount;
 allow init_shell self:udp_socket create;
 allow init_shell self:udp_socket ioctl;
+allow init_shell shell_exec:file execute_no_trans;
+
