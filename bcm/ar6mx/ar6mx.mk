@@ -103,7 +103,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    VisualizationWallpapers					\
 		    NoiseField							\
 		    PhaseBeam							\
-		    WebViewDream
+		    WebViewDream						\
+		    org.androidappdev.wifiwidget
 
 # for Compat driver
 PRODUCT_COPY_FILES += \

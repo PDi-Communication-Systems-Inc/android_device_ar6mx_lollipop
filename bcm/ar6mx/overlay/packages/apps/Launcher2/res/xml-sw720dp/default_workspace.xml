@@ -149,8 +149,16 @@
             launcher:packageName="com.android.settings"
             launcher:className="com.android.settings.Settings$ZenModeSettingsActivity"/>
 
-
     </folder>
+
+    <appwidget
+        launcher:packageName="org.androidappdev.wifiwidget"
+        launcher:className="org.androidappdev.wifiwidget.WifiAppWidgetProvider"
+        launcher:screen="2"
+        launcher:x="5"
+        launcher:y="4"
+        launcher:spanX="1"
+        launcher:spanY="1" />
 
 
     <!-- Right screen [3] -->

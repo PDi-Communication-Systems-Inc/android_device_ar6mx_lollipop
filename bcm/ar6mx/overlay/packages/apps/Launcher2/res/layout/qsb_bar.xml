@@ -13,9 +13,23 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<com.android.launcher2.SearchDropTargetBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/QSBBar"
+    android:focusable="false"
+    android:paddingBottom="3dp">
 
-<resources>
-    <dimen name="workspace_width_gap_land">32dp</dimen>
-    <dimen name="search_bar_height">48dp</dimen>
-</resources>
+    <!-- Search buttons container -->
+    <include android:id="@+id/qsb_search_bar"
+        layout="@layout/search_bar" />
 
+    <!-- Drag specific targets container -->
+    <LinearLayout
+        style="@style/SearchDropTargetBar"
+        android:id="@+id/drag_target_bar"
+	android:paddingBottom="3dp">
+
+        <include
+            layout="@layout/drop_target_bar" />
+    </LinearLayout>
+</com.android.launcher2.SearchDropTargetBar>
