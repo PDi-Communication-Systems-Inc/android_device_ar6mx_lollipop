@@ -129,6 +129,10 @@
             launcher:className="com.android.calendar.AllInOneActivity"/>
 
         <favorite
+            launcher:packageName="org.tomdroid"
+            launcher:className="org.tomdroid.ui.Tomdroid" />
+
+        <favorite
             launcher:packageName="com.android.settings"
             launcher:className="com.android.settings.Settings$AccessibilitySettingsActivity"/>
 
