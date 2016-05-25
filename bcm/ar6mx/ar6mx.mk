@@ -104,7 +104,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    NoiseField							\
 		    PhaseBeam							\
 		    WebViewDream						\
-		    org.androidappdev.wifiwidget
+		    org.androidappdev.wifiwidget				\
+		    org.tomdroid
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
