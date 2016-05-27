@@ -105,7 +105,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PhaseBeam							\
 		    WebViewDream						\
 		    org.androidappdev.wifiwidget				\
-		    org.tomdroid
+		    org.tomdroid						\
+		    todoTxtTouch						\
+		    jackpal.androidterm 
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
