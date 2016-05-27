@@ -133,6 +133,10 @@
             launcher:className="org.tomdroid.ui.Tomdroid" />
 
         <favorite
+            launcher:packageName="com.todotxt.todotxttouch"
+            launcher:className="com.todotxt.todotxttouch.TodoTxtTouch" />
+
+        <favorite
             launcher:packageName="com.android.settings"
             launcher:className="com.android.settings.Settings$AccessibilitySettingsActivity"/>
 
