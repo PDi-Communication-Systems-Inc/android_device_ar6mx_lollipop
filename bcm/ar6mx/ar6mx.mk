@@ -107,7 +107,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    org.androidappdev.wifiwidget				\
 		    org.tomdroid						\
 		    todoTxtTouch						\
-		    jackpal.androidterm 
+		    jackpal.androidterm 					\
+		    libjackpal-termexec2
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
