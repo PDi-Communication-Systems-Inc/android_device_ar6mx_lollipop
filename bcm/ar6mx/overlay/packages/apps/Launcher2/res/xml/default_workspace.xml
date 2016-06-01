@@ -41,7 +41,7 @@
 
         <favorite
             launcher:packageName="org.moire.opensudoku"
-            launcher:className="org.moire.opensudoku.gui"/>
+            launcher:className="org.moire.opensudoku.gui.FolderListActivity"/>
 
         <favorite 
             launcher:packageName="com.replica.replicaisland"
@@ -54,6 +54,11 @@
         <favorite
             launcher:packageName="com.mobilepearls.sokoban"
             launcher:className="com.mobilepearls.sokoban.SokobanLevelMenuActivity"/>
+
+        <favorite
+           launcher:packageName="com.uberspot.a2048"
+           launcher:className="com.uberspot.a2048.MainActivity"/>
+
     </folder>
 
 
