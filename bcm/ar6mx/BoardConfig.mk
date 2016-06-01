@@ -106,7 +106,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE         := 256000000
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE       := ext4
 
 ifeq ($(EMMC_SIZE),PRODUCTION)
-   BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 14258291200
+   BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1425829120
    BOARD_USERDATAIMAGE_PARTITION_SIZE := 3900000000
 $(warning Production build -- Setting system size to $(BOARD_SYSTEMIMAGE_PARTITION_SIZE) and data size to $(BOARD_USERDATAIMAGE_PARTITION_SIZE))
 else ifeq ($(EMMC_SIZE),TESTING)
@@ -163,7 +163,8 @@ BOARD_SEPOLICY_UNION := \
        wpa.te \
        zygote.te \
        pdi_ts_script.te \
-       eGTouchD.te
+       eGTouchD.te \
+       platform_app.te
 
 # Other Recovery Options
 TARGET_NO_RECOVERY                      := false
