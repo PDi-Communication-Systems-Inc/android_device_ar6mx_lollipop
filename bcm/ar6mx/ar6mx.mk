@@ -108,7 +108,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    org.tomdroid						\
 		    todoTxtTouch						\
 		    jackpal.androidterm 					\
-		    libjackpal-termexec2
+		    libjackpal-termexec2					\
+		    libjackpal-androidterm5
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
