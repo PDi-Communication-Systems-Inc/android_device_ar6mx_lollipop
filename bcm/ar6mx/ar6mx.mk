@@ -110,7 +110,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    jackpal.androidterm 					\
 		    libjackpal-termexec2					\
 		    libjackpal-androidterm5					\
-		    alogcat
+		    alogcat							\
+		    com.uberspot.a2048
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
