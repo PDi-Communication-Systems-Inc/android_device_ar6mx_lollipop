@@ -111,7 +111,11 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libjackpal-termexec2					\
 		    libjackpal-androidterm5					\
 		    alogcat							\
-		    com.uberspot.a2048
+		    com.uberspot.a2048						\
+		    org.petero.droidfish-1.61-69 				\
+                    libgtb.so 							\
+                    libnativeutil.so 						\
+                    librtb.so
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
