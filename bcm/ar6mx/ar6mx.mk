@@ -113,9 +113,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    alogcat							\
 		    com.uberspot.a2048						\
 		    org.petero.droidfish-1.61-69 				\
-                    libgtb.so 							\
-                    libnativeutil.so 						\
-                    librtb.so
+		    fbreader
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
