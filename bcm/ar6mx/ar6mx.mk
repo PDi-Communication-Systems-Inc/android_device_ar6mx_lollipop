@@ -113,11 +113,17 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    alogcat							\
 		    com.uberspot.a2048						\
 		    org.petero.droidfish-1.61-69 				\
-		    fbreader
+		    fbreader							\
+		    frozenbubble						\
+		    libmodplug-1.0	
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
-	device/bcm/ar6mx/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
+	device/bcm/ar6mx/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf
+
+# Add sample data files
+PRODUCT_COPY_FILES += \
+                  vendor/pdi/data/littlewomenormeg00alcoiala.epub:system/media/text/littlewomenormeg00alcoiala.epub
 
 # include firmware binaries for Wifi adapters
 #$(call inherit-product-if-exists, vendor/linux-firmware/iwlwifi.mk)
