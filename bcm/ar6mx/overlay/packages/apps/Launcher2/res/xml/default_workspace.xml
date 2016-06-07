@@ -63,6 +63,10 @@
            launcher:packageName="org.petero.droidfish"
            launcher:className="org.petero.droidfish/.DroidFish"/>
 
+        <favorite
+           launcher:packageName="org.jfedor.frozenbubble"
+           launcher:className="org.jfedor.frozenbubble.FrozenBubble"/>
+
     </folder>
 
 
