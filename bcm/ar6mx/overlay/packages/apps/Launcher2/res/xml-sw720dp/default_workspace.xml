@@ -125,6 +125,10 @@
             launcher:packageName="org.wikipedia"
             launcher:className="org.wikipedia.WikipediaActivity"/>
 
+        <favorite
+            launcher:packageName="org.geometerplus.zlibrary.ui.android"
+            launcher:className="org.geometerplus.zlibrary.ui.android.org.geometerplus.android.fbreader.FBReader"/>
+
     </folder>
 
     <folder 
