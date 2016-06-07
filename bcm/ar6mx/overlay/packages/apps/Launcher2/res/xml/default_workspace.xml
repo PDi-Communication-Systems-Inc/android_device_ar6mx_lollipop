@@ -59,6 +59,10 @@
            launcher:packageName="com.uberspot.a2048"
            launcher:className="com.uberspot.a2048.MainActivity"/>
 
+        <favorite
+           launcher:packageName="org.petero.droidfish"
+           launcher:className="org.petero.droidfish/.DroidFish"/>
+
     </folder>
 
 
@@ -116,6 +120,10 @@
         <favorite
             launcher:packageName="org.wikipedia"
             launcher:className="org.wikipedia.WikipediaActivity"/>
+
+        <favorite
+            launcher:packageName="org.geometerplus.zlibrary.ui.android"
+            launcher:className="org.geometerplus.zlibrary.ui.android.org.geometerplus.android.fbreader.FBReader"/>
 
     </folder>
 
