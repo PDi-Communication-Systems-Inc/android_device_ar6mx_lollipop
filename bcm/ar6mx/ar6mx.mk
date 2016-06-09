@@ -116,7 +116,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    org.petero.droidfish-1.61-69 				\
 		    fbreader							\
 		    frozenbubble						\
-		    libmodplug-1.0	
+		    libmodplug-1.0						\
+		    ghostcommander
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
@@ -151,3 +152,10 @@ PRODUCT_PACKAGES += IWLWIFI 			\
 		    l2ping			\
 		    l2test			\
 		    btmgmt
+
+# Video for Linux Packages
+PRODUCT_PACKAGES += v4l2-ctl			\
+		    v4l2-dbg                    \
+		    v4l2-compliance             \
+		    libv4l2                     \
+		    libv4l_convert
