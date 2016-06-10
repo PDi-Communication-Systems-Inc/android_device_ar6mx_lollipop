@@ -18,4 +18,5 @@ allow init_shell labeledfs:filesystem remount;
 allow init_shell self:udp_socket create;
 allow init_shell self:udp_socket ioctl;
 allow init_shell shell_exec:file execute_no_trans;
-
+allow init_shell self:tcp_socket create;
+allow init_shell zygote_exec:file execute_no_trans;
