@@ -117,7 +117,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    fbreader							\
 		    frozenbubble						\
 		    libmodplug-1.0						\
-		    ghostcommander
+		    ghostcommander						\
+		    k9								\
+		    hn-android`
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
