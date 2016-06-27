@@ -26,18 +26,28 @@ builddtonly := $(shell date +%Y%m%d)
 export BUILD_NUMBER=${buildnum}
 export BUILD_DATE_ONLY=${builddtonly}
 
+# For legacy support of first generation TAB
 ifeq (${PDI_SOLO},T)
    export CORE_TYPE=S
 else
    export CORE_TYPE=Q
 endif
 
+# Add TV or AIO marker to build, based more so on front panel 
+# for mapping of gpio-keys 
+ifeq (${AIO_CONFIGURATION},T)
+   export CONFIG_MARKER=AIO
+else
+   export CONFIG_MARKER=TV
+endif
 
+# Final assignment of BUILD_ID
+# TODO: change the U/E8 with TAB3 higher memory configuration
 ifeq (${ANDROID_BUILD_MODE},user)
    $(warning Generating user build)
-   export BUILD_ID=${CORE_TYPE}U8-${BUILD_DATE_ONLY}
+   export BUILD_ID=${CORE_TYPE}U8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
 else
    $(warning Generating enginnering build)
-export BUILD_ID=${CORE_TYPE}E8-${BUILD_DATE_ONLY}
+export BUILD_ID=${CORE_TYPE}E8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
 endif
 $(warning the finalized build id is defined to be ${BUILD_ID})
