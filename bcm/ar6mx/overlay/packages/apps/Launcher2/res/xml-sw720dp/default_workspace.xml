@@ -24,14 +24,14 @@
         launcher:packageName="com.android.deskclock"
         launcher:className="com.android.alarmclock.DigitalAppWidgetProvider"
         launcher:screen="2"
-        launcher:x="0"
+        launcher:x="1"
         launcher:y="0"
         launcher:spanX="5"
         launcher:spanY="3" />
 
     <folder 
         launcher:title="@string/pdi_games_folder_name"  
-        launcher:x="0"
+        launcher:x="1"
         launcher:y="3"
         launcher:screen="2">
 
@@ -72,7 +72,7 @@
 
     <folder 
         launcher:title="@string/pdi_internet_folder_name"  
-        launcher:x="2"
+        launcher:x="3"
         launcher:y="3"
         launcher:screen="2">
   
@@ -92,7 +92,7 @@
 
     <folder 
         launcher:title="@string/pdi_media_folder_name"  
-        launcher:x="4"
+        launcher:x="5"
         launcher:y="3"
         launcher:screen="2">
 
@@ -109,15 +109,15 @@
     <appwidget
         launcher:packageName="com.android.browser"
         launcher:className="com.android.browser.widget.BookmarkThumbnailWidgetProvider"
-        launcher:screen="2"
+        launcher:screen="1"
         launcher:x="5"
         launcher:y="0"
-        launcher:spanX="3"
-        launcher:spanY="4" />
+        launcher:spanX="7"
+        launcher:spanY="5" />
 
     <folder 
         launcher:title="@string/pdi_reference_folder_name"  
-        launcher:x="1"
+        launcher:x="2"
         launcher:y="3"
         launcher:screen="2">
 
@@ -137,7 +137,7 @@
 
     <folder 
         launcher:title="@string/pdi_tools_folder_name"  
-        launcher:x="3"
+        launcher:x="4"
         launcher:y="3"
         launcher:screen="2">
 
@@ -184,8 +184,8 @@
         launcher:packageName="org.androidappdev.wifiwidget"
         launcher:className="org.androidappdev.wifiwidget.WifiAppWidgetProvider"
         launcher:screen="2"
-        launcher:x="5"
-        launcher:y="4"
+        launcher:x="6"
+        launcher:y="3"
         launcher:spanX="1"
         launcher:spanY="1" />
 
