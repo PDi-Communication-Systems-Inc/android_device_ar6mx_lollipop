@@ -119,7 +119,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libmodplug-1.0						\
 		    ghostcommander						\
 		    k9								\
-		    hn-android
+		    hn-android							\
+		    com.kmagic.solitaire_450					\
+		    VLC
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
