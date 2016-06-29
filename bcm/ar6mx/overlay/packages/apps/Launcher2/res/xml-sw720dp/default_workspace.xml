@@ -61,7 +61,7 @@
 
         <favorite
            launcher:packageName="org.petero.droidfish"
-           launcher:className="org.petero.droidfish/.DroidFish"/>
+           launcher:className="org.petero.droidfish.DroidFish"/>
 
         <favorite
            launcher:packageName="org.jfedor.frozenbubble"
@@ -109,7 +109,7 @@
 
         <favorite
             launcher:packageName="org.geometerplus.zlibrary.ui.android"
-            launcher:className="org.geometerplus.zlibrary.ui.android.org.geometerplus.android.fbreader.FBReader"/>
+            launcher:className="org.geometerplus.android.fbreader.FBReader"/>
 
         <favorite
            launcher:packageName="org.videolan.vlc"
