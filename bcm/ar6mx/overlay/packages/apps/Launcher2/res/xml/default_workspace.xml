@@ -67,8 +67,11 @@
            launcher:packageName="org.jfedor.frozenbubble"
            launcher:className="org.jfedor.frozenbubble.FrozenBubble"/>
 
-    </folder>
+        <favorite
+           launcher:packageName="com.kmagic.solitaire"
+           launcher:className="com.kmagic.solitaire.Solitaire"/>
 
+    </folder>
 
     <folder 
         launcher:title="@string/pdi_internet_folder_name"  
@@ -104,6 +107,14 @@
         <favorite
             launcher:packageName="com.android.music"
             launcher:className="com.android.music.ArtistAlbumBrowserActivity"/>
+
+        <favorite
+            launcher:packageName="org.geometerplus.zlibrary.ui.android"
+            launcher:className="org.geometerplus.zlibrary.ui.android.org.geometerplus.android.fbreader.FBReader"/>
+
+        <favorite
+           launcher:packageName="org.videolan.vlc"
+           launcher:className="org.videolan.vlc.StartActivity"/>
 
     </folder>
 
