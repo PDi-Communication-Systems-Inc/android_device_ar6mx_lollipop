@@ -121,7 +121,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    k9								\
 		    hn-android							\
 		    com.kmagic.solitaire_450					\
-		    VLC
+		    VLC								\
+		    raidl							\
+		    iperf
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
