@@ -145,6 +145,10 @@
             launcher:packageName="org.geometerplus.zlibrary.ui.android"
             launcher:className="org.geometerplus.android.fbreader.FBReader"/>
 
+        <favorite
+            launcher:packageName="com.manuelmaly.hn"
+            launcher:className="com.manuelmaly.hn.MainActivity_"/>
+
     </folder>
 
     <folder 
@@ -168,6 +172,14 @@
         <favorite
             launcher:packageName="com.todotxt.todotxttouch"
             launcher:className="com.todotxt.todotxttouch.TodoTxtTouch" />
+
+        <favorite
+            launcher:packageName="com.android.camera2"
+            launcher:className="com.android.camera.CameraLauncher" />
+
+        <favorite
+            launcher:packageName="com.android.soundrecorder"
+            launcher:className="com.android.soundrecorder.SoundRecorder" />
 
         <favorite
             launcher:packageName="com.android.settings"
