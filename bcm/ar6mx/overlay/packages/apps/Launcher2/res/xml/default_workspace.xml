@@ -109,10 +109,6 @@
             launcher:className="com.android.music.ArtistAlbumBrowserActivity"/>
 
         <favorite
-            launcher:packageName="org.geometerplus.zlibrary.ui.android"
-            launcher:className="org.geometerplus.android.fbreader.FBReader"/>
-
-        <favorite
            launcher:packageName="org.videolan.vlc"
            launcher:className="org.videolan.vlc.StartActivity"/>
 
@@ -143,7 +139,7 @@
 
         <favorite
             launcher:packageName="org.geometerplus.zlibrary.ui.android"
-            launcher:className="org.geometerplus.zlibrary.ui.android.org.geometerplus.android.fbreader.FBReader"/>
+            launcher:className="org.geometerplus.android.fbreader.FBReader"/>
 
     </folder>
 
