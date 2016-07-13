@@ -5984,4 +5984,53 @@
    <!-- Message for encryption dialog telling the user that Talkback and other accessibility services will be disabled. -->
    <string name="encrypt_talkback_dialog_message_password">When you enter your password to start this device, accessibility services like <xliff:g id="service" example="TalkBack">%1$s</xliff:g> won\'t yet be available.</string>
 
+
+    <!-- PDi string resource additions for additional network entries, OTA, user management, etc. -->
+    <add-resource type="string" name="status_ethernet_mac_address"/>
+    <string name="status_ethernet_mac_address"> Ethernet MAC address </string>
+    <add-resource type="string" name="ota_settings" />
+    <string name="ota_settings"> Over the Air (OTA) </string>
+    <add-resource type="string" name="ota_server_name" />
+    <string name="ota_server_name"> Server </string>
+    <add-resource type="string" name="ota_port_name" />
+    <string name="ota_port_name"> Port </string>
+    <add-resource type="string" name="ota_server_summary" />
+    <string name="ota_server_summary"> Tap to use a non PDi\u00AE OTA server </string>
+    <add-resource type="string" name="ota_port_summary" />
+    <string name="ota_port_summary"> Tap to use a different port </string> 
+    <add-resource type="string" name="ota_protocol_name" />
+    <string name="ota_protocol_name"> Protocol </string>
+    <add-resource type="string" name="ota_protocol_summary" />
+    <string name="ota_protocol_summary"> Tap to change the type of server being accessed </string>
+    <add-resource type="string" name="ota_config_name" />
+    <string name="ota_config_name"> Configuration Suffix </string>
+    <add-resource type="string" name="ota_config_summary" />
+    <string name="ota_config_summary"> Tap to use a custom update configuration </string>
+    <add-resource type="string" name="ota_archive_name" />
+    <string name="ota_archive_name"> Archive Suffix </string>
+    <add-resource type="string" name="ota_port_summary" />
+    <string name="ota_archive_summary"> Tap to use a custom update package </string>
+    <add-resource type="string" name="ota_monthly_check_name" />
+    <string name="ota_monthly_check_name"> Automate Updates </string>
+    <add-resource type="string" name="ota_monthly_check_sum_off" />
+    <string name="ota_monthly_check_sum_off">Tap box to have system start monthly checks for updates </string>
+    <add-resource type="string" name="ota_monthly_check_sum_on" />
+    <string name="ota_monthly_check_sum_on">Tap box to have system stop monthly checks </string>
+    <add-resource type="string" name="ota_url_mod_title" />
+    <string name="ota_url_mod_title"> URL Configuration </string>
+    <add-resource type="string" name="ota_automation_title" />
+    <string name="ota_automation_title"> Automation Configuration</string>
+    <add-resource type="string" name="ota_actions_title" />
+    <string name="ota_actions_title"> Actions </string>
+    <add-resource type="string" name="max_users_choice" />
+    <string name="max_users_choice"> Maximum users on device (including owner) </string>
+    <add-resource type="string" name="global_action_restart"/>
+    <string name="global_action_restart">Restart</string>
+    <add-resource type="string" name="enable_guest_account_title"/>
+    <string name="enable_guest_account_title">Guest Account</string>
+    <add-resource type="string" name="enable_guest_account_summary_on"/>
+    <string name="enable_guest_account_summary_on">Tap to disable guest account</string>
+    <add-resource type="string" name="enable_guest_account_summary_off"/>
+    <string name="enable_guest_account_summary_off">Tap to enable guest account</string>
+
 </resources>
