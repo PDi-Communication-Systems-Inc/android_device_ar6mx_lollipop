@@ -240,6 +240,13 @@
                 android:icon="@drawable/ic_settings_development"
                 />
 
+        <add-resource type="dashboard-tile" name="ota_settings" />
+        <dashboard-tile
+	   android:id="@+id/ota_settings"
+           android:fragment="com.android.settings.OtaSettings"
+           android:icon="@drawable/ic_settings_ota"
+           android:title="@string/ota_settings" />
+
         <!-- About Device -->
         <dashboard-tile
                 android:id="@+id/about_settings"
