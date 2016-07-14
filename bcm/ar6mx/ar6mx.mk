@@ -11,8 +11,9 @@ PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
 PRODUCT_BRAND := PDi-Tab
 PRODUCT_MODEL := PD403-008
 
-PRODUCT_PROPERTY_OVERRIDES += hw.nobattery=true
-PRODUCT_PROPERTY_OVERRIDES += sys.device.type=tablet
+PRODUCT_PROPERTY_OVERRIDES += \
+			hw.nobattery=true \
+			sys.device.type=tablet
 
 PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/init.rc:root/init.freescale.rc \
