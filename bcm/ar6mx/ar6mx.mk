@@ -169,3 +169,7 @@ PRODUCT_PACKAGES += v4l2-ctl			\
 		    v4l2-compliance             \
 		    libv4l2                     \
 		    libv4l_convert
+
+# specify use of PDi release key, make sure fsl/nxp testkey has been removed
+PRODUCT_DEFAULT_DEV_CERTIFICATE := \
+	vendor/pdi/security/ar6mx/releasekey
