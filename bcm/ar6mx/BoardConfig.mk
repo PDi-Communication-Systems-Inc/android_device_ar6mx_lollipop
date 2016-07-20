@@ -125,13 +125,13 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-# Perform JIT-ready optimizations of jar/apks at compile time
-# Should reduce first-run boot but will increase compile times
-WITH_DEXPREOPT=true
-
+# which configuration should be used for the quad, dual, and solo boards
 TARGET_BOOTLOADER_CONFIG := 6q:ar6mxqandroid_config 6dl:ar6mxdlandroid_config 6solo:ar6mxsandroid_config
+
+# which device tree binary blob should be used with the quad and dual boards
 TARGET_BOARD_DTS_CONFIG := 6q:imx6q-ar6mx.dtb 6dl:imx6dl-ar6mx.dtb
 
+# which file is the kernel configuration file for the BCM board
 TARGET_KERNEL_DEFCONF := imx_v7_android_defconfig
 
 BOARD_SEPOLICY_DIRS := \
@@ -163,6 +163,7 @@ BOARD_SEPOLICY_UNION := \
        wpa.te \
        zygote.te \
        pdi_ts_script.te \
+       pdi_ota_script.te \
        eGTouchD.te \
        platform_app.te
 

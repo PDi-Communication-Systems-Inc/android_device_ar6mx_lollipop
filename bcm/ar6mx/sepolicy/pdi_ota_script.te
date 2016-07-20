@@ -1,0 +1,10 @@
+type pdi_ota_script, domain;
+type pdi_ota_script_exec, exec_type, file_type;
+
+allow pdi_ota_script self:capability sys_module;
+allow pdi_ota_script self:capability { setuid setgid };
+allow pdi_ota_script self:capability sys_admin;
+allow pdi_ota_script shell_exec:file rx_file_perms;
+init_daemon_domain(pdi_ota_script)
+
+permissive_or_unconfined(pdi_ota_script)
