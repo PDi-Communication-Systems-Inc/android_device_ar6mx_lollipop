@@ -40,6 +40,28 @@ TARGET_BOOTLOADER_BOARD_NAME := AR6MX
 BOARD_WPA_SUPPLICANT_DRIVER  := NL80211
 BOARD_HOSTAPD_DRIVER         := NL80211
 
+
+# Enabling iwlwifi
+
+BOARD_USING_INTEL_IWL := true
+INTEL_IWL_MODULE_SUB_FOLDER := cht
+
+COMBO_CHIP_VENDOR := intel
+COMBO_CHIP := lnp
+
+# SoftAp FW reload definitions.
+# we don't really need this, it's to avoid error when the framework
+# will trigger the fwReloadSoftap function, what will lead to an error
+
+# enabling the SoftAp.
+# so we set up this for letting the function execute gracefully.
+
+WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/iwlwifi-softap-dummy.ucode"
+WIFI_DRIVER_FW_PATH_AP  := "/system/vendor/firmware/iwlwifi-softap-dummy.ucode"
+WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/iwlwifi-softap-dummy.ucode"
+WIFI_DRIVER_FW_PATH_PARAM := "/dev/null"
+
+# config_wifi_background_scan_support=true:
 #for intel vendor
 BOARD_WLAN_DEVICE := intel
 BOARD_HOSTAPD_PRIVATE_LIB                := private_lib_driver_cmd
@@ -163,7 +185,6 @@ BOARD_SEPOLICY_UNION := \
        wpa.te \
        zygote.te \
        pdi_ts_script.te \
-       pdi_ota_script.te \
        eGTouchD.te \
        platform_app.te
 
