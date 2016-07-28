@@ -103,7 +103,7 @@ on boot
     #setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
     #setprop ro.lightsensor.threshold  20
 
-    # No bluetooth hardware present
+    # wlan0 is the default wifi interface
     setprop wlan.interface wlan0
 
     # Set WiFi Display Source VideoBitRate Adaptive
