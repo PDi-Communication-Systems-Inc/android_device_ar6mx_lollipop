@@ -61,14 +61,11 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml \
-	device/bcm/ar6mx/ota.conf:system/etc/ota.conf \
-	device/bcm/ar6mx/ota.conf:data/system/ota.conf
+	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml
 
 #PDi additions
 PRODUCT_COPY_FILES += \
  	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
-	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
@@ -168,8 +165,25 @@ PRODUCT_PACKAGES += v4l2-ctl			\
 		    v4l2-dbg                    \
 		    v4l2-compliance             \
 		    libv4l2                     \
-		    libv4l_convert
+		    libv4l_convert              \
+                    hostapd                     \
+                    hostapd_cli                 \
+                    wpa_supplicant              \
+                    wpa_cli
 
-# specify use of PDi release key, make sure fsl/nxp testkey has been removed
-PRODUCT_DEFAULT_DEV_CERTIFICATE := \
-	vendor/pdi/security/ar6mx/releasekey
+# iwlwifi USC
+PRODUCT_PACKAGES += \
+    wifi_intel_usc
+
+#copy iwlwifi wpa config files
+PRODUCT_COPY_FILES += \
+        device/bcm/common/wlan/wpa_supplicant-common.conf:system/etc/wifi/wpa_supplicant.conf \
+        device/bcm/common/wlan/iwlwifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+
+PRODUCT_COPY_FILES += \
+        device/bcm/common/wlan/iwlwifi/load_iwlwifi.sh:system/bin/load_iwlwifi.sh
+
+# Add Manufacturing tool
+PRODUCT_PACKAGES += \
+    wlan_intel_restore.sh
+                               

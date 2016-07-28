@@ -6003,7 +6003,7 @@
     <add-resource type="string" name="ota_protocol_summary" />
     <string name="ota_protocol_summary"> Tap to change the type of server being accessed </string>
     <add-resource type="string" name="ota_config_name" />
-    <string name="ota_config_name"> Configuration Build File </string>
+    <string name="ota_config_name"> Configuration Suffix </string>
     <add-resource type="string" name="ota_config_summary" />
     <string name="ota_config_summary"> Tap to use a custom update configuration </string>
     <add-resource type="string" name="ota_archive_name" />
