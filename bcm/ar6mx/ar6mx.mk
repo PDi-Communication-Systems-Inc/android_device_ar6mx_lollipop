@@ -61,11 +61,14 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml
+	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml \
+	device/bcm/ar6mx/ota.conf:system/etc/ota.conf \
+	device/bcm/ar6mx/ota.conf:data/system/ota.conf
 
 #PDi additions
 PRODUCT_COPY_FILES += \
  	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
+	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
@@ -170,6 +173,9 @@ PRODUCT_PACKAGES += v4l2-ctl			\
                     hostapd_cli                 \
                     wpa_supplicant              \
                     wpa_cli
+
+PRODUCT_DEFAULT_DEV_CERTIFICATE := \
+				vendor/pdi/security/ar6mx/releasekey
 
 # iwlwifi USC
 PRODUCT_PACKAGES += \

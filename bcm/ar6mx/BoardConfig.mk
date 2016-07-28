@@ -185,6 +185,7 @@ BOARD_SEPOLICY_UNION := \
        wpa.te \
        zygote.te \
        pdi_ts_script.te \
+       pdi_ota_script.te \
        eGTouchD.te \
        platform_app.te
 
