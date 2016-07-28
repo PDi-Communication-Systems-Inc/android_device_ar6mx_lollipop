@@ -103,7 +103,7 @@ on boot
     #setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
     #setprop ro.lightsensor.threshold  20
 
-    # wlan0 is the default wifi interface
+    # No bluetooth hardware present
     setprop wlan.interface wlan0
 
     # Set WiFi Display Source VideoBitRate Adaptive
@@ -136,51 +136,61 @@ on charger
     write /sys/devices/system/cpu/cpu3/online 0
 
 
-setprop wifi.interface wlan0
-
 # for wifi
 service load_wifi_module /system/bin/logwrapper -k /system/etc/load_wifi_module.sh
-   user root
-   group root
-   class main
-   oneshot
+    user root
+    group root
+    class main
+    oneshot
 
-service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/    data/misc/wifi/wpa_supplicant.conf -dt \
-    -e /data/misc/wifi/entropy.bin
+service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/data/misc/wifi/wpa_supplicant.conf -dt
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -ABDKL
-    class main
-    disabled
-    oneshot
-
-service iprenew_wlan0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
+setprop wifi.interface wlan0
 
 service p2p_supplicant /system/bin/wpa_supplicant \
-   -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-   -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-   -m/data/misc/wifi/p2p_supplicant.conf \
-   -O/data/misc/wifi/sockets \
-   -e/data/misc/wifi/entropy.bin \
-   -dt -g@android:wpa_wlan0
+    -dt -i wlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -g@android:wpa_wlan0 \
+    -m/system/etc/wifi/p2p_supplicant.conf \
+    -O/data/misc/wifi/sockets
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
-service dhcpcd_p2p /system/bin/dhcpcd -aABKL
-    disabled
-    oneshot
 
-service iprenew_p2p /system/bin/dhcpcd -n
-    disabled
-    oneshot
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABDKL
+class main
+disabled
+oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+class main
+disabled
+oneshot
+
+service p2p_supplicant /system/bin/wpa_supplicant \
+       -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
+       -I/system/etc/wifi/wpa_supplicant_overlay.conf \
+       -m/data/misc/wifi/p2p_supplicant.conf \
+       -O/data/misc/wifi/sockets \
+       -e/data/misc/wifi/entropy.bin \
+       -dt -g@android:wpa_wlan0
+        class main
+        socket wpa_wlan0 dgram 660 wifi wifi
+        disabled
+        oneshot
+
+
+    service dhcpcd_p2p /system/bin/dhcpcd -aABKL
+        disabled
+        oneshot
+
+    service iprenew_p2p /system/bin/dhcpcd -n
+        disabled
+        oneshot
 
 
 on property:init.svc.wpa_supplicant=stopped
