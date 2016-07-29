@@ -65,7 +65,7 @@ DEVICE_PACKAGE_OVERLAYS += device/bcm/common/wlan/overlay-pno
 DEVICE_PACKAGE_OVERLAYS += device/bcm/common/wlan/overlay-tcp-buffers
 
 
-SE_ATHR_GPS_HARDWARE := false
+USE_ATHR_GPS_HARDWARE := false
 USE_QEMU_GPS_HARDWARE := false
 
 #for accelerator sensor, need to define sensor type here
@@ -185,13 +185,14 @@ BOARD_SEPOLICY_UNION := \
 # Other Recovery Options
 TARGET_NO_RECOVERY                      := false
 
-ifeq ($(AIO_CONFIGURATION),F)
+# Recovery Setup
+ifeq ($(AIO_CONFIGURATION),T)
 $(warning Non-LVDS panel recovery color space of BGRA_8888) 
-   TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
+   TARGET_RECOVERY_PIXEL_FORMAT            := "RGBX_8888"
 else
 $(warning LVDS panel recovery color space of RGBA_8888)
-   TARGET_RECOVERY_PIXEL_FORMAT            := "RGBX_8888"
+   TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
 endif
 
-# TODO: Allow OTA to update bootloader
-#TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx
+# OTA Addition to update bootloader
+TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx
