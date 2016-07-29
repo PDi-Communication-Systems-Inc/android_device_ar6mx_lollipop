@@ -60,6 +60,14 @@ WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/iwlwifi-softap-dummy.ucode"
 WIFI_DRIVER_FW_PATH_PARAM := "/dev/null"
 
 # config_wifi_background_scan_support=true:
+#for intel vendor
+BOARD_WLAN_DEVICE := intel
+BOARD_HOSTAPD_PRIVATE_LIB                := private_lib_driver_cmd
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB         := private_lib_driver_cmd
+WPA_SUPPLICANT_VERSION                   := VER_0_8_X
+HOSTAPD_VERSION                          := VER_0_8_X
+WIFI_DRIVER_MODULE_PATH                  ?= auto
+
 DEVICE_PACKAGE_OVERLAYS += device/bcm/common/wlan/overlay-pno
 
 DEVICE_PACKAGE_OVERLAYS += device/bcm/common/wlan/overlay-tcp-buffers
