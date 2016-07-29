@@ -21,7 +21,8 @@ PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/audio_policy.conf:system/etc/audio_policy.conf \
         device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
         device/bcm/init.superuser.rc:root/init.superuser.rc \
-        device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh
+        device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
+        device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
