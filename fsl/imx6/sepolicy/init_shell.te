@@ -29,3 +29,4 @@ allow init_shell ram_device:blk_file getattr;
 allow init_shell security_file:dir read;
 allow init_shell shell_data_file:dir { search getattr };
 allow init_shell usermodehelper:file getattr;
+allow init_shell self:tcp_socket { bind setopt };
