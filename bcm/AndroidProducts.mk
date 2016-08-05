@@ -29,4 +29,4 @@
 
 PRODUCT_MAKEFILES += \
     $(LOCAL_DIR)/ar6mx/ar6mx.mk \
-
+    $(LOCAL_DIR)/gr60mx/gr60mx.mk \
