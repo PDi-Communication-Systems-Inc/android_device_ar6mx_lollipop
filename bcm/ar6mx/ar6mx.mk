@@ -175,6 +175,14 @@ PRODUCT_PACKAGES += v4l2-ctl			\
                     wpa_supplicant              \
                     wpa_cli
 
+# Additional native troubleshooting tools
+PRODUCT_PACKAGES += librank			\
+		    procmem                     \
+		    procrank                    \
+		    showmap                     \
+		    latencytop
+
+
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
 #copy iwlwifi wpa config files
