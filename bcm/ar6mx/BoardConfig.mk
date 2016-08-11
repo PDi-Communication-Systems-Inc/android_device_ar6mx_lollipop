@@ -196,10 +196,10 @@ TARGET_NO_RECOVERY                      := false
 
 # Recovery Setup
 ifeq ($(AIO_CONFIGURATION),T)
-$(warning Non-LVDS panel recovery color space of BGRA_8888) 
+$(warning LVDS panel recovery color space of RGBX_8888) 
    TARGET_RECOVERY_PIXEL_FORMAT            := "RGBX_8888"
 else
-$(warning LVDS panel recovery color space of RGBA_8888)
+$(warning Non-LVDS panel recovery color space of BGRA_8888)
    TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
 endif
 
