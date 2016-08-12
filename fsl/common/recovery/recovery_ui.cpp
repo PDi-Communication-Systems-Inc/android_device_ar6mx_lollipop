@@ -25,7 +25,7 @@
 #include "screen_ui.h"
 
 const char* HEADERS[] = { "Volume up/down to move highlight;",
-                          "power button to select.",
+                          "power button, enter, or left arrow to select.",
                           "",
                           NULL };
 
@@ -66,6 +66,8 @@ class ImxDevice : public Device {
                 return kHighlightUp;
 
               case KEY_POWER:
+	      case KEY_LEFT:
+              case KEY_ENTER:
                 return kInvokeItem;
             }
         }
