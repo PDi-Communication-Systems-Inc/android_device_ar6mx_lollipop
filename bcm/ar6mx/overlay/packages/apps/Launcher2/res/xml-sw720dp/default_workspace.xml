@@ -197,6 +197,10 @@
             launcher:packageName="com.android.settings"
             launcher:className="com.android.settings.Settings$ZenModeSettingsActivity"/>
 
+        <favorite
+            launcher:packageName="com.pdiarm.managemyaccount"
+            launcher:className="com.pdiarm.managemyaccount.ManageAccountActivity"/>
+
     </folder>
 
     <appwidget

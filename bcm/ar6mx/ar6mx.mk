@@ -182,6 +182,9 @@ PRODUCT_PACKAGES += librank			\
 		    showmap                     \
 		    latencytop
 
+# Add PDi internal closed source packages
+PRODUCT_PACKAGES += com.pdiarm.managemyaccount
+
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
