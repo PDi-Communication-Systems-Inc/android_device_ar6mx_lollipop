@@ -87,8 +87,6 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    net.micode.fileexplorer 					\
 		    com.mobilepearls.sokoban					\
 		    com.example.puzzlegame					\
-		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget	\
-		    com.pdiarm.pdicinchwidgets.pdixplain			\
 		    org.moire.opensudoku.game					\
 		    com.mobilepearls.memory					\
 		    maxtouch							\
@@ -96,7 +94,6 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-                    pdiarm.com.camerapreview					\
 		    libusb1.0							\
 		    i2c-tools							\
 		    i2cdetect							\
@@ -183,12 +180,19 @@ PRODUCT_PACKAGES += librank			\
 		    latencytop
 
 # Add PDi internal closed source packages
-PRODUCT_PACKAGES += com.pdiarm.managemyaccount
+PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
+		    com.pdiarm.pdicinchwidgets.pdixplain \
+		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget 
+			
 
+ifneq ( $(AIO_CONFIGURATION),T)
+$(warning Including PDi TV App)
+   PRODUCT_PACKAGES += pdiarm.com.camerapreview
+endif
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
 #copy iwlwifi wpa config files
 PRODUCT_COPY_FILES += \
         device/bcm/common/wlan/wpa_supplicant-common.conf:system/etc/wifi/wpa_supplicant.conf \
-        device/bcm/common/wlan/iwlwifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+        device/bcm/common/wlan/iwlwifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
