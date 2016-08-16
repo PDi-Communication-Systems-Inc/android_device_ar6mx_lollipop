@@ -177,7 +177,8 @@ PRODUCT_PACKAGES += librank			\
 		    procmem                     \
 		    procrank                    \
 		    showmap                     \
-		    latencytop
+		    latencytop			\
+		    strace
 
 # Add PDi internal closed source packages
 PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
