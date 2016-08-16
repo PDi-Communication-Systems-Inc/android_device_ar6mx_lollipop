@@ -94,7 +94,6 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-                    pdiarm.com.camerapreview                                    \
                     org.wso2.emm.agent                                          \
                     libusb1.0							\
                     i2c-tools							\
@@ -185,7 +184,8 @@ PRODUCT_PACKAGES += librank			\
 # Add PDi internal closed source packages
 PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    com.pdiarm.pdicinchwidgets.pdixplain \
-		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget 
+		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
+		    org.wso2.emm.agent
 			
 
 ifneq ( $(AIO_CONFIGURATION),T)
