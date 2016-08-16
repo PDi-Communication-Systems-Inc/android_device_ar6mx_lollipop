@@ -7,4 +7,3 @@ if [[ -z /data/system/ota.conf ]]
 else
    echo "ota.conf already exists"
 fi
-

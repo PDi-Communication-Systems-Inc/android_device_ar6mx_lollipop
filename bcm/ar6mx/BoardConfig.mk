@@ -36,10 +36,31 @@ endif # BUILD_TARGET_DEVICE
 
 
 TARGET_BOOTLOADER_BOARD_NAME := AR6MX
+PRODUCT_MODEL := AR6MX
 
-BOARD_WPA_SUPPLICANT_DRIVER  := NL80211
-BOARD_HOSTAPD_DRIVER         := NL80211
+# This enables the wpa wireless driver
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+WPA_SUPPLICANT_VERSION := VER_2_1_DEVEL_WCS
 
+# Enabling iwlwifi
+BOARD_USING_INTEL_IWL := true
+INTEL_IWL_MODULE_SUB_FOLDER := cht
+
+COMBO_CHIP_VENDOR := intel
+COMBO_CHIP := lnp
+
+# SoftAp FW reload definitions.
+# we don't really need this, it's to avoid error when the framework
+# will trigger the fwReloadSoftap function, what will lead to an error
+# enabling the SoftAp.
+# so we set up this for letting the function execute gracefully.
+WIFI_DRIVER_FW_PATH_STA := "/system/vendor/firmware/iwlwifi-softap-dummy.ucode"
+WIFI_DRIVER_FW_PATH_AP  := "/system/vendor/firmware/iwlwifi-softap-dummy.ucode"
+WIFI_DRIVER_FW_PATH_P2P := "/system/vendor/firmware/iwlwifi-softap-dummy.ucode"
+WIFI_DRIVER_FW_PATH_PARAM := "/dev/null"
+
+# config_wifi_background_scan_support=true:
 #for intel vendor
 BOARD_WLAN_DEVICE := intel
 BOARD_HOSTAPD_PRIVATE_LIB                := private_lib_driver_cmd
@@ -48,7 +69,10 @@ WPA_SUPPLICANT_VERSION                   := VER_0_8_X
 HOSTAPD_VERSION                          := VER_0_8_X
 WIFI_DRIVER_MODULE_PATH                  ?= auto
 
-BOARD_MODEM_VENDOR := AMAZON
+DEVICE_PACKAGE_OVERLAYS += device/bcm/common/wlan/overlay-pno
+
+DEVICE_PACKAGE_OVERLAYS += device/bcm/common/wlan/overlay-tcp-buffers
+
 
 USE_ATHR_GPS_HARDWARE := false
 USE_QEMU_GPS_HARDWARE := false
@@ -169,6 +193,15 @@ BOARD_SEPOLICY_UNION := \
 
 # Other Recovery Options
 TARGET_NO_RECOVERY                      := false
-TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
-# TODO: Allow OTA to update bootloader
-#TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx
+
+# Recovery Setup
+ifeq ($(AIO_CONFIGURATION),T)
+$(warning LVDS panel recovery color space of BGRA_8888) 
+   TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
+else
+$(warning Non-LVDS panel recovery color space of BGRA_8888)
+   TARGET_RECOVERY_PIXEL_FORMAT            := "RGBX_8888"
+endif
+
+# OTA Addition to update bootloader
+TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx

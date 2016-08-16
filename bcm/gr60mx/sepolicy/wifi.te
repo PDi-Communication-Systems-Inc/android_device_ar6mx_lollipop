@@ -1,0 +1,10 @@
+type load_wifi_module, domain;
+type load_wifi_module_exec, exec_type, file_type;
+
+allow load_wifi_module self:capability sys_module;
+allow load_wifi_module self:capability { setuid setgid };
+allow load_wifi_module self:capability sys_admin;
+allow load_wifi_module shell_exec:file rx_file_perms;;
+init_daemon_domain(load_wifi_module)
+
+permissive_or_unconfined(load_wifi_module)

@@ -22,6 +22,7 @@ PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
         device/bcm/init.superuser.rc:root/init.superuser.rc \
         device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
+        device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
@@ -86,8 +87,6 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    net.micode.fileexplorer 					\
 		    com.mobilepearls.sokoban					\
 		    com.example.puzzlegame					\
-		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget	\
-		    com.pdiarm.pdicinchwidgets.pdixplain			\
 		    org.moire.opensudoku.game					\
 		    com.mobilepearls.memory					\
 		    maxtouch							\
@@ -95,9 +94,13 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
+<<<<<<< HEAD
                     pdiarm.com.camerapreview                                    \
                     org.wso2.emm.agent                                          \
                     libusb1.0							\
+=======
+		    libusb1.0							\
+>>>>>>> 852789cbb754fd832179c1d22d6f6ec85ca66d7f
 		    i2c-tools							\
 		    i2cdetect							\
 		    i2cget							\
@@ -169,8 +172,33 @@ PRODUCT_PACKAGES += v4l2-ctl			\
 		    v4l2-dbg                    \
 		    v4l2-compliance             \
 		    libv4l2                     \
-		    libv4l_convert
+		    libv4l_convert              \
+                    hostapd                     \
+                    hostapd_cli                 \
+                    wpa_supplicant              \
+                    wpa_cli
 
-# specify use of PDi release key, make sure fsl/nxp testkey has been removed
+# Additional native troubleshooting tools
+PRODUCT_PACKAGES += librank			\
+		    procmem                     \
+		    procrank                    \
+		    showmap                     \
+		    latencytop
+
+# Add PDi internal closed source packages
+PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
+		    com.pdiarm.pdicinchwidgets.pdixplain \
+		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget 
+			
+
+ifneq ( $(AIO_CONFIGURATION),T)
+$(warning Including PDi TV App)
+   PRODUCT_PACKAGES += pdiarm.com.camerapreview
+endif
+
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
-	vendor/pdi/security/ar6mx/releasekey
+				vendor/pdi/security/ar6mx/releasekey
+#copy iwlwifi wpa config files
+PRODUCT_COPY_FILES += \
+        device/bcm/common/wlan/wpa_supplicant-common.conf:system/etc/wifi/wpa_supplicant.conf \
+        device/bcm/common/wlan/iwlwifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf

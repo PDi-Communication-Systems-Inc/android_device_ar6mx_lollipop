@@ -1,0 +1,210 @@
+import init.${ro.hardware}.usb.rc
+import init.bluetooth.rc
+import init.superuser.rc
+
+on init
+    start watchdogd
+
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage/emulated 0555 root root
+
+    export EXTERNAL_STORAGE /storage/emulated/legacy
+    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+    export EMULATED_STORAGE_TARGET /storage/emulated
+
+    # Support legacy paths
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /mnt/sdcard
+    symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+
+on boot
+
+    # emmulate battery property
+    setprop sys.emulated.battery 1
+
+    # Set permission for IIM node
+    symlink /dev/mxs_viim /dev/mxc_mem
+
+    # Enable Tethering in the Settings
+    setprop ro.tether.denied false
+
+    # 3D acceleration property
+    setprop debug.sf.showfps    0
+    setprop debug.sf.enable_hgl 1
+    setprop debug.egl.hw	1
+
+    setprop hwc.stretch.filter  1
+    setprop hwc.enable_dither   1
+
+    # fsl omx graphic manager media framework property
+    setprop media.omxgm.enable-player 1
+    setprop media.omxgm.enable-record 1
+    setprop media.omxgm.enable-scan 1
+    setprop rw.VIDEO_RENDER_NAME video_render.surface
+
+    #Define the config for dual camera
+    setprop camera.disable_zsl_mode 1
+    #For landscape mode, orient is 0
+    #For portrait mode, orient is 90
+    #the android before honycomb are all in portrait mode
+    setprop back_camera_name ov5640_mipi
+    setprop back_camera_orient 0
+    setprop front_camera_name uvc,ov5642_camera,ov5640_camera
+    setprop front_camera_orient 0
+
+    # Set OpenGLES version
+    setprop ro.opengles.version 131072
+
+    # Set rotation to 270 to cofigure as portrait mode
+    setprop ro.sf.hwrotation 0
+
+    # Set the density to 160dpi, default 128dpi is not good
+    setprop ro.sf.lcd_density 160
+
+    # Set extsd access permission
+    setprop persist.sampling_profiler 1
+
+# change for FSL specific service
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chmod 0440 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+    chown root system /sys/devices/system/cpu/cpu0/online
+    chmod 0664 /sys/devices/system/cpu/cpu0/online
+    chown root system /sys/devices/system/cpu/cpu1/online
+    chmod 0664 /sys/devices/system/cpu/cpu1/online
+    chown root system /sys/devices/system/cpu/cpu2/online
+    chmod 0664 /sys/devices/system/cpu/cpu2/online
+    chown root system /sys/devices/system/cpu/cpu3/online
+    chmod 0664 /sys/devices/system/cpu/cpu3/online
+    chmod 0750 /system/etc/load_wifi_module.sh
+    start load_wifi_module
+
+    # prepare for ril
+    setprop gsm.ril.delay 15
+    setprop ro.ril.wake_lock_timeout 300
+
+    start console
+
+    # Default backlight device
+    setprop hw.backlight.dev "backlight_lvds0.0"
+    # Chmod/chown FSL specific sys entry
+    chown system system /sys/class/backlight/backlight_lvds0.0/brightness
+    chmod 0660 /sys/class/backlight/backlight_lvds0.0/brightness
+
+    # Set light sensor sysfs path and light sensor threshold lux value
+    #setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
+    #setprop ro.lightsensor.threshold  20
+
+    # No bluetooth hardware present
+    setprop wlan.interface wlan0
+
+    # Set WiFi Display Source VideoBitRate Adaptive
+    setprop media.wfd.video-bitrate 3000000
+
+# Program the Atmel Touchscreen with configuration file
+service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
+    class core
+    user root
+    group root
+    oneshot
+
+# mount the debugfs
+    mount debugfs none /sys/kernel/debug/
+
+# Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
+    service watchdogd /sbin/watchdogd 10 20
+    class core
+    seclabel u:r:watchdogd:s0
+
+on charger
+    # Enable Power modes and set the CPU Freq Sampling rates
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
+    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+
+
+setprop wifi.interface wlan0
+
+service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/    data/misc/wifi/wpa_supplicant.conf -dt \
+    -e /data/misc/wifi/entropy.bin
+    class main
+    socket wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABDKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service p2p_supplicant /system/bin/wpa_supplicant \
+   -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
+   -I/system/etc/wifi/wpa_supplicant_overlay.conf \
+   -m/data/misc/wifi/p2p_supplicant.conf \
+   -O/data/misc/wifi/sockets \
+   -e/data/misc/wifi/entropy.bin \
+   -dt -g@android:wpa_wlan0
+    class main
+    socket wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd_p2p /system/bin/dhcpcd -aABKL
+    disabled
+    oneshot
+
+service iprenew_p2p /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
+
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd
+
+on property:wlan.driver.status=ok
+    ifup wlan0
+
+# magd daemon
+service magd /system/bin/magd
+    class late_start
+    seclabel u:r:sensors:s0
+    user system
+    group input
+    oneshot
+
+service charger /charger
+    class charger
+
+service eGTouchD /system/bin/eGTouchD
+    class core
+    user root
+    group root
+    oneshot
+
+service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
+    user root
+    group root
+    class core
+    oneshot
+
+on fs
+# mount ext4 partitions
+    mount_all /fstab.freescale
