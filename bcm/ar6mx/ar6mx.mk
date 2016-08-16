@@ -94,8 +94,10 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-		    libusb1.0							\
-		    i2c-tools							\
+                    pdiarm.com.camerapreview                                    \
+                    org.wso2.emm.agent                                          \
+                    libusb1.0							\
+                    i2c-tools							\
 		    i2cdetect							\
 		    i2cget							\
 		    i2cset							\
