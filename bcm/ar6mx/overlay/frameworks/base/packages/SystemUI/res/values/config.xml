@@ -37,7 +37,7 @@
     <integer name="config_recents_max_thumbnail_count">10</integer>
 
     <!-- The number of app icons we keep in memory -->
-    <integer name="config_recents_max_icon_count">20</integer>
+    <integer name="config_recents_max_icon_count">10</integer>
 
     <!-- Whether to use cheap, less good looking shadows for recents -->
     <bool name="config_recents_fake_shadows">false</bool>
@@ -202,7 +202,7 @@
     <bool name="enable_ticker">false</bool>
 
     <!-- Set to true to enable the user switcher on the keyguard. -->
-    <bool name="config_keyguardUserSwitcher">false</bool>
+    <bool name="config_keyguardUserSwitcher">true</bool>
 
     <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
     <bool name="doze_display_state_supported">false</bool>
