@@ -32,7 +32,7 @@ on early-init
 on init
     sysclktz 0
 
-    loglevel 8
+    loglevel 3
 
     # setup the global environment
     export SHM_MOUNTPOINT /mnt/shm
