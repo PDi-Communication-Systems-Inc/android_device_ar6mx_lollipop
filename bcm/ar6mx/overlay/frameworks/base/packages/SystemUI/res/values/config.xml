@@ -37,7 +37,7 @@
     <integer name="config_recents_max_thumbnail_count">10</integer>
 
     <!-- The number of app icons we keep in memory -->
-    <integer name="config_recents_max_icon_count">20</integer>
+    <integer name="config_recents_max_icon_count">10</integer>
 
     <!-- Whether to use cheap, less good looking shadows for recents -->
     <bool name="config_recents_fake_shadows">false</bool>
