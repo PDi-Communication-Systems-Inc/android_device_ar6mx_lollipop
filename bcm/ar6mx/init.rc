@@ -219,7 +219,7 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     class core
     oneshot
 
-service pdi_cmdline_script /system/bin/logwrapper -k /system/etc/process_cmdline.sh
+service pdi_cl_script /system/bin/logwrapper -k /system/etc/process_cmdline.sh
     user root
     group root
     class core
