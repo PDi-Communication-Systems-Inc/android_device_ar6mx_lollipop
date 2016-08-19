@@ -6046,5 +6046,9 @@
     <string name="status_wifi_dns_addresses">Wi-fi DNS Addresses</string>    
     <add-resource type="string" name="status_wifi_dns_addresses_summary"/>
     <string name="status_wifi_dns_addresses_summary">Show up to four DNS addresses if available</string>
+    <add-resource type="string" name="board_version"/>
+    <string name="board_version">Board Version</string>
+    <add-resource type="string" name="board_version_summary"/>
+    <string name="board_version_summary">Hardware encoded board version</string>
 
 </resources>
