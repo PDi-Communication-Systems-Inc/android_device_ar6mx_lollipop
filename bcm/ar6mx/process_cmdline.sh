@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/system/bin/sh
 
 # A fairly rough way to separate off the bootargs
 # this might need improvement in the future
