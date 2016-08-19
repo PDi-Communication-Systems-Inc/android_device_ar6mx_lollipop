@@ -59,7 +59,7 @@
                 android:persistent="false" />
 
         <Preference android:title="@string/reboot_recovery"
-                    android:key="device_reboot"
+                    android:key="device_reboot_recovery"
                     android:persistent="false">
         </Preference>
 
