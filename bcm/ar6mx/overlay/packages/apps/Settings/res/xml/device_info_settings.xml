@@ -124,4 +124,11 @@
                 android:title="@string/selinux_status"
                 android:summary="@string/selinux_status_enforcing"/>
 
+        <!-- Hardware encoded board version -->
+        <Preference android:key="board_version_preference" 
+                style="?android:preferenceInformationStyle"
+                android:title="@string/board_version"
+                android:summary="@string/board_version_summary"/>
+
+
 </PreferenceScreen>

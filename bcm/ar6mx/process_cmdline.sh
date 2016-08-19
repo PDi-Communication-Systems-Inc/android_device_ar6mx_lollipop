@@ -5,20 +5,21 @@
 # for now just interested in the board version
 
 CMDLINE=`cat /proc/cmdline`
-echo cmdline=$CMDLINE
+echo -e "cmdline=$CMDLINE\n"
 for bootarg in $CMDLINE;
    do
       BOOTARG_VALUE=$bootarg
-      echo BOOTARG value is $BOOTARG_VALUE
+      echo -e "BOOTARG value is $BOOTARG_VALUE\n"
       (IFS='=';
        KEY='' 
        for kv in $BOOTARG_VALUE;
           do
-             echo "$kv";
+             echo -e "key is $kv\n";
              if [ -z $KEY]; then
                 KEY=pdiarm.cmdline.$kv
              else
                 VALUE=$kv
+                echo -e "setting property $KEY=$VALUE\n"
                 setprop $KEY $VALUE
                 break
              fi
