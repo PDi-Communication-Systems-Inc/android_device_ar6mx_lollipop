@@ -145,5 +145,26 @@
         android:title="@string/status_wifi_dns_addresses"
         android:summary="@string/status_wifi_dns_addresses_summary"
         android:persistent="false" />
+   <Preference android:key="ethernet_gateway_address"
+        style="?android:attr/preferenceInformationStyle"
+        android:title="@string/status_ethernet_gateway"
+        android:summary="@string/status_ethernet_gateway_summary"
+        android:persistent="false" />
+   <Preference android:key="wifi_gateway_address"
+        style="?android:attr/preferenceInformationStyle"
+        android:title="@string/status_wifi_gateway"
+        android:summary="@string/status_wifi_gateway_summary"
+        android:persistent="false" />
+   <Preference android:key="ethernet_leasetime"
+        style="?android:attr/preferenceInformationStyle"
+        android:title="@string/status_ethernet_lease"
+        android:summary="@string/status_ethernet_lease_summary"
+        android:persistent="false" />
+   <Preference android:key="wifi_leasetime"
+        style="?android:attr/preferenceInformationStyle"
+        android:title="@string/status_wifi_lease"
+        android:summary="@string/status_wifi_lease_summary"
+        android:persistent="false" />
+
 
 </PreferenceScreen>

@@ -6041,14 +6041,30 @@
     <add-resource type="string" name="status_ethernet_dns_addresses"/>
     <string name="status_ethernet_dns_addresses">Ethernet DNS Addresses</string>
     <add-resource type="string" name="status_ethernet_dns_addresses_summary"/>
-    <string name="status_ethernet_dns_addresses_summary">Show up to four DNS addresses if available</string>  
+    <string name="status_ethernet_dns_addresses_summary">Servers to resolve network name with IP address</string>  
     <add-resource type="string" name="status_wifi_dns_addresses"/>
     <string name="status_wifi_dns_addresses">Wi-fi DNS Addresses</string>    
     <add-resource type="string" name="status_wifi_dns_addresses_summary"/>
-    <string name="status_wifi_dns_addresses_summary">Show up to four DNS addresses if available</string>
+    <string name="status_wifi_dns_addresses_summary">Servers to resolve network name with IP address</string>
     <add-resource type="string" name="board_version"/>
     <string name="board_version">Board Version</string>
     <add-resource type="string" name="board_version_summary"/>
     <string name="board_version_summary">Hardware encoded board version</string>
+    <add-resource type="string" name="status_ethernet_gateway"/>
+    <string name="status_ethernet_gateway">Ethernet Gateway</string>
+    <add-resource type="string" name="status_ethernet_gateway_summary"/>
+    <string name="status_ethernet_gateway_summary">Network node for interfacing with Internet/another network</string>
+    <add-resource type="string" name="status_ethernet_lease"/>
+    <string name="status_ethernet_lease">Ethernet Lease Time</string>
+    <add-resource type="string" name="status_ethernet_lease_summary"/>
+    <string name="status_ethernet_lease_summary">How long is IP address valid before it must be renewed in seconds</string>
+    <add-resource type="string" name="status_wifi_gateway"/>
+    <string name="status_wifi_gateway">Wifi Gateway</string>
+    <add-resource type="string" name="status_wifi_gateway_summary"/>
+    <string name="status_wifi_gateway_summary">Network node for interfacing with Internet/another network</string>
+    <add-resource type="string" name="status_wifi_lease"/>
+    <string name="status_wifi_lease">Wifi Lease Time</string>
+    <add-resource type="string" name="status_wifi_lease_summary"/>
+    <string name="status_wifi_lease_summary">How long is IP address valid before it must be renewed in seconds</string>
 
 </resources>
