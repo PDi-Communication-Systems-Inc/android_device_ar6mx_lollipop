@@ -6066,5 +6066,14 @@
     <string name="status_wifi_lease">Wifi Lease Time</string>
     <add-resource type="string" name="status_wifi_lease_summary"/>
     <string name="status_wifi_lease_summary">How long is IP address valid before it must be renewed in seconds</string>
+    <add-resource type="string" name="status_ethernet_domain"/>
+    <string name="status_ethernet_domain">Ethernet Domain</string>
+    <add-resource type="string" name="status_ethernet_domain_summary"/>
+    <string name="status_ethernet_domain_summary">Subnetwork assigned to this device</string>
+    <add-resource type="string" name="status_wifi_domain"/>
+    <string name="status_wifi_domain">Wifi Domain</string>
+    <add-resource type="string" name="status_wifi_domain_summary"/>
+    <string name="status_wifi_domain_summary">Subnetwork assigned to this device</string>
+
 
 </resources>

@@ -165,6 +165,14 @@
         android:title="@string/status_wifi_lease"
         android:summary="@string/status_wifi_lease_summary"
         android:persistent="false" />
-
-
+   <Preference android:key="ethernet_domain"
+        style="?android:attr/preferenceInformationStyle"
+        android:title="@string/status_ethernet_domain"
+        android:summary="@string/status_ethernet_domain_summary"
+        android:persistent="false" />
+   <Preference android:key="wifi_domain"
+        style="?android:attr/preferenceInformationStyle"
+        android:title="@string/status_wifi_domain"
+        android:summary="@string/status_wifi_domain_summary"
+        android:persistent="false" />
 </PreferenceScreen>
