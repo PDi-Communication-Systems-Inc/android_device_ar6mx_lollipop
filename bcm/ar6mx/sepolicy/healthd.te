@@ -1,0 +1,1 @@
+allow healthd init_shell:fd use;
