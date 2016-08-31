@@ -1,3 +1,2 @@
 allow platform_app devpts:chr_file open;
 allow platform_app init_shell:fd use;
-allow platform_app system_data_file:file write;
