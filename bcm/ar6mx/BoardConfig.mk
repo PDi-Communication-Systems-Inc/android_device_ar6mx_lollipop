@@ -190,19 +190,15 @@ BOARD_SEPOLICY_UNION := \
        pdi_cmdline_script.te \
        pdi_ota_script.te \
        eGTouchD.te \
-       platform_app.te
+       platform_app.te \
+       drmserver.te \
+       healthd.te \
+       radio.te \
+       surfaceflinger.te
 
-# Other Recovery Options
+# Recovery Options
 TARGET_NO_RECOVERY                      := false
-
-# Recovery Setup
-ifeq ($(AIO_CONFIGURATION),T)
-$(warning LVDS panel recovery color space of BGRA_8888) 
-   TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
-else
-$(warning Non-LVDS panel recovery color space of BGRA_8888)
-   TARGET_RECOVERY_PIXEL_FORMAT            := "RGBX_8888"
-endif
+TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
 
 # OTA Addition to update bootloader
 TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx
