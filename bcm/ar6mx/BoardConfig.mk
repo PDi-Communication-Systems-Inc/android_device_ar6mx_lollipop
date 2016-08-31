@@ -194,7 +194,8 @@ BOARD_SEPOLICY_UNION := \
        drmserver.te \
        healthd.te \
        radio.te \
-       surfaceflinger.te
+       surfaceflinger.te \
+       keystore.te
 
 # Recovery Options
 TARGET_NO_RECOVERY                      := false

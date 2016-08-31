@@ -1,1 +1,2 @@
 allow surfaceflinger init_shell:fd use;
+allow surfaceflinger system_data_file:file write;

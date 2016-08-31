@@ -1,1 +1,2 @@
 allow radio init_shell:fd use;
+allow radio system_data_file:file write;
