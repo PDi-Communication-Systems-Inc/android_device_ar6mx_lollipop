@@ -143,13 +143,17 @@ $(call inherit-product,$(LOCAL_PATH)/firmware.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
-ifeq ( $(ANDROID_BUILD_MODE),eng)
+ifeq ( $(ANDROID_BUILD_MODE),engr)
 $(warning Engineering build...including Koush superuser package)
    SUPERUSER_PACKAGE := com.bcm.superuser
    SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
    SUPERUSER_EMBEDDED := true
 
-   PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc
+   PRODUCT_PACKAGES += devregs	\
+		       inputRead
+
+   PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
+			 device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
 else
 $(warning Not an engineering build, not including Koush superuser package)
 endif
