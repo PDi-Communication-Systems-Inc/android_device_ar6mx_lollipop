@@ -143,7 +143,7 @@ $(call inherit-product,$(LOCAL_PATH)/firmware.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
-ifeq ( $(ANDROID_BUILD_MODE),engr)
+ifeq ($(ANDROID_BUILD_MODE),engr)
 $(warning Engineering build...including Koush superuser package)
    SUPERUSER_PACKAGE := com.bcm.superuser
    SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
@@ -194,7 +194,7 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    org.wso2.emm.agent
 			
 
-ifneq ( $(AIO_CONFIGURATION),T)
+ifneq ($(AIO_CONFIGURATION),T)
 $(warning Including PDi TV App)
    PRODUCT_PACKAGES += pdiarm.com.camerapreview
 endif
