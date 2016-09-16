@@ -126,7 +126,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.kmagic.solitaire_450					\
 		    VLC								\
 		    raidl							\
-		    iperf
+		    iperf                                                       \
+                    com.pdiarm.newuserconfirmation
+                                         
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
