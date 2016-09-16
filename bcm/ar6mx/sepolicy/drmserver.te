@@ -1,0 +1,2 @@
+allow drmserver init_shell:fd use;
+allow drmserver system_data_file:file write;

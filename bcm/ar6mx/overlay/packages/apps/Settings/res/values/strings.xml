@@ -1109,6 +1109,12 @@
     <!-- Summary of preference to manage device policies -->
     <string name="manage_trust_agents_summary">View or deactivate trust agents</string>
 
+    <!-- Summary of preference to manage device recovery -->
+    <string name="reboot_recovery">Device recovery</string>
+
+    <!-- Summary of preference to manage device recovery -->
+    <string name="reboot_recovery_msg">Click yes to start the Device Recovery!</string>
+
     <!-- Bluetooth settings -->
     <!-- Bluetooth settings check box title on Main Settings screen -->
     <string name="bluetooth_quick_toggle_title">Bluetooth</string>
@@ -6035,10 +6041,39 @@
     <add-resource type="string" name="status_ethernet_dns_addresses"/>
     <string name="status_ethernet_dns_addresses">Ethernet DNS Addresses</string>
     <add-resource type="string" name="status_ethernet_dns_addresses_summary"/>
-    <string name="status_ethernet_dns_addresses_summary">Show up to four DNS addresses if available</string>  
+    <string name="status_ethernet_dns_addresses_summary">Servers to resolve network name with IP address</string>  
     <add-resource type="string" name="status_wifi_dns_addresses"/>
     <string name="status_wifi_dns_addresses">Wi-fi DNS Addresses</string>    
     <add-resource type="string" name="status_wifi_dns_addresses_summary"/>
-    <string name="status_wifi_dns_addresses_summary">Show up to four DNS addresses if available</string>
+    <string name="status_wifi_dns_addresses_summary">Servers to resolve network name with IP address</string>
+    <add-resource type="string" name="board_version"/>
+    <string name="board_version">Board Version</string>
+    <add-resource type="string" name="board_version_summary"/>
+    <string name="board_version_summary">Hardware encoded board version</string>
+    <add-resource type="string" name="status_ethernet_gateway"/>
+    <string name="status_ethernet_gateway">Ethernet Gateway</string>
+    <add-resource type="string" name="status_ethernet_gateway_summary"/>
+    <string name="status_ethernet_gateway_summary">Network node for interfacing with Internet/another network</string>
+    <add-resource type="string" name="status_ethernet_lease"/>
+    <string name="status_ethernet_lease">Ethernet Lease Time</string>
+    <add-resource type="string" name="status_ethernet_lease_summary"/>
+    <string name="status_ethernet_lease_summary">How long is IP address valid before it must be renewed in seconds</string>
+    <add-resource type="string" name="status_wifi_gateway"/>
+    <string name="status_wifi_gateway">Wifi Gateway</string>
+    <add-resource type="string" name="status_wifi_gateway_summary"/>
+    <string name="status_wifi_gateway_summary">Network node for interfacing with Internet/another network</string>
+    <add-resource type="string" name="status_wifi_lease"/>
+    <string name="status_wifi_lease">Wifi Lease Time</string>
+    <add-resource type="string" name="status_wifi_lease_summary"/>
+    <string name="status_wifi_lease_summary">How long is IP address valid before it must be renewed in seconds</string>
+    <add-resource type="string" name="status_ethernet_domain"/>
+    <string name="status_ethernet_domain">Ethernet Domain</string>
+    <add-resource type="string" name="status_ethernet_domain_summary"/>
+    <string name="status_ethernet_domain_summary">Subnetwork assigned to this device</string>
+    <add-resource type="string" name="status_wifi_domain"/>
+    <string name="status_wifi_domain">Wifi Domain</string>
+    <add-resource type="string" name="status_wifi_domain_summary"/>
+    <string name="status_wifi_domain_summary">Subnetwork assigned to this device</string>
+
 
 </resources>

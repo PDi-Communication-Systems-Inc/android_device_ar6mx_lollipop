@@ -1,0 +1,2 @@
+allow healthd init_shell:fd use;
+allow healthd system_data_file:file write;

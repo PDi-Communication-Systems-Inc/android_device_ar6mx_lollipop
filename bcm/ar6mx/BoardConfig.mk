@@ -103,7 +103,7 @@ $(error "TARGET_USERIMAGES_USE_UBIFS and TARGET_USERIMAGES_USE_EXT4 config open 
 endif
 endif
 
-BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init video=mxcfb0:dev=ldb,bpp=32 video=mxcfb1:off video=mxcfb2:off video=mxcfb3:off vmalloc=400M androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale cma=384M
+BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init vmalloc=400M androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale
 
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 #UBI boot command line.
@@ -115,7 +115,7 @@ endif
 BOARD_USE_AR3K_BLUETOOTH := false
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/bcm/ar6mx/bluetooth
 
-USE_ION_ALLOCATOR := false
+USE_ION_ALLOCATOR := true
 USE_GPU_ALLOCATOR := true
 
 # camera hal v2
@@ -187,21 +187,19 @@ BOARD_SEPOLICY_UNION := \
        wpa.te \
        zygote.te \
        pdi_ts_script.te \
+       pdi_cmdline_script.te \
        pdi_ota_script.te \
        eGTouchD.te \
-       platform_app.te
+       platform_app.te \
+       drmserver.te \
+       healthd.te \
+       radio.te \
+       surfaceflinger.te \
+       keystore.te
 
-# Other Recovery Options
+# Recovery Options
 TARGET_NO_RECOVERY                      := false
-
-# Recovery Setup
-ifeq ($(AIO_CONFIGURATION),T)
-$(warning LVDS panel recovery color space of BGRA_8888) 
-   TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
-else
-$(warning Non-LVDS panel recovery color space of BGRA_8888)
-   TARGET_RECOVERY_PIXEL_FORMAT            := "RGBX_8888"
-endif
+TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
 
 # OTA Addition to update bootloader
 TARGET_RECOVERY_UPDATER_LIBS            := librecovery_updater_ar6mx

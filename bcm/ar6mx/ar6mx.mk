@@ -20,7 +20,6 @@ PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/gpsreset.sh:system/etc/gpsreset.sh \
         device/bcm/ar6mx/audio_policy.conf:system/etc/audio_policy.conf \
         device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-        device/bcm/init.superuser.rc:root/init.superuser.rc \
         device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
         device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
@@ -69,6 +68,7 @@ PRODUCT_COPY_FILES += \
 #PDi additions
 PRODUCT_COPY_FILES += \
  	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
+        device/bcm/ar6mx/process_cmdline.sh:system/etc/process_cmdline.sh \
 	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
@@ -145,11 +145,17 @@ $(call inherit-product,$(LOCAL_PATH)/firmware.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
-ifeq ( $(ANDROID_BUILD_MODE),eng)
+ifeq ( $(ANDROID_BUILD_MODE),engr)
 $(warning Engineering build...including Koush superuser package)
    SUPERUSER_PACKAGE := com.bcm.superuser
    SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
    SUPERUSER_EMBEDDED := true
+
+   PRODUCT_PACKAGES += devregs	\
+		       inputRead
+
+   PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
+			 device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
 else
 $(warning Not an engineering build, not including Koush superuser package)
 endif
@@ -180,12 +186,14 @@ PRODUCT_PACKAGES += librank			\
 		    procmem                     \
 		    procrank                    \
 		    showmap                     \
-		    latencytop
+		    latencytop			\
+		    strace
 
 # Add PDi internal closed source packages
 PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    com.pdiarm.pdicinchwidgets.pdixplain \
-		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget 
+		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
+		    org.wso2.emm.agent
 			
 
 ifneq ( $(AIO_CONFIGURATION),T)
