@@ -94,7 +94,6 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-                    pdiarm.com.camerapreview                                    \
                     org.wso2.emm.agent                                          \
                     libusb1.0							\
                     i2c-tools							\
@@ -127,7 +126,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.kmagic.solitaire_450					\
 		    VLC								\
 		    raidl							\
-		    iperf
+		    iperf                                                       \
+                    com.pdiarm.newuserconfirmation
+                                         
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
