@@ -24,8 +24,8 @@
 #include "device.h"
 #include "screen_ui.h"
 
-const char* HEADERS[] = { "Volume up/down to move highlight;",
-                          "power button, enter, or left arrow to select.",
+const char* HEADERS[] = { "Front Panel/Keyboard up/down to move highlight;",
+                          "Front Panel/Keyboard Left/Enter or left arrow to select.",
                           "",
                           NULL };
 
@@ -59,15 +59,17 @@ class ImxDevice : public Device {
             switch (key_code) {
               case KEY_DOWN:
               case KEY_VOLUMEDOWN:
+	      case KEY_F17:
                 return kHighlightDown;
 
               case KEY_UP:
               case KEY_VOLUMEUP:
+	      case KEY_F16:
                 return kHighlightUp;
 
-              case KEY_POWER:
 	      case KEY_LEFT:
               case KEY_ENTER:
+	      case KEY_F18:
                 return kInvokeItem;
             }
         }
