@@ -1,2 +1,3 @@
 allow platform_app devpts:chr_file open;
 allow platform_app init_shell:fd use;
+allow platform_app device:dir read;
