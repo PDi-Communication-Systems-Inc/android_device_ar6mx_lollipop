@@ -32,3 +32,4 @@ allow init_shell usermodehelper:file getattr;
 allow init_shell self:tcp_socket { bind setopt };
 allow init_shell default_prop:property_service set;
 allow init_shell self:capability sys_module;
+allow init_shell platform_app:process sigkill;
