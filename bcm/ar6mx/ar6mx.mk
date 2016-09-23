@@ -21,7 +21,9 @@ PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/audio_policy.conf:system/etc/audio_policy.conf \
         device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
         device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
-        device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
+        device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+	device/bcm/ar6mx/device_policies.xml:system/etc/device_policies.xml \
+	device/bcm/ar6mx/copy_device_policies.sh:system/etc/copy_device_policies.sh
 
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
@@ -152,7 +154,8 @@ $(warning Engineering build...including Koush superuser package)
    SUPERUSER_EMBEDDED := true
 
    PRODUCT_PACKAGES += devregs	\
-		       inputRead
+		       inputRead \
+		       su
 
    PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
 			 device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat

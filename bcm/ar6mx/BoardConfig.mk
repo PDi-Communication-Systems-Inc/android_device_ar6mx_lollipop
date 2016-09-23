@@ -195,6 +195,7 @@ BOARD_SEPOLICY_UNION := \
        healthd.te \
        radio.te \
        surfaceflinger.te \
+       pdi_copy_device_policies.te \
        keystore.te
 
 # Recovery Options

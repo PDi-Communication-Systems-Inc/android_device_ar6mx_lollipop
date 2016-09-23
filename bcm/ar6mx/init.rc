@@ -128,18 +128,6 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     class core
     seclabel u:r:watchdogd:s0
 
-on charger
-    # Enable Power modes and set the CPU Freq Sampling rates
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
-    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
-    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
-    write /sys/devices/system/cpu/cpu1/online 0
-    write /sys/devices/system/cpu/cpu2/online 0
-    write /sys/devices/system/cpu/cpu3/online 0
-
-
 setprop wifi.interface wlan0
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/data/misc/wifi/wpa_supplicant.conf -dt \
@@ -210,34 +198,58 @@ service magd /system/bin/magd
 service charger /charger
     class charger
 
-
+# Start the egalax dameon for USB touchscreen, may be disabled later
 service eGTouchD /system/bin/eGTouchD
     class core
     user root
     group root
     oneshot
 
+# Configure the touchscreen
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
     user root
     group root
     class core
     oneshot
 
+# Process command line values to get values needed in Settings App
 service pdi_cl_script /system/bin/logwrapper -k /system/etc/process_cmdline.sh
     user root
     group root
     class core
     oneshot
 
+# On reset, copy over base ota configuration
 service pdi_ota_script /system/bin/logwrapper -k /system/etc/otasetup.sh
     user root
     group root
     class core
     oneshot
 
+# Load the wifi and bluetooth drivers
 service load_wifi_module /system/bin/sh /system/etc/load_wifi_module.sh	
     disabled
     oneshot
+
+#copy the default admin policy file
+service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.sh
+    user root
+    group root
+    class core
+    oneshot
+
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
+
+on charger
+    # Enable Power modes and set the CPU Freq Sampling rates
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
+    write /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor 4
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+
