@@ -29,7 +29,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 
-		android:defaultValue="pdiarm.com"
+		android:defaultValue="ota.pdiarm.com"
 
 		android:summary="@string/ota_server_summary"
 
