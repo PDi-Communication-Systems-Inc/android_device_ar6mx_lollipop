@@ -24,8 +24,8 @@
 #include "device.h"
 #include "screen_ui.h"
 
-const char* HEADERS[] = { "Front Panel/Keyboard up/down to move highlight;",
-                          "Front Panel/Keyboard Left/Enter or left arrow to select.",
+const char* HEADERS[] = { "Front Panel/KB up/down to move highlight;",
+                          "Front Panel/KB left/enter to select.",
                           "",
                           NULL };
 
