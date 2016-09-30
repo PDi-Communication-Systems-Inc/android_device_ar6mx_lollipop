@@ -44,7 +44,7 @@
    <integer name="def_sleep_timeout">600000</integer>
    
    <!-- allow non-market apps to be installed -->
-   <bool name="def_install_non_market_apps">true</bool>
+   <bool name="def_install_non_market_apps">false</bool>
 
    <!-- allow backups -->
    <bool name="def_backup_enabled">true</bool>
