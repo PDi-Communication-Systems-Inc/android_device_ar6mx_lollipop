@@ -129,6 +129,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    VLC								\
 		    raidl							\
 		    iperf                                                       \
+		    iperf3							\
                     com.pdiarm.newuserconfirmation				\
 		    PicoTts							\
 		    PicoLangInstaller
