@@ -1,3 +1,8 @@
 allow platform_app devpts:chr_file open;
 allow platform_app init_shell:fd use;
 allow platform_app device:dir read;
+allow platform_app su_exec:file getattr;
+allow platform_app su_exec:file { read execute open execute_no_trans };
+allow platform_app usb_device:dir read;
+allow platform_app usb_device:dir { search open };
+allow platform_app device:sock_file write;
