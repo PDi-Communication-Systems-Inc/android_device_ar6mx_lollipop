@@ -45,9 +45,9 @@ endif
 # TODO: change the U/E8 with TAB3 higher memory configuration
 ifeq (${ANDROID_BUILD_MODE},user)
    $(warning Generating user build)
-   export BUILD_ID=${CORE_TYPE}U8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
+   export BUILD_ID=TVRC${CORE_TYPE}U8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
 else
    $(warning Generating enginnering build)
-export BUILD_ID=${CORE_TYPE}E8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
+export BUILD_ID=TVRC${CORE_TYPE}E8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
 endif
 $(warning the finalized build id is defined to be ${BUILD_ID})

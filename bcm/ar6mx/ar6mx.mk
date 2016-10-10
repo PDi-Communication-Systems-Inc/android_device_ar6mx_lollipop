@@ -132,7 +132,9 @@ PRODUCT_PACKAGES += AudioRoute							\
                     com.pdiarm.newuserconfirmation				\
 		    PicoTts							\
 		    PicoLangInstaller
-                                         
+
+# TVRC Branch Specific Packages
+PRODUCT_PACKAGES += omicron-V1_2_4                                         
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
@@ -149,21 +151,18 @@ $(call inherit-product,$(LOCAL_PATH)/firmware.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
-ifeq ($(ANDROID_BUILD_MODE),engr)
-$(warning Engineering build...including Koush superuser package)
-   SUPERUSER_PACKAGE := com.bcm.superuser
-   SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
-   SUPERUSER_EMBEDDED := true
 
-   PRODUCT_PACKAGES += devregs	\
-		       inputRead \
-		       su
+# Including SuperUser in TVRC builds
+SUPERUSER_PACKAGE := com.bcm.superuser
+SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
+SUPERUSER_EMBEDDED := true
 
-   PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
-			 device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
-else
-$(warning Not an engineering build, not including Koush superuser package)
-endif
+PRODUCT_PACKAGES += devregs   \
+		    inputRead \
+		    su
+
+PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
+		      device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
 
 # Wireless packages
 PRODUCT_PACKAGES += IWLWIFI 			\
@@ -195,15 +194,11 @@ PRODUCT_PACKAGES += librank			\
 		    strace
 
 # Add PDi internal closed source packages
-PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
-		    com.pdiarm.pdicinchwidgets.pdixplain \
-		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
-		    org.wso2.emm.agent
+PRODUCT_PACKAGES += com.pdiarm.managemyaccount
 			
-
 ifneq ($(AIO_CONFIGURATION),T)
 $(warning Including PDi TV App)
-   PRODUCT_PACKAGES += pdiarm.com.camerapreview
+# PRODUCT_PACKAGES += pdiarm.com.camerapreview
 endif
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
