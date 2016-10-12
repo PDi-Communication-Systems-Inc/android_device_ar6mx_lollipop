@@ -54,7 +54,7 @@
    <bool name="def_accessibility_speak_password">true</bool>
 
    <!-- allow screen to be magnified --> 
-   <bool name="def_accessibility_display_magnification_enabled">true</bool>
+   <bool name="def_accessibility_display_magnification_enabled">false</bool>
 
    <!-- allow a guest user to be set up -->
    <bool name="def_guest_user_enabled">true</bool>
