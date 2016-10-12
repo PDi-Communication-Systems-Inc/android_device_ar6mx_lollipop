@@ -238,6 +238,11 @@ service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.
     class core
     oneshot
 
+# Allow root daemon to run on engineering builds only, not on production user 
+# builds
+on property:ro.build.type=eng
+    setprop persist.sys.root_access 1
+
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
