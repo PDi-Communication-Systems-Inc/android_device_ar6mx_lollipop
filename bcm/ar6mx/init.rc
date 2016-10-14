@@ -121,7 +121,7 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     oneshot
 
 # mount the debugfs
-    mount debugfs none /sys/kernel/debug/
+    mount debugfs nodev /sys/kernel/debug/
 
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
     service watchdogd /sbin/watchdogd 10 20
@@ -164,11 +164,6 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     oneshot
 
 service iprenew_p2p /system/bin/dhcpcd -n
-    disabled
-    oneshot
-
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
-    class main
     disabled
     oneshot
 
