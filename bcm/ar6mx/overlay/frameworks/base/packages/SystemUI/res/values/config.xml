@@ -56,10 +56,8 @@
     <!-- Whether or not we show the number in the bar. -->
     <bool name="config_statusBarShowNumber">false</bool>
 
-    <!-- How many icons may be shown at once in the system bar. Includes any
-         slots that may be reused for things like IME control. Modified by PDi
-         PDi displays are larger and can show more icons -->
-    <integer name="config_maxNotificationIcons">10</integer>
+    <!-- On TVRC builds, there should be no notification icons -->
+    <integer name="config_maxNotificationIcons">0</integer>
 
     <!-- Show phone (voice) signal strength instead of data in mobile RSSI. -->
     <bool name="config_showPhoneRSSIForData">false</bool>
@@ -107,20 +105,19 @@
     <integer name="config_recent_item_min_alpha">3</integer>
 
     <!-- The number of columns in the QuickSettings -->
-    <integer name="quick_settings_num_columns">3</integer>
+    <integer name="quick_settings_num_columns">0</integer>
 
     <!-- The maximum number of rows in the QuickSettings -->
-    <integer name="quick_settings_max_rows">4</integer>
+    <integer name="quick_settings_max_rows">0</integer>
 
     <!-- The maximum number of rows in the QuickSettings when on the keyguard -->
-    <integer name="quick_settings_max_rows_keyguard">3</integer>
+    <integer name="quick_settings_max_rows_keyguard">0</integer>
 
     <!-- The number of columns that the top level tiles span in the QuickSettings -->
-    <integer name="quick_settings_user_time_settings_tile_span">1</integer>
+    <integer name="quick_settings_user_time_settings_tile_span">0</integer>
 
     <!-- The default tiles to display in QuickSettings -->
     <string name="quick_settings_tiles_default" translatable="false">
-        wifi,bt,inversion,airplane,cast
     </string>
 
     <!-- The tiles to display in QuickSettings -->
@@ -186,11 +183,11 @@
     <bool name="recents_has_transposed_nav_bar">true</bool>
 
     <!-- Whether to enable KeyguardService or not -->
-    <bool name="config_enableKeyguardService">true</bool>
+    <bool name="config_enableKeyguardService">false</bool>
 
     <!-- The maximum count of notifications on Keyguard. The rest will be collapsed in an overflow
      card. -->
-    <integer name="keyguard_max_notification_count">3</integer>
+    <integer name="keyguard_max_notification_count">0</integer>
 
     <!-- Defines the implementation of the velocity tracker to be used for the panel expansion. Can
          be 'platform' or 'noisy' (i.e. for noisy touch screens). -->
@@ -202,7 +199,7 @@
     <bool name="enable_ticker">false</bool>
 
     <!-- Set to true to enable the user switcher on the keyguard. -->
-    <bool name="config_keyguardUserSwitcher">true</bool>
+    <bool name="config_keyguardUserSwitcher">false</bool>
 
     <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
     <bool name="doze_display_state_supported">false</bool>
