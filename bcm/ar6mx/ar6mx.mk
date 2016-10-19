@@ -129,10 +129,11 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.kmagic.solitaire_450					\
 		    VLC								\
 		    raidl							\
-		    iperf                                                       \
-            com.pdiarm.newuserconfirmation 	\
-			PicoTts							\
-			PicoTtsLangInstaller
+		    iperf							\
+		    iperf3							\
+		    com.pdiarm.newuserconfirmation 				\
+		    PicoTts							\
+		    PicoTtsLangInstaller
                                          
 
 # for Compat driver
