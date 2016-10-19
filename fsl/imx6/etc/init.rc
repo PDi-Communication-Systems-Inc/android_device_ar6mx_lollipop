@@ -11,6 +11,9 @@ import /init.zygote32.rc
 import /init.trace.rc
 
 on early-init
+    # For TVRC builds, allow su to work
+    setenforce 0
+
     # Set init and its forked children's oom_adj.
     write /proc/1/oom_score_adj -1000
 
