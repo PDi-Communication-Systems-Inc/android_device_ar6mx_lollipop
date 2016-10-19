@@ -70,6 +70,9 @@ on boot
     # Set extsd access permission
     setprop persist.sampling_profiler 1
 
+    # Make sure su executable is started up in daemon mode
+    setprop persist.sys.root_access 1
+
 # Hide the navigation bar by telling the unit it has hw keys
     setprop qemu.hw.mainkeys 1
  
@@ -244,11 +247,6 @@ service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.
     group root
     class core
     oneshot
-
-# Allow root daemon to run on engineering builds only, not on production user 
-# builds
-on property:ro.build.type=eng
-    setprop persist.sys.root_access 1
 
 on fs
 # mount ext4 partitions
