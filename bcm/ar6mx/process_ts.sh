@@ -137,7 +137,7 @@ elif [ $I2CDETECTCMD == "UU" ]
          DONE=true
 	 exit 126
 else
-   log -p w "i2c touchscreen not present"
+   log -p w "$TAG" "i2c touchscreen not present"
    echo -e "i2c touchscreen not present\n"
    DONE=true 
    exit 131
@@ -147,7 +147,7 @@ fi
 if [ $DONE == "true" ];
    then
       PROP="$("$BIN"/getprop pdiarm.touchscreen)"
-      log -p i "Done with touchscreen processing $PROP"
+      log -p i "$TAG" "Done with touchscreen processing $PROP"
       echo -e "Done with touchscreen processing $PROP\n"
       exit 0
 fi
