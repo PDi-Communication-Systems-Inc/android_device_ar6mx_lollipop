@@ -4,11 +4,13 @@
 BIN=/system/bin
 COUNT=`$BIN/lsusb | $BIN/grep -i atmel | $BIN/busybox wc -l`
 DONE=false
+TAG=PROCESS_TOUCHSCREEN
 
 # Atmel touchscreen handling
 if [ $COUNT -ge "1" ];
   then
       # try to reset Atmel MXT1664S1 up to five times
+      log -p i "$TAG" "$COUNT Atmel Touchscreen discovered"
       echo -e "$COUNT Atmel Touchscreen discovered\n"
       setprop pdiarm.touchscreen Atmel
  
@@ -24,6 +26,7 @@ if [ $COUNT -ge "1" ];
       if [ $RESULT -gt "0" ];
          then
          while [ $COUNTER -lt 5 ]; do
+            log -p e "$TAG" "Reset failed with result code $RESULT ... Retrying mxt-app reset, try $COUNTER"
             echo -e "Reset failed with result code $RESULT ... Retrying mxt-app reset, try $COUNTER\n"
             # Figure out where the Atmel touchscreen is on the usb bus
             PATH=`$BIN/lsusb | $BIN/grep -i Atmel | $BIN/busybox cut -d " " -f 1`
@@ -46,15 +49,18 @@ if [ $COUNT -ge "1" ];
             fi  
          done
       else
+            log -p i "$TAG" "Atmel initalized okay with result code $RESULT"
 	    echo -e "Atmel initalized okay with result code $RESULT\n"
       fi  
       # For Atmel touchscreens we need to disable the egalax touchscreen 
       PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
       if [ $PROCESS -gt "0" ];
          then
+             log -p i "$TAG" "killing process $PROCESS"
              echo -e "killing process $PROCESS\n"
              kill $PROCESS 
       else
+          log -p e "$TAG" "No process to call the kill command on"
           echo -e "No process to call the kill command on\n"
       fi
 
@@ -65,11 +71,13 @@ fi
 COUNT=`$BIN/lsusb | $BIN/grep -i egalax | $BIN/busybox wc -l`
 if [ $COUNT -ge "1" ];
    then
+       log -p i "$TAG" "$COUNT eGalax Touchscreen discovered, resetting usb controller"
        echo -e "$COUNT eGalax Touchscreen discovered, resetting usb controller\n"
        # Reset entire controller touchscreen is connected to
        # vid=0x58f Alcor Micro controller, pid=6254 -- generic USB Hub
        (sleep 10; usbreset 058f:6254) &
 
+       log -p i "$TAG" "Resetting touchscreen device"
        echo -e "Resetting touchscreen device\n"
        # Reset device itself 0x0eef=eGalax, 0xa04d USB Touchscreen Controller
        (sleep 15; usbreset 0eef:a04d) &
@@ -82,12 +90,14 @@ fi
 if [ $DONE == "true" ];
    then
       PROP="$("$BIN"/getprop pdiarm.touchscreen)"
+      log -p i "$TAG" "Done with touchscreen processing $PROP"
       echo -e "Done with touchscreen processing $PROP\n"
       exit 0
 fi
 
 # if nothing found assume i2c touchscreen
 I2CDETECTCMD=`i2cdetect -y 1 0x4a 0x4a | busybox cut -d : -f2 | busybox tail +6 | busybox tr -d '[[:space:]]'`
+log -p i "$TAG" "Result of i2c detection is $I2CDETECTCMD"
 echo -e "Result of i2c detection is $I2CDETECTCMD\n"
 if [ $I2CDETECTCMD == "4a" ];
    then
@@ -95,17 +105,20 @@ if [ $I2CDETECTCMD == "4a" ];
       RESULT=`insmod /system/lib/modules/atmel_mxt_ts.ko`
       if [ $RESULT -ne "0" ];
       then
-         echo -e "Driver failed to load properly, try removing\n"
+         log -p e "$TAG" "Driver failed to load properly, trying to remove"
+         echo -e "Driver failed to load properly, trying to remove\n"
          rmmod atmel_mxt_ts.ko
       fi
 
       # remove eGalax USB Touch Daemon process 
       PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
+      log -p i "$TAG" "killing process $PROCESS"
       echo -e "killing process $PROCESS\n"
       kill $PROCESS
 
       # indicate the i2c touchscreen has been setup via properties
       NAME=`cat /sys/bus/i2c/devices/1-004a/name`
+      log -p i "$TAG" "found touchscreen $NAME"
       echo -e "found touchscreen $NAME\n"
       setprop pdiarm.touchscreen $NAME
       PROP=`$BIN"/getprop pdiarm.touchscreen`
@@ -114,14 +127,17 @@ elif [ $I2CDETECTCMD == "UU" ]
      then
          # indicate the i2c touchscreen has been setup via properties
          NAME=`cat /sys/bus/i2c/devices/1-004a/name`
+         log -p i "$TAG" "found touchscreen $NAME"
          echo -e "found touchscreen $NAME \n"
          setprop pdiarm.touchscreen $NAME
          PROP=`$BIN/getprop pdiarm.touchscreen`
+         log -p i "$TAG" "Done with touchscreen processing $PROP"
          echo -e "Done with touchscreen processing $PROP\n"
 
          DONE=true
 	 exit 126
 else
+   log -p w "i2c touchscreen not present"
    echo -e "i2c touchscreen not present\n"
    DONE=true 
    exit 131
@@ -131,6 +147,7 @@ fi
 if [ $DONE == "true" ];
    then
       PROP="$("$BIN"/getprop pdiarm.touchscreen)"
+      log -p i "Done with touchscreen processing $PROP"
       echo -e "Done with touchscreen processing $PROP\n"
       exit 0
 fi
