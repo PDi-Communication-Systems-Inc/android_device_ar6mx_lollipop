@@ -26,6 +26,14 @@ builddtonly := $(shell date +%Y%m%d)
 export BUILD_NUMBER=${buildnum}
 export BUILD_DATE_ONLY=${builddtonly}
 
+# EMMC size
+# TODO: change the U/E8 with TAB3 higher memory configuration
+ifeq (${EMMC_SIZE},PRODUCTION)
+   export EMMC_MARKER=8
+else
+   export EMMC_MARKER=4
+endif
+
 # For legacy support of first generation TAB
 ifeq (${PDI_SOLO},T)
    export CORE_TYPE=S
@@ -41,13 +49,15 @@ else
    export CONFIG_MARKER=TV
 endif
 
-# Final assignment of BUILD_ID
-# TODO: change the U/E8 with TAB3 higher memory configuration
 ifeq (${ANDROID_BUILD_MODE},user)
    $(warning Generating user build)
-   export BUILD_ID=${CORE_TYPE}U8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
+   export MODE_MARKER=U
 else
-   $(warning Generating enginnering build)
-export BUILD_ID=${CORE_TYPE}E8-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
+   $(warning Generating engineering build)
+   export MODE_MARKER=E
 endif
-$(warning the finalized build id is defined to be ${BUILD_ID})
+
+# Final assignment of BUILD_ID
+export BUILD_ID=${BUILD_BRANCH}${CORE_TYPE}${MODE_MARKER}${EMMC_MARKER}-${CONFIG_MARKER}-${BUILD_DATE_ONLY}
+
+$(warning The finalized build id is defined to be ${BUILD_ID})
