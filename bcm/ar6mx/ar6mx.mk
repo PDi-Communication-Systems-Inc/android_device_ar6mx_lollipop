@@ -9,7 +9,14 @@ PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
 PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
 PRODUCT_BRAND := PDi-Tab
-PRODUCT_MODEL := PD403-008
+
+# Set MODEL by firmware part number
+# if no BUILD_BRANCH defined PDI-PXT will be used
+PRODUCT_MODEL := PDI-PXT
+ifeq ($(BUILD_BRANCH),main)
+	PRODUCT_MODEL := PD403-022
+endif
+$(warning Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
 PRODUCT_PROPERTY_OVERRIDES += \
 			hw.nobattery=true \
@@ -54,6 +61,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
 	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	frameworks/native/data/etc/android.hardware.faketouch.xml:system/etc/permissions/android.hardware.faketouch.xml \
@@ -128,12 +136,14 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.kmagic.solitaire_450					\
 		    VLC								\
 		    raidl							\
-		    iperf                                                       \
+		    iperf							\
 		    iperf3							\
-                    com.pdiarm.newuserconfirmation				\
+		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
-		    PicoLangInstaller
-                                         
+		    PicoTtsLangInstaller					\
+		    alphavnc                                                    \
+                    com.teslacoilsw.launcher
+
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
