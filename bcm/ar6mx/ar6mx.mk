@@ -9,7 +9,14 @@ PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
 PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
 PRODUCT_BRAND := PDi-Tab
-PRODUCT_MODEL := PD403-008
+
+# Set MODEL by firmware part number
+# if no BUILD_BRANCH defined PDI-PXT will be used
+PRODUCT_MODEL := PDI-PXT
+ifeq ($(BUILD_BRANCH),main)
+	PRODUCT_MODEL := PD403-022
+endif
+$(warning Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
 PRODUCT_PROPERTY_OVERRIDES += \
 			hw.nobattery=true \
@@ -133,7 +140,10 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    iperf3							\
 		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
-		    PicoTtsLangInstaller
+		    PicoTtsLangInstaller					\
+		    alphavnc                                                    \
+                    com.teslacoilsw.launcher
+
                                          
 
 # for Compat driver
