@@ -135,7 +135,7 @@ ifeq ($(EMMC_SIZE),PRODUCTION)
 $(warning Production build -- Setting system size to $(BOARD_SYSTEMIMAGE_PARTITION_SIZE) and data size to $(BOARD_USERDATAIMAGE_PARTITION_SIZE))
 else ifeq ($(EMMC_SIZE),TESTING)
    BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 958860800
-   BOARD_USERDATAIMAGE_PARTITION_SIZE := 256000000
+   BOARD_USERDATAIMAGE_PARTITION_SIZE := 456000000
 $(warning Testing build -- Setting system size to $(BOARD_SYSTEMIMAGE_PARTITION_SIZE) and data size to $(BOARD_USERDATAIMAGE_PARTITION_SIZE))
 else
    BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 958860800
@@ -144,6 +144,14 @@ $(warning EMMC_SIZE not defined, using TESTING -- Setting system size to $(BOARD
 endif
 
 BOARD_FLASH_BLOCK_SIZE := 4096
+
+# Customized boot image args to include device tree
+# use = since PRODUCT_OUT has not been yet, will be later on
+ifeq ($(CORE_TYPE),Q)
+   BOARD_MKBOOTIMG_ARGS = --second $(PRODUCT_OUT)/imx6q-ar6mx.dtb
+else ifeq ($(CORE_TYPE),S)
+   BOARD_MKBOOTIMG_ARGS = --second $(PRODUCT_OUT)/imx6dl-ar6mx.dtb
+endif
 
 # Boot animation optimizations
 TARGET_BOOTANIMATION_PRELOAD := true
