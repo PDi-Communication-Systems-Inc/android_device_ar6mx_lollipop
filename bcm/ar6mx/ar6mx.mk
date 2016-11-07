@@ -140,11 +140,14 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    iperf3							\
 		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
+		    PicoTtsLangInstaller  					\
+		    mxc-v4l2-capture  						\
+		    mxc-v4l2-overlay  						\
+		    mxc-v4l2-output  						\
+		    mxc-v4l2-tvin  						\
 		    PicoTtsLangInstaller					\
 		    alphavnc                                                    \
                     com.teslacoilsw.launcher
-
-                                         
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
@@ -213,10 +216,10 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    org.wso2.emm.agent
 			
 
-ifneq ($(AIO_CONFIGURATION),T)
-$(warning Including PDi TV App)
-   PRODUCT_PACKAGES += pdiarm.com.camerapreview
-endif
+#ifneq ($(AIO_CONFIGURATION),T)
+#$(warning Including PDi TV App)
+ #  PRODUCT_PACKAGES += pdiarm.com.camerapreview
+#endif
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
