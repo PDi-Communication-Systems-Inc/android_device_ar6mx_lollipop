@@ -22,15 +22,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 			hw.nobattery=true \
 			sys.device.type=tablet
 
+# gps.conf just lists ntp servers, no gps no device
+# to eliminate warnings/errors
 PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/init.rc:root/init.freescale.rc \
-        device/bcm/ar6mx/gpsreset.sh:system/etc/gpsreset.sh \
         device/bcm/ar6mx/audio_policy.conf:system/etc/audio_policy.conf \
         device/bcm/ar6mx/audio_effects.conf:system/vendor/etc/audio_effects.conf \
         device/bcm/ar6mx/load_wifi_module.sh:system/etc/load_wifi_module.sh \
         device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/bcm/ar6mx/device_policies.xml:system/etc/device_policies.xml \
-	device/bcm/ar6mx/copy_device_policies.sh:system/etc/copy_device_policies.sh
+	device/bcm/ar6mx/copy_device_policies.sh:system/etc/copy_device_policies.sh \
+	device/bcm/ar6mx/gps.conf:system/etc/gps.conf
 
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
@@ -214,7 +216,6 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    com.pdiarm.pdicinchwidgets.pdixplain \
 		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 		    org.wso2.emm.agent
-			
 
 #ifneq ($(AIO_CONFIGURATION),T)
 #$(warning Including PDi TV App)
