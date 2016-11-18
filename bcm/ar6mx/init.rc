@@ -73,8 +73,8 @@ on boot
     # Make sure su executable is started up in daemon mode
     setprop persist.sys.root_access 1
 
-# Hide the navigation bar by telling the unit it has hw keys
-    setprop qemu.hw.mainkeys 1
+# Show the navigation bar by telling the unit it has hw keys -- let system app disable it if it wants to
+    setprop qemu.hw.mainkeys 0
  
 # For testing, debug, and special operation purposes allow the nav bar to toggle
     on property:qemu.hw.mainkeys=0
