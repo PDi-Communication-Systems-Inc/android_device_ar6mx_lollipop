@@ -147,7 +147,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-tvin  						\
 		    PicoTtsLangInstaller					\
 		    alphavnc                                                    \
-                    com.teslacoilsw.launcher
+                    com.teslacoilsw.launcher                                    \
+                    com.pdiarm.pdicore                 
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
