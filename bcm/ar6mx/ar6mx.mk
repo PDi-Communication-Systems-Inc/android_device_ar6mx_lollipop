@@ -20,7 +20,9 @@ $(warning Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
 PRODUCT_PROPERTY_OVERRIDES += \
 			hw.nobattery=true \
-			sys.device.type=tablet
+			sys.device.type=tablet \
+			ro.product.locale.language=en-US \
+			ro.product.locale.region=US
 
 # gps.conf just lists ntp servers, no gps no device
 # to eliminate warnings/errors
