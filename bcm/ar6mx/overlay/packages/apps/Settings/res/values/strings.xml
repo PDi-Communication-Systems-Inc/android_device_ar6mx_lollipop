@@ -3775,6 +3775,8 @@
     <!-- Title for the button to restart a print job. [CHAR LIMIT=25] -->
     <string name="print_restart">Restart</string>
 
+    <string name="max_users_choice"> Maximum users on device (including owner) </string>
+
     <!-- Title for the button to cancel a print job. [CHAR LIMIT=25] -->
     <string name="print_cancel">Cancel</string>
 
