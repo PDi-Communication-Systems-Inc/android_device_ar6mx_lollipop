@@ -44,11 +44,7 @@
                 android:title="@string/sim_settings_title"
                 android:fragment="com.android.settings.sim.SimSettings"
                 android:icon="@drawable/ic_sim_sd"
-<<<<<<< HEAD
          />
-=======
-                />
->>>>>>> 05fa6200650115dda5284721d5ce5349cd6df922
 
         <!-- Data Usage -->
         <dashboard-tile
