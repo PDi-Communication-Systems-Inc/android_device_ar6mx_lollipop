@@ -217,6 +217,7 @@ PRODUCT_PACKAGES += librank			\
 PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    com.pdiarm.pdicinchwidgets.pdixplain \
 		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
+			com.pdiarm.clone \
 		    org.wso2.emm.agent
 
 #ifneq ($(AIO_CONFIGURATION),T)
