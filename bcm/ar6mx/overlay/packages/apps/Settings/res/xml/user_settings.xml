@@ -23,9 +23,11 @@
             android:title="@string/user_list_title">
     </PreferenceCategory>
 
-    <Preference
-            android:key="user_add"
-            android:title="@string/user_add_user_or_profile_menu"
-            android:icon="@drawable/ic_menu_add_dark" />
+     <ListPreference
+	  android:key="maxUsers"
+	  android:title="@string/max_users_choice"
+	  android:entries="@array/max_users_choices_human_readable"
+	  android:entryValues="@array/max_users_choices_lookup"
+     />
 
 </PreferenceScreen>
