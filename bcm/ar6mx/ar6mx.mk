@@ -149,10 +149,14 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-overlay  						\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
-		    PicoTtsLangInstaller					\
+		    PicoLangInstaller						\
 		    alphavnc                                                    \
                     com.teslacoilsw.launcher                                    \
-                    com.pdiarm.pdicore                 
+                    com.pdiarm.pdicore                 				\
+		    pdiarm.com.camerapreview					\
+		    libccitv							\
+		    jniccitvLib	
+		    
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
@@ -219,11 +223,6 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    com.pdiarm.pdicinchwidgets.pdixplain \
 		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 		    org.wso2.emm.agent
-
-#ifneq ($(AIO_CONFIGURATION),T)
-#$(warning Including PDi TV App)
- #  PRODUCT_PACKAGES += pdiarm.com.camerapreview
-#endif
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
