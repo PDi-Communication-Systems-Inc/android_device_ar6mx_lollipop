@@ -151,8 +151,10 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller						\
 		    alphavnc                                                    \
-                    com.teslacoilsw.launcher                                    \
                     com.pdiarm.pdicore                 				\
+                    com.allentek.abe                                            \
+                    org.mozilla.firefox                                         \
+                    com.android.chrome                                          \
 		    pdiarm.com.camerapreview					\
 		    libccitv							\
 		    jniccitvLib	
