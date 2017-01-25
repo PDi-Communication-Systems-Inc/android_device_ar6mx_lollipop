@@ -2,6 +2,9 @@ import init.${ro.hardware}.usb.rc
 import init.bluetooth.rc
 import init.superuser.rc
 
+# Note: order is early-init, init, early-fs
+#       fs, post-fs, early-boot, and boot
+
 on init
     start watchdogd
 
@@ -73,18 +76,6 @@ on boot
     # Make sure su executable is started up in daemon mode
     setprop persist.sys.root_access 1
 
-# Show the navigation bar by telling the unit it has hw keys -- let system app disable it if it wants to
-    setprop qemu.hw.mainkeys 0
- 
-# For testing, debug, and special operation purposes allow the nav bar to toggle
-    on property:qemu.hw.mainkeys=0
-       restart zygote
-       setprop pdiarm.softkeys.tobeenabled 1
- 
-    on property:qemu.hw.mainkeys=1
-       restart zygote
-       setprop pdiarm.softkeys.tobeenabled 0
-
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -122,11 +113,18 @@ on boot
     #setprop ro.hardware.lightsensor "/sys/class/i2c-dev/i2c-2/device/2-0044/"
     #setprop ro.lightsensor.threshold  20
 
-    # No bluetooth hardware present
+    # Convention in android is for wlan0 to serve as first wifi interface
     setprop wlan.interface wlan0
 
     # Set WiFi Display Source VideoBitRate Adaptive
     setprop media.wfd.video-bitrate 3000000
+
+    # mount the debugfs
+    mount debugfs debugfs /sys/kernel/debug
+
+    # Set a permanent wake lock for tvrc
+    wait /sys/power/wake_lock
+    write /sys/power/wake_lock "tvrc_lock"
 
 # Program the Atmel Touchscreen with configuration file
 service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
@@ -135,15 +133,10 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     group root
     oneshot
 
-# mount the debugfs
-    mount debugfs nodev /sys/kernel/debug/
-
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
     service watchdogd /sbin/watchdogd 10 20
     class core
     seclabel u:r:watchdogd:s0
-
-setprop wifi.interface wlan0
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -g@android:wpa_wlan0 -c/data/misc/wifi/wpa_supplicant.conf -dt \
     -e /data/misc/wifi/entropy.bin
