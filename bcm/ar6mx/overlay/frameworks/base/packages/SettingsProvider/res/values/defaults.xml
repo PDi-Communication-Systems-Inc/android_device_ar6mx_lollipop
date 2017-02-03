@@ -19,8 +19,10 @@
 <resources>
     <!-- Default for Settings.Secure.USER_SETUP_COMPLETE -->
     <bool name="def_user_setup_complete">true</bool>
+
     <!-- Disable GPS Provider-->
     <string name="def_location_providers_allowed" translatable="false"></string>
+
     <!-- Default for Settings.Global.STAY_ON_WHILE_PLUGGED_IN -->
     <bool name="def_stay_on_while_plugged_in">true</bool>
 
@@ -34,9 +36,6 @@
     <!-- no gps ic -->
     <bool name="assisted_gps_enabled">false</bool>
 
-    <!-- Development settings -->
-    <bool name="def_stay_on_while_plugged_in">false</bool>
-
    <!-- Modify the default timeout to 10 minutes this is line with HIPAA best
         practice defined at 
         https://www.hipaa.com/access-control-automatic-logoff-what-to-do-and-how-to-do-it/ -->
@@ -49,7 +48,6 @@
    <!-- allow backups -->
    <bool name="def_backup_enabled">true</bool>
 
-
    <!-- allow passwords to be spoken -->
    <bool name="def_accessibility_speak_password">true</bool>
 
@@ -57,5 +55,5 @@
    <bool name="def_accessibility_display_magnification_enabled">false</bool>
 
    <!-- allow a guest user to be set up -->
-   <bool name="def_guest_user_enabled">true</bool>
+   <bool name="def_guest_user_enabled">false</bool>
 </resources>
