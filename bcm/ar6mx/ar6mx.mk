@@ -145,6 +145,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
+			PDI_mxc-v4l2-tvin                       \
 		    mxc-v4l2-capture  						\
 		    mxc-v4l2-overlay  						\
 		    mxc-v4l2-output  						\
