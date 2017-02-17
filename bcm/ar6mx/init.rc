@@ -25,6 +25,9 @@ on boot
     # reference to property ConnectivityService constructor
     setprop ro.radio.noril true
 
+    # Color property
+     write /sys/class/video4linux/video0/fsl_fg_property 1
+
     # emmulate battery property
     setprop sys.emulated.battery 1
 
