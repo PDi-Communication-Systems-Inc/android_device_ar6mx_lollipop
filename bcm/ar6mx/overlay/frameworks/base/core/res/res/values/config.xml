@@ -230,4 +230,8 @@
     <!-- PDi TABs do not support cellular capabilties -->
     <bool name="config_cellBroadcastAppLinks">false</bool>
 
+    <!-- Sets whether menu shortcuts should be displayed on panel menus when
+         a keyboard is present. -->
+    <bool name="config_showMenuShortcutsWhenKeyboardPresent">true</bool>
+
 </resources>
