@@ -13,7 +13,9 @@ PRODUCT_MODEL := PD403-010
 
 PRODUCT_PROPERTY_OVERRIDES += \
 			hw.nobattery=true \
-			sys.device.type=tablet
+			sys.device.type=tablet \
+			ro.product.locale.language=en-US \
+			ro.product.locale.region=US
 
 PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/init.rc:root/init.freescale.rc \
