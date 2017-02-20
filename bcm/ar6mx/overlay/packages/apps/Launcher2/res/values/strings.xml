@@ -278,7 +278,9 @@ s -->
         <!-- Start - PDi Additions-->
     <add-resource type="string" name="welcome_head"></add-resource>
     <string name="welcome_head">WELCOME</string>
+    <add-resource type="string" name="welcome_head_owner"></add-resource>
     <string name="welcome_head_owner">WELCOME OWNER</string>
+    <add-resource type="string" name="welcome_head_patient"></add-resource>
     <string name="welcome_head_patient">WELCOME NEW PATIENT</string>
     <add-resource type="string" name="welcome_intro"></add-resource>
     <string name="welcome_intro">PDi-Tab can bring you more than just TV. A few steps before we start:</string>
