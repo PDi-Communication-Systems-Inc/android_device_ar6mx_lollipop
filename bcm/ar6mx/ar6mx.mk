@@ -152,9 +152,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoLangInstaller						\
 		    alphavnc                                                    \
                     com.pdiarm.pdicore                 				\
-                    com.allentek.abe                                            \
-                    org.mozilla.firefox                                         \
-                    com.android.chrome                                          \
+                    com.allentek.medtv                                          \
 		    pdiarm.com.camerapreview					\
 		    libccitv							\
 		    jniccitvLib	
