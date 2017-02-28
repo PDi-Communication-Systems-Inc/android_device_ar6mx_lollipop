@@ -224,6 +224,23 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 		    org.wso2.emm.agent
 
+
+# Add medTV on standard product medTV branch
+#ifeq ($(MEDTV_BUILD), T)  --uncomment it when we have the branch for the MEDTV 
+   PRODUCT_PACKAGES += com.allentek.medtv \
+                       com.marketjs.bingoworld \
+                       com.marketjs.carparkpuzzle \
+                       com.marketjs.millionairequizallentek \
+                       com.marketjs.monstermahjong \
+                       com.marketjs.spotthedifference \
+                       com.marketjs.sudokuvillage \
+                       com.marketjs.wordfinderallentek \
+                       com.marketjs.wordhunter \
+                       com.marketjs.zombiegemsallentek \
+                       libxwalkcore.so \
+                       libxwalkdummy.so
+#endif
+
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
 #copy iwlwifi wpa config files
