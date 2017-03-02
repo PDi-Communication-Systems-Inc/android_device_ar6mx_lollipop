@@ -17,14 +17,19 @@
  */
 -->
 <resources>
-    <!-- Default for Settings.Secure.USER_SETUP_COMPLETE -->
+    <!-- TAB products have their own specialized onboarding process for
+         facility owner and patients -->
     <bool name="def_user_setup_complete">true</bool>
+
     <!-- Disable GPS Provider-->
     <string name="def_location_providers_allowed" translatable="false"></string>
-    <!-- Default for Settings.Global.STAY_ON_WHILE_PLUGGED_IN -->
-    <bool name="def_stay_on_while_plugged_in">true</bool>
 
-    <!-- Default for Settings.Secure.USER_SETUP_COMPLETE -->
+    <!-- TAB products lack an accelerometer -->
+    <bool name="def_accelerometer_rotation">false</bool>
+
+    <!-- This will eventually set the correct data and minutes after the hour
+         but without any location service, the correct timezone and hour
+         cannot be set -->
     <bool name="def_auto_time">true</bool>
     <bool name="def_auto_time_zone">true</bool>
 
@@ -34,28 +39,39 @@
     <!-- no gps ic -->
     <bool name="assisted_gps_enabled">false</bool>
 
-    <!-- Development settings -->
+    <!-- TAB products are always AC powered, so it would be annoying to
+         the patient and use extra power -->
     <bool name="def_stay_on_while_plugged_in">false</bool>
 
-   <!-- Modify the default timeout to 10 minutes this is line with HIPAA best
-        practice defined at 
-        https://www.hipaa.com/access-control-automatic-logoff-what-to-do-and-how-to-do-it/ -->
+   <!-- Modify the default screen display timeout to 10 minutes this is line with 
+        HIPAA best practice defined at 
+        https://www.hipaa.com/access-control-automatic-logoff-what-to-do-and-how-to-do-it/ 
+         
+        Screen should lock after 30 seconds of this timeout occuring 
+
+        However, allow facility owner or patient to select the 30 minute option in
+        Settings-Display-Sleep if so desired -->
    <integer name="def_screen_off_timeout">600000</integer>
-   <integer name="def_sleep_timeout">600000</integer>
+   <integer name="def_sleep_timeout">1800000</integer>
    
-   <!-- allow non-market apps to be installed -->
+   <!-- do not allow side loaded apps by default, facillity owner can still
+        turn this on (should be just for the install) to install an app -->
    <bool name="def_install_non_market_apps">false</bool>
 
-   <!-- allow backups -->
+   <!-- allow backups for now, may want to disable if we want to 
+        emphasize use of the cloning app, not sure if disabling
+        would interfere with cloning -->
    <bool name="def_backup_enabled">true</bool>
-
 
    <!-- allow passwords to be spoken -->
    <bool name="def_accessibility_speak_password">true</bool>
 
-   <!-- allow screen to be magnified --> 
+   <!-- do not turn on magnification accessibility setting by default, 
+        confuses users who interact with the screen in just the 
+        right way to trigger it --> 
    <bool name="def_accessibility_display_magnification_enabled">false</bool>
 
-   <!-- allow a guest user to be set up -->
-   <bool name="def_guest_user_enabled">true</bool>
+   <!-- do not allow a guest user to be set up only patient or 
+        restricted profile accounts should be allowed -->
+   <bool name="def_guest_user_enabled">false</bool>
 </resources>
