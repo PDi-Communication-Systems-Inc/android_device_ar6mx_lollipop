@@ -166,7 +166,6 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoLangInstaller						\
 		    alphavnc                                                    \
                     com.pdiarm.pdicore                 				\
-                    com.allentek.medtv                                          \
 		    pdiarm.com.camerapreview					\
 		    libccitv							\
 		    jniccitvLib	
@@ -240,7 +239,7 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 
 
 # Add medTV on standard product medTV branch
-#ifeq ($(MEDTV_BUILD), T)  --uncomment it when we have the branch for the MEDTV 
+ifeq ($(MEDTV_BUILD), T)  --uncomment it when we have the branch for the MEDTV 
    PRODUCT_PACKAGES += com.allentek.medtv \
                        com.marketjs.bingoworld \
                        com.marketjs.carparkpuzzle \
@@ -253,7 +252,7 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
                        com.marketjs.zombiegemsallentek \
                        libxwalkcore.so \
                        libxwalkdummy.so
-#endif
+endif
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
