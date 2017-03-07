@@ -11,24 +11,8 @@ PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
 PRODUCT_BRAND := PDi-Tab
 
 # Set MODEL by firmware part number
-# if no BUILD_BRANCH defined PDI-PXT will be used
 # Replace fake part numbers in model when assigned
-PRODUCT_MODEL := PDI-PXT
-ifeq ($(BUILD_BRANCH),MAIN)
-	PRODUCT_MODEL := PD403-022
-else
-   ifeq ($(BUILD_BRANCH), TVRC)
-	PRODUCT_MODEL := PD403-998
-   else
-        ifeq ($(BUILD_BRANCH), MEDTV)
-             PRODUCT_MODEL := PD403-997
-        else
-           ifeq ($(BUILD_BRANCH), SIM)
-              PRODUCT_MODEL := PD403-996
-           endif
-        endif
-   endif
-endif
+PRODUCT_MODEL := PD403-998
 
 $(warning Given BUILD_BRANCH being $(BUILD_BRANCH), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
