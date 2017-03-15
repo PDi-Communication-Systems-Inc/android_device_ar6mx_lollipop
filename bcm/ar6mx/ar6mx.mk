@@ -177,11 +177,12 @@ $(warning Engineering build...including Koush superuser package)
    SUPERUSER_EMBEDDED := true
 
    PRODUCT_PACKAGES += devregs	\
+		       devregs_imx6q.dat \
+		       devregs_imx6dls.dat \
 		       inputRead \
 		       su
 
-   PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
-			 device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
+   PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc
 else
 $(warning Not an engineering build, not including Koush superuser package)
 endif
