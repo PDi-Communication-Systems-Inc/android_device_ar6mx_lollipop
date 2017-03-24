@@ -211,8 +211,8 @@ ifeq ($(AIO_CONFIGURATION),T)
 $(warning Using Recovery Pixel Format BGRA_8888)
 TARGET_RECOVERY_PIXEL_FORMAT            := "BGRA_8888"
 else
-$(warning Using Recovery Pixel Format RGBX_8888)
-TARGET_RECOVERY_PIXEL_FORMAT            := "RGBX_8888"
+$(warning Using Recovery Pixel Format RGBA_8888)
+TARGET_RECOVERY_PIXEL_FORMAT            := "RGBA_8888"
 endif
 
 # OTA Addition to update bootloader
