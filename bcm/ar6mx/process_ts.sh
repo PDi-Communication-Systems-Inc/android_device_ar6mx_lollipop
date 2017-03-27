@@ -79,10 +79,12 @@ if [ $COUNT -ge "1" ];
 
        log -p i "$TAG" "Resetting touchscreen device"
        echo -e "Resetting touchscreen device\n"
-       # Reset device itself 0x0eef=eGalax, 0xa04d USB Touchscreen Controller
-       (sleep 15; usbreset 0eef:a04d) &
+       DEVICEID=`lsusb | busybox grep eGalax | busybox cut -d':' -f3 | busybox cut -c1-4`
+       # Reset device itself 0x0eef=eGalax, 0xa04d/0xc000 (EXC3147-3430) 
+       # USB Touchscreen Controller
+       (sleep 15; usbreset 0eef:$DEVICEID) &
 
-       setprop pdiarm.touchscreen eGalax
+       setprop pdiarm.touchscreen eGalax-$DEVICEID
        DONE=true
 fi
 
