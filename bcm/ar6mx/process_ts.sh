@@ -82,8 +82,15 @@ if [ $COUNT -ge "1" ];
        DEVICEID=`lsusb | busybox grep eGalax | busybox cut -d':' -f3 | busybox cut -c1-4`
        # Reset device itself 0x0eef=eGalax, 0xa04d/0xc000 (EXC3147-3430) 
        # USB Touchscreen Controller
-       (sleep 15; usbreset 0eef:$DEVICEID) &
-
+       if [ $DEVICEID == "a04d" ];
+          then
+             (sleep 15; usbreset 0eef:$DEVICEID) &
+       elif [ $DEVICEID == "0xc000" ] 
+           then
+              log -p i "$TAG" "$DEVICEID does not like to reset after bus, not doing reset"
+       else
+              log -p i "$TAG" "Unknown EGalax touchscreen $DEVICEID not doing reset"
+       fi
        setprop pdiarm.touchscreen eGalax-$DEVICEID
        DONE=true
 fi
