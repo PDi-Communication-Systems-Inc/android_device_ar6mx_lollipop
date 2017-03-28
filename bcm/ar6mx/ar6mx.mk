@@ -153,10 +153,12 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoLangInstaller						\
 		    alphavnc                                                    \
                     com.teslacoilsw.launcher                                    \
-                    com.pdiarm.pdicore                 				\
-		    pdiarm.com.camerapreview					\
 		    libccitv							\
-		    jniccitvLib	
+		    jniccitvLib	                                                \
+                    pdi_directdisp_jni                                         \
+                    pdiarm.com.pditv                                           \
+                    com.pdiarm.pdicore                                          
+                  
 		    
 
 # for Compat driver
