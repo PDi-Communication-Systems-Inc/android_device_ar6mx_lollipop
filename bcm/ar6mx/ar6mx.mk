@@ -155,9 +155,7 @@ PRODUCT_PACKAGES += AudioRoute							\
                     com.teslacoilsw.launcher                                    \
 		    libccitv							\
 		    jniccitvLib	                                                \
-                    pdi_directdisp_jni                                         \
-                    pdiarm.com.pditv                                           \
-                    com.pdiarm.pdicore                                          
+                    pdi_directdisp_jni                                                                                   
                   
 		    
 
