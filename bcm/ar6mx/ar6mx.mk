@@ -94,13 +94,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += AudioRoute							\
 		    AdobeReader 						\
 		    org.jtb.alogcat_43						\
-		    ReplicaIsland						\
 		    org.wikipedia						\
 		    net.micode.fileexplorer 					\
-		    com.mobilepearls.sokoban					\
-		    com.example.puzzlegame					\
-		    org.moire.opensudoku.game					\
-		    com.mobilepearls.memory					\
 		    maxtouch							\
 		    libmaxtouch-jni						\
 		    libusbdroid							\
@@ -149,7 +144,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller						\
 		    alphavnc                                                    \
-                    com.pdiarm.pdicore                 				\
+            com.pdiarm.pdicore                 				\
 		    pdiarm.com.camerapreview					\
 		    libccitv							\
 		    jniccitvLib	
