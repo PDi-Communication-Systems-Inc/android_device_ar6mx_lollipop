@@ -283,9 +283,9 @@ s -->
     <add-resource type="string" name="welcome_head_patient"></add-resource>
     <string name="welcome_head_patient">WELCOME NEW PATIENT</string>
     <add-resource type="string" name="welcome_intro"></add-resource>
-    <string name="welcome_intro">PDi-Tab\u00AE2 can bring you more than just TV. A few steps before we start:</string>
+    <string name="welcome_intro">PDi-Tab\u00AE can bring you more than just TV. A few steps before we start:</string>
     <add-resource type="string" name="permission_secure_device"></add-resource>
-    <string name="permission_secure_device">Secure Device - Ask your permission to Administer this PDi-TAB\u00AE2 to secure your data</string>
+    <string name="permission_secure_device">Secure Device - Ask your permission to Administer this PDi-TAB\u00AE to secure your data</string>
     <add-resource type="string" name="choose_password"></add-resource>
     <string name="choose_password">Step 1 - Secure your personal data - Choose a password for yourself</string>
     <add-resource type="string" name="home_screen"></add-resource>
