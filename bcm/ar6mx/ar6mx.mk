@@ -180,7 +180,8 @@ $(warning Engineering build...including Koush superuser package)
 		       devregs_imx6q.dat \
 		       devregs_imx6dls.dat \
 		       inputRead \
-		       su
+		       su		\
+			   fbconfig
 
    PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc
 else
