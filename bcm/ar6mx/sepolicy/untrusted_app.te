@@ -2,3 +2,5 @@ allow untrusted_app su_exec:file { read execute execute_no_trans open getattr };
 allow untrusted_app device:sock_file write;
 allow untrusted_app init_shell:fd use;
 allow untrusted_app video_device:chr_file { read write open ioctl };
+allow untrusted_app graphics_device:chr_file { read write open ioctl };
+
