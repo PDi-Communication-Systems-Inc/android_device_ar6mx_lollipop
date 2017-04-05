@@ -156,8 +156,9 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libccitv							\
 		    jniccitvLib	                                                \
                     pdi_directdisp_jni                                         \
-                    pdiarm.com.pditv                                           \
-                    com.pdiarm.pdicore                                          
+                    pdiarm.com.pditv                                          \
+                    com.pdiarm.pdicore
+                           
                   
 		    
 
