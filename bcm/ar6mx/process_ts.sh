@@ -92,7 +92,6 @@ if [ $COUNT -ge "1" ];
               log -p i "$TAG" "Unknown EGalax touchscreen $DEVICEID not doing reset"
        fi
        setprop pdiarm.touchscreen eGalax-$DEVICEID
->>>>>>> f7cfb0e... New EGalax Touchscreen does not like to reset after bus, locks up
        DONE=true
 fi
 
