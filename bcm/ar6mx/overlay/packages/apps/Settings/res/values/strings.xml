@@ -325,12 +325,12 @@
     <string name="bluetooth_ask_enablement">An app wants to turn on Bluetooth.</string>
 
     <!-- Strings for asking to the user whether to allow an app to enable discovery mode -->
-    <string name="bluetooth_ask_discovery" product="tablet">An app wants to make your PDi-TAB\u00AE2 visible to other Bluetooth devices for <xliff:g id="timeout">%1$d</xliff:g> seconds.</string>
+    <string name="bluetooth_ask_discovery" product="tablet">An app wants to make your PDi-TAB\u00AE visible to other Bluetooth devices for <xliff:g id="timeout">%1$d</xliff:g> seconds.</string>
     <!-- Strings for asking to the user whether to allow an app to enable discovery mode -->
     <string name="bluetooth_ask_discovery" product="default">An app wants to make your phone visible to other Bluetooth devices for <xliff:g id="timeout">%1$d</xliff:g> seconds.</string>
 
     <!-- Strings for asking to the user whether to allow an app to enable lasting discovery mode  -->
-    <string name="bluetooth_ask_lasting_discovery" product="tablet">An app wants to make your PDi-TAB\u00AE2 visible to other Bluetooth devices. You can change this later in Bluetooth settings.</string>
+    <string name="bluetooth_ask_lasting_discovery" product="tablet">An app wants to make your PDi-TAB\u00AE visible to other Bluetooth devices. You can change this later in Bluetooth settings.</string>
     <string name="bluetooth_ask_lasting_discovery" product="default">An app wants to make your phone visible to other Bluetooth devices. You can change this later in Bluetooth settings.</string>
 
     <!-- Strings for asking to the user whether to allow an app to start broadcasting -->
@@ -341,12 +341,12 @@
     <string name="bluetooth_broadcasting_explaination" product="default">When this feature is turned on, your phone can communicate with other devices nearby.\n\nBroadcasting uses low-power Bluetooth signals.</string>
 
     <!-- Strings for asking to the user whether to allow an app to enable bluetooth and discovery mode -->
-    <string name="bluetooth_ask_enablement_and_discovery" product="tablet">An app wants to turn on Bluetooth and make your PDi-TAB\u00AE2 visible to other devices for <xliff:g id="timeout">%1$d</xliff:g> seconds.</string>
+    <string name="bluetooth_ask_enablement_and_discovery" product="tablet">An app wants to turn on Bluetooth and make your PDi-TAB\u00AE visible to other devices for <xliff:g id="timeout">%1$d</xliff:g> seconds.</string>
     <!-- Strings for asking to the user whether to allow an app to enable bluetooth and discovery mode -->
     <string name="bluetooth_ask_enablement_and_discovery" product="default">An app wants to turn on Bluetooth and make your phone visible to other devices for <xliff:g id="timeout">%1$d</xliff:g> seconds.</string>
 
     <!-- Strings for asking to the user whether to allow an app to enable bluetooth and discovery mode -->
-    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet">An app wants to turn on Bluetooth and make your PDi-TAB\u00AE2 visible to other devices. You can change this later in Bluetooth settings.</string>
+    <string name="bluetooth_ask_enablement_and_lasting_discovery" product="tablet">An app wants to turn on Bluetooth and make your PDi-TAB\u00AE visible to other devices. You can change this later in Bluetooth settings.</string>
     <string name="bluetooth_ask_enablement_and_lasting_discovery" product="default">An app wants to turn on Bluetooth and make your phone visible to other devices. You can change this later in Bluetooth settings.</string>
 
     <!-- Strings for msg to display to user while bluetooth is turning on [CHAR LIMIT=60] -->
@@ -589,7 +589,7 @@
     <!-- The title of the activity to adjust display settings -->
     <string name="display_label">Screen</string>
     <!-- The title of the activity to see phone info -->
-    <string name="phone_info_label" product="tablet">PDi-TAB\u00AE2 info</string>
+    <string name="phone_info_label" product="tablet">PDi-TAB\u00AE info</string>
     <!-- The title of the activity to see phone info -->
     <string name="phone_info_label" product="default">Phone info</string>
     <!-- The title of the activity to adjust SD card settings [CHAR LIMIT=25] -->
@@ -662,7 +662,7 @@
     <!-- mobile network settings screen, message in dialog box that appears when you select the "Data roaming" check box -->
     <string name="roaming_warning">When you allow data roaming, you may incur significant roaming charges!</string>
     <!-- mobile network settings screen, message in dialog box that appears when you select the "Data roaming" check box. This is for multiuser tablets [CHAR LIMIT=none] -->
-    <string name="roaming_warning_multiuser" product="tablet">When you allow data roaming, you may incur significant roaming charges!\n\nThis setting affects all users on this PDi-TAB\u00AE2.</string>
+    <string name="roaming_warning_multiuser" product="tablet">When you allow data roaming, you may incur significant roaming charges!\n\nThis setting affects all users on this PDi-TAB\u00AE.</string>
     <!-- mobile network settings screen, message in dialog box that appears when you select the "Data roaming" check box. This is for multiuser phones [CHAR LIMIT=none] -->
     <string name="roaming_warning_multiuser" product="default">When you allow data roaming, you may incur significant roaming charges!\n\nThis setting affects all users on this phone.</string>
     <!-- mobile network settings screen, title of dialog box that appears when you select the "Data roaming" check box -->
@@ -780,7 +780,7 @@
     <string name="crypt_keeper_settings_title">Encryption</string>
 
     <!-- Title of the preferences item to control encryption -->
-    <string name="crypt_keeper_encrypt_title" product="tablet">Encrypt PDi-TAB\u00AE2</string>
+    <string name="crypt_keeper_encrypt_title" product="tablet">Encrypt PDi-TAB\u00AE</string>
     <!-- Title of the preferences item to control encryption -->
     <string name="crypt_keeper_encrypt_title" product="default">Encrypt phone</string>
 
@@ -790,11 +790,11 @@
     <!-- Informational text in the first confirmation screen before starting device encryption -->
     <string name="crypt_keeper_desc" product="tablet">
     You can encrypt your accounts, settings, downloaded apps and their data,
-    media, and other files. After you encrypt your PDi-TAB\u00AE2, assuming you\'ve set up a screen lock
+    media, and other files. After you encrypt your PDi-TAB\u00AE, assuming you\'ve set up a screen lock
     (that is, a pattern or numeric PIN or password), you\'ll need to unlock the screen to decrypt
-    the PDi-TAB\u00AE2 every time you power it on. The only other way to decrypt is to perform a factory
+    the PDi-TAB\u00AE every time you power it on. The only other way to decrypt is to perform a factory
     data reset, erasing all your data.\n\nEncryption takes an hour or more. You must start with
-    a charged battery and keep your PDi-TAB\u00AE2 plugged in throughout the process. If you interrupt it,
+    a charged battery and keep your PDi-TAB\u00AE plugged in throughout the process. If you interrupt it,
     you\'ll lose some or all of your data</string>
     <!-- Informational text in the first confirmation screen before starting device encryption -->
     <string name="crypt_keeper_desc" product="default">
@@ -807,7 +807,7 @@
     you\'ll lose some or all of your data.</string>
 
     <!-- Button text to start encryption process -->
-    <string name="crypt_keeper_button_text" product="tablet">Encrypt PDi-TAB\u00AE2</string>
+    <string name="crypt_keeper_button_text" product="tablet">Encrypt PDi-TAB\u00AE</string>
     <!-- Button text to start encryption process -->
     <string name="crypt_keeper_button_text" product="default">Encrypt phone</string>
 
@@ -833,7 +833,7 @@
     <!-- Warning text in the final confirmation screen before starting device encryption -->
     <string name="crypt_keeper_final_desc" product="tablet">
     The encryption operation is irreversible and if you interrupt it, you\'ll lose data.
-    Encryption takes an hour or more, during which the PDi-TAB\u00AE2 will restart several times.
+    Encryption takes an hour or more, during which the PDi-TAB\u00AE will restart several times.
     </string>
     <!-- Warning text in the final confirmation screen before starting device encryption -->
     <string name="crypt_keeper_final_desc" product="default">
@@ -845,12 +845,12 @@
     <string name="crypt_keeper_setup_title">Encrypting</string>
 
     <!-- Informational text on the progress screen while encrypting the device -->
-    <string name="crypt_keeper_setup_description" product="tablet">Wait while your PDi-TAB\u00AE2
+    <string name="crypt_keeper_setup_description" product="tablet">Wait while your PDi-TAB\u00AE
     is being encrypted. <xliff:g id="percent" example="50">^1</xliff:g>% complete.</string>
     <!-- Informational text on the progress screen while encrypting the device -->
     <string name="crypt_keeper_setup_description" product="default">Wait while your phone
     is being encrypted. <xliff:g id="percent" example="50">^1</xliff:g>% complete.</string>
-    <string name="crypt_keeper_setup_time_remaining" product="tablet">Wait while your PDi-TAB\u00AE2
+    <string name="crypt_keeper_setup_time_remaining" product="tablet">Wait while your PDi-TAB\u00AE
     is being encrypted. Time remaining: <xliff:g id="duration" example="1:23">^1</xliff:g></string>
     <string name="crypt_keeper_setup_time_remaining" product="default">Wait while your phone
     is being encrypted. Time remaining: <xliff:g id="duration" example="1:23">^1</xliff:g></string>
@@ -872,10 +872,10 @@
     <!-- Informational text when encryption fails -->
     <string name="crypt_keeper_failed_summary" product="tablet">
       Encryption was interrupted and can\'t complete. As a result, the data on
-      your PDi-TAB\u00AE2 is no longer accessible.
+      your PDi-TAB\u00AE is no longer accessible.
       \n\n
-      To resume using your PDi-TAB\u00AE2, you need to perform a factory reset.
-      When you set up your PDi-TAB\u00AE2 after the reset, you\'ll have an opportunity
+      To resume using your PDi-TAB\u00AE, you need to perform a factory reset.
+      When you set up your PDi-TAB\u00AE after the reset, you\'ll have an opportunity
       to restore any data that was backed up to your Google Account.
     </string>
 
@@ -895,8 +895,8 @@
     <string name="crypt_keeper_data_corrupt_summary" product="tablet">
       The password you entered is correct, but unfortunately your data is
       corrupt.
-      \n\nTo resume using your PDi-TAB\u00AE2, you need to perform a factory reset.
-      When you set up your PDi-TAB\u00AE2 after the reset, you\'ll have an opportunity
+      \n\nTo resume using your PDi-TAB\u00AE, you need to perform a factory reset.
+      When you set up your PDi-TAB\u00AE after the reset, you\'ll have an opportunity
       to restore any data that was backed up to your Google Account.
     </string>
 
@@ -1272,7 +1272,7 @@
     <!-- Bluetooth settings.  Message for disconnecting from the PAN profile (user role). [CHAR LIMIT=80] -->
     <string name="bluetooth_disconnect_pan_user_profile">Internet access via <xliff:g id="device_name">%1$s</xliff:g> will be disconnected.</string>
     <!-- Bluetooth settings.  Message for disconnecting from the PAN profile (NAP role). [CHAR LIMIT=80] -->
-    <string name="bluetooth_disconnect_pan_nap_profile" product="tablet"><xliff:g id="device_name">%1$s</xliff:g> will be disconnected from sharing this PDi-TAB\u00AE2\'s Internet connection.</string>
+    <string name="bluetooth_disconnect_pan_nap_profile" product="tablet"><xliff:g id="device_name">%1$s</xliff:g> will be disconnected from sharing this PDi-TAB\u00AE\'s Internet connection.</string>
     <!-- Bluetooth settings.  Message for disconnecting from the PAN profile (NAP role). [CHAR LIMIT=80] -->
     <string name="bluetooth_disconnect_pan_nap_profile" product="default"><xliff:g id="device_name">%1$s</xliff:g> will be disconnected from sharing this phone\'s Internet connection.</string>
 
@@ -1403,7 +1403,7 @@
     <!-- Used in the 1st-level settings screen to turn on NFC -->
     <string name="nfc_quick_toggle_title">NFC</string>
     <!-- Description of NFC in the 1st level settings screen, for a tablet. [CHAR LIMIT=NONE] -->
-    <string name="nfc_quick_toggle_summary" product="tablet">Allow data exchange when the PDi-TAB\u00AE2 touches another device</string>
+    <string name="nfc_quick_toggle_summary" product="tablet">Allow data exchange when the PDi-TAB\u00AE touches another device</string>
     <!-- Description of NFC in the 1st level settings screen, for a phone. [CHAR LIMIT=NONE] -->
     <string name="nfc_quick_toggle_summary" product="default">Allow data exchange when the phone touches another device</string>
 
@@ -1530,7 +1530,7 @@
     <!-- Wi-Fi settings. wps menu title [CHAR LIMIT=25]-->
     <string name="wifi_setup_wps">Automatic setup (WPS)</string>
     <!-- Message informing that wifi is required during setup [CHAR LIMIT=NONE] -->
-    <string name="wifi_required_info_text">To complete setup, your PDi-TAB\u00AE2 needs access to Wi\u2011Fi. After setup, you can switch between cellular data and Wi\u2011Fi.</string>
+    <string name="wifi_required_info_text">To complete setup, your PDi-TAB\u00AE needs access to Wi\u2011Fi. After setup, you can switch between cellular data and Wi\u2011Fi.</string>
 
     <!-- Dialog for Access Points --> <skip />
     <!-- Label to show/hide advanced options [CHAR LIMIT=40] -->
@@ -1681,19 +1681,19 @@
     <string name="wifi_dont_skip">Don\'t skip</string>
 
     <!-- Text warning about skipping Wi-Fi with a mobile connect (tablet) [CHAR LIMIT=NONE]-->
-    <string name="wifi_skipped_message" product="tablet">WARNING: if you skip Wi\u2011Fi, your PDi-TAB\u00AE2 will only use cellular data for initial downloads and updates. To avoid possible data charges, connect to Wi\u2011Fi.</string>
+    <string name="wifi_skipped_message" product="tablet">WARNING: if you skip Wi\u2011Fi, your PDi-TAB\u00AE will only use cellular data for initial downloads and updates. To avoid possible data charges, connect to Wi\u2011Fi.</string>
     <!-- Text warning about skipping Wi-Fi with a mobile connect (device) [CHAR LIMIT=NONE]-->
     <string name="wifi_skipped_message" product="device">WARNING: if you skip Wi\u2011Fi, your device will only use cellular data for initial downloads and updates. To avoid possible data charges, connect to Wi\u2011Fi.</string>
     <!-- Text warning about skipping Wi-Fi with a mobile connect (phone) [CHAR LIMIT=NONE]-->
     <string name="wifi_skipped_message" product="default">WARNING: if you skip Wi\u2011Fi, your phone will only use cellular data for initial downloads and updates. To avoid possible data charges, connect to Wi\u2011Fi.</string>
     <!-- Text warning about skipping Wi-Fi without a mobile connect (tablet) [CHAR LIMIT=NONE] -->
-    <string name="wifi_and_mobile_skipped_message" product="tablet">WARNING: If you skip Wi\u2011Fi, your PDi-TAB\u00AE2 won\'t have an Internet connection to use for any initial downloads or updates.</string>
+    <string name="wifi_and_mobile_skipped_message" product="tablet">WARNING: If you skip Wi\u2011Fi, your PDi-TAB\u00AE won\'t have an Internet connection to use for any initial downloads or updates.</string>
     <!-- Text warning about skipping Wi-Fi without a mobile connect (device) [CHAR LIMIT=NONE] -->
     <string name="wifi_and_mobile_skipped_message" product="device">WARNING: If you skip Wi\u2011Fi, your device won\'t have an Internet connection to use for any initial downloads or updates.</string>
     <!-- Text warning about skipping Wi-Fi without a mobile connect (phone) [CHAR LIMIT=NONE] -->
     <string name="wifi_and_mobile_skipped_message" product="default">WARNING: If you skip Wi\u2011Fi, your phone won\'t have an Internet connection to use for any initial downloads or updates.</string>
     <!-- Text alerting that Wi-Fi couldn't connect (tablet) [CHAR LIMIT=NONE] -->
-    <string name="wifi_connect_failed_message" product="tablet">The PDi-TAB\u00AE2 was unable to connect to this Wi\u2011Fi network.</string>
+    <string name="wifi_connect_failed_message" product="tablet">The PDi-TAB\u00AE was unable to connect to this Wi\u2011Fi network.</string>
     <!-- Text alerting that Wi-Fi couldn't connect (device) [CHAR LIMIT=NONE] -->
     <string name="wifi_connect_failed_message" product="device">The device was unable to connect to this Wi\u2011Fi network.</string>
     <!-- Text alerting that Wi-Fi couldn't connect (phone) [CHAR LIMIT=NONE] -->
@@ -1970,7 +1970,7 @@
     <!-- Dock audio summary for docked to car dock -->
     <string name="dock_audio_summary_car">Settings for the attached car dock</string>
     <!-- Dock audio summary for undocked -->
-    <string name="dock_audio_summary_none" product="tablet">PDi-TAB\u00AE2 not docked</string>
+    <string name="dock_audio_summary_none" product="tablet">PDi-TAB\u00AE not docked</string>
     <!-- Dock audio summary for undocked -->
     <string name="dock_audio_summary_none" product="default">Phone not docked</string>
     <!-- Dock audio summary for docked to unknown -->
@@ -1978,17 +1978,17 @@
     <!-- Dock not found dialog title -->
     <string name="dock_not_found_title">Dock not found</string>
     <!-- Dock not found dialog text -->
-    <string name="dock_not_found_text" product="tablet">You need to dock the PDi-TAB\u00AE2 before setting up dock audio.</string>
+    <string name="dock_not_found_text" product="tablet">You need to dock the PDi-TAB\u00AE before setting up dock audio.</string>
     <!-- Dock not found dialog text -->
     <string name="dock_not_found_text" product="default">You need to dock the phone before setting up dock audio.</string>
     <!-- Dock settings screen, dock events SFX setting check box label -->
     <string name="dock_sounds_enable_title">Dock insert sound</string>
     <!-- Dock settings screen, setting option summary text when check box is selected -->
-    <string name="dock_sounds_enable_summary_on" product="tablet">Play sound when inserting or removing PDi-TAB\u00AE2 from dock</string>
+    <string name="dock_sounds_enable_summary_on" product="tablet">Play sound when inserting or removing PDi-TAB\u00AE from dock</string>
     <!-- Dock settings screen, setting option summary text when check box is selected -->
     <string name="dock_sounds_enable_summary_on" product="default">Play sound when inserting or removing phone from dock</string>
     <!-- Sound settings screen, setting option summary text when check box is clear -->
-    <string name="dock_sounds_enable_summary_off" product="tablet">Don\'t play sound when inserting or removing PDi-TAB\u00AE2 from dock</string>
+    <string name="dock_sounds_enable_summary_off" product="tablet">Don\'t play sound when inserting or removing PDi-TAB\u00AE from dock</string>
     <!-- Sound settings screen, setting option summary text when check box is clear -->
     <string name="dock_sounds_enable_summary_off" product="default">Don\'t play sound when inserting or removing phone from dock</string>
 
@@ -2010,11 +2010,11 @@
     <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
     <string name="accelerometer_title">Auto-rotate screen</string>
     <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
-    <string name="accelerometer_summary_on" product="tablet">Switch orientation automatically when rotating PDi-TAB\u00AE2</string>
+    <string name="accelerometer_summary_on" product="tablet">Switch orientation automatically when rotating PDi-TAB\u00AE</string>
     <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
     <string name="accelerometer_summary_on" product="default">Switch orientation automatically when rotating phone</string>
     <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
-    <string name="accelerometer_summary_off" product="tablet">Switch orientation automatically when rotating PDi-TAB\u00AE2</string>
+    <string name="accelerometer_summary_off" product="tablet">Switch orientation automatically when rotating PDi-TAB\u00AE</string>
     <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
     <string name="accelerometer_summary_off" product="default">Switch orientation automatically when rotating phone</string>
     <!-- Sound & display settings screen, setting option name to change brightness level -->
@@ -2081,11 +2081,11 @@
     <!-- SIM card lock settings screen, setting check box label  [CHAR LIMIT=40] -->
     <string name="sim_pin_toggle">Lock SIM card</string>
     <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is selected  [CHAR LIMIT=40] -->
-    <string name="sim_lock_on" product="tablet">Require PIN to use PDi-TAB\u00AE2</string>
+    <string name="sim_lock_on" product="tablet">Require PIN to use PDi-TAB\u00AE</string>
     <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is selected  [CHAR LIMIT=40] -->
     <string name="sim_lock_on" product="default">Require PIN to use phone</string>
     <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is clear  [CHAR LIMIT=40] -->
-    <string name="sim_lock_off" product="tablet">Require PIN to use PDi-TAB\u00AE2</string>
+    <string name="sim_lock_off" product="tablet">Require PIN to use PDi-TAB\u00AE</string>
     <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is clear  [CHAR LIMIT=40] -->
     <string name="sim_lock_off" product="default">Require PIN to use phone</string>
     <!-- SIM card lock settings screen, setting option name to change the SIM PIN  [CHAR LIMIT=40] -->
@@ -2135,7 +2135,7 @@
     <string name="pin_failed">SIM PIN operation failed!</string>
 
     <!-- Advanced (used for diagnostics) device info activity title [CHAR LIMIT=40] -->
-    <string name="device_info_settings" product="tablet">PDi-TAB\u00AE2 status</string>
+    <string name="device_info_settings" product="tablet">PDi-TAB\u00AE status</string>
     <!-- Advanced (used for diagnostics) device info activity title [CHAR LIMIT=40] -->
     <string name="device_info_settings" product="default">Phone status</string>
 
@@ -2435,11 +2435,11 @@
     <!-- SD card & phone storage settings screen, setting option name under Internal phone storage heading -->
     <string name="master_clear_title">Factory data reset</string>
     <!-- SD card & phone storage settings screen, setting option summary text under Internal phone storage heading -->
-    <string name="master_clear_summary" product="tablet">Erases all data on PDi-TAB\u00AE2</string>
+    <string name="master_clear_summary" product="tablet">Erases all data on PDi-TAB\u00AE</string>
     <!-- SD card & phone storage settings screen, setting option summary text under Internal phone storage heading -->
     <string name="master_clear_summary" product="default">Erases all data on phone</string>
     <!-- SD card & phone storage settings screen, message on screen after user selects Factory data reset [CHAR LIMIT=NONE] -->
-    <string name="master_clear_desc" product="tablet">"This will erase all data from your PDi-TAB\u00AE2\'s <b>internal storage</b>, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li>"</string>
+    <string name="master_clear_desc" product="tablet">"This will erase all data from your PDi-TAB\u00AE\'s <b>internal storage</b>, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li>"</string>
     <!-- SD card & phone storage settings screen, message on screen after user selects Factory data reset [CHAR LIMIT=NONE] -->
     <string name="master_clear_desc" product="default">"This will erase all data from your phone\'s <b>internal storage</b>, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps"</li></string>
     <!-- SD card & phone storage settings screen, instructions and list of current accounts.  The list of accounts follows this text[CHAR LIMIT=NONE] -->
@@ -2459,7 +2459,7 @@
     <!-- SD card & phone storage settings screen, description for check box to erase USB storage [CHAR LIMIT=NONE] -->
     <string name="erase_external_storage_description" product="default">Erase all the data on the SD card, such as music or photos</string>
     <!-- SD card & phone storage settings screen, button on screen after user selects Factory data reset -->
-    <string name="master_clear_button_text" product="tablet">Reset PDi-TAB\u00AE2</string>
+    <string name="master_clear_button_text" product="tablet">Reset PDi-TAB\u00AE</string>
     <!-- SD card & phone storage settings screen, button on screen after user selects Factory data reset -->
     <string name="master_clear_button_text" product="default">Reset phone</string>
     <!-- SD card & phone storage settings screen, message on screen after user selects Reset phone button -->
@@ -2548,21 +2548,21 @@
     <!-- Label for bluetooth tether checkbox [CHAR LIMIT=25]-->
     <string name="bluetooth_tether_checkbox_text">Bluetooth tethering</string>
     <!-- Bluetooth available subtext - shown when Bluetooth tethering is turned on but it is not currently tethered to any devices [CHAR LIMIT=50]-->
-    <string name="bluetooth_tethering_available_subtext" product="tablet">Sharing this PDi-TAB\u00AE2\'s Internet connection</string>
+    <string name="bluetooth_tethering_available_subtext" product="tablet">Sharing this PDi-TAB\u00AE\'s Internet connection</string>
     <!-- Bluetooth available subtext - shown when Bluetooth tethering is turned on but it is not currently tethered to any devices [CHAR LIMIT=50]-->
     <string name="bluetooth_tethering_available_subtext" product="default">Sharing this phone\'s Internet connection</string>
     <!-- Bluetooth connected subtext - shown when a device is tethered over Bluetooth [CHAR LIMIT=60]-->
-    <string name="bluetooth_tethering_device_connected_subtext" product="tablet">Sharing this PDi-TAB\u00AE2\'s Internet connection to 1 device</string>
+    <string name="bluetooth_tethering_device_connected_subtext" product="tablet">Sharing this PDi-TAB\u00AE\'s Internet connection to 1 device</string>
     <!-- Bluetooth connected subtext - shown when a device is tethered over Bluetooth [CHAR LIMIT=60]-->
     <string name="bluetooth_tethering_device_connected_subtext" product="default">Sharing this phone\'s Internet connection to 1 device</string>
     <!-- Bluetooth connected subtext - shown when multiple devices are tethered over Bluetooth [CHAR LIMIT=60]-->
-    <string name="bluetooth_tethering_devices_connected_subtext" product="tablet">Sharing this PDi-TAB\u00AE2\'s Internet connection to <xliff:g id="connectedDeviceCount">%1$d</xliff:g> devices</string>
+    <string name="bluetooth_tethering_devices_connected_subtext" product="tablet">Sharing this PDi-TAB\u00AE\'s Internet connection to <xliff:g id="connectedDeviceCount">%1$d</xliff:g> devices</string>
     <!-- Bluetooth connected subtext - shown when multiple devices are tethered over Bluetooth [CHAR LIMIT=60]-->
     <string name="bluetooth_tethering_devices_connected_subtext" product="default">Sharing this phone\'s Internet connection to <xliff:g id="connectedDeviceCount">%1$d</xliff:g> devices</string>
     <!-- Bluetooth tethering off subtext - shown when Bluetooth Tethering is turned off [CHAR LIMIT=50]-->
     <string name="bluetooth_tethering_off_subtext_config">Sharing this <xliff:g id="device_name">%1$d</xliff:g>\'s Internet connection</string>
     <!-- Bluetooth tethering off subtext - shown when Bluetooth Tethering is turned off [CHAR LIMIT=50]-->
-    <string name="bluetooth_tethering_off_subtext" product="tablet">Not sharing this PDi-TAB\u00AE2\'s Internet connection</string>
+    <string name="bluetooth_tethering_off_subtext" product="tablet">Not sharing this PDi-TAB\u00AE\'s Internet connection</string>
     <!-- Bluetooth tethering off subtext - shown when Bluetooth Tethering is turned off [CHAR LIMIT=50]-->
     <string name="bluetooth_tethering_off_subtext" product="default">Not sharing this phone\'s Internet connection</string>
     <!-- Bluetooth errored subtext - shown when Bluetooth is broken for some reason [CHAR LIMIT=50]-->
@@ -2646,7 +2646,7 @@
     <!-- [CHAR LIMIT=30] Security & location settings screen, setting check box label for GPS satellites -->
     <string name="location_gps">GPS satellites</string>
     <!-- [CHAR LIMIT=100] Security & location settings screen, setting check box summary for GPS satellites on a tablet -->
-    <string name="location_street_level" product="tablet">Let apps use GPS on your PDi-TAB\u00AE2 to pinpoint your location</string>
+    <string name="location_street_level" product="tablet">Let apps use GPS on your PDi-TAB\u00AE to pinpoint your location</string>
     <!-- [CHAR LIMIT=100] Security & location settings screen, setting check box summary for GPS satellites on a phone -->
     <string name="location_street_level" product="default">Let apps use GPS on your phone to pinpoint your location</string>
     <!-- Security & location settings screen, setting check box label if Assisted GPS should be enabled -->
@@ -2668,7 +2668,7 @@
 
     <!-- About --> <skip />
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
-    <string name="about_settings" product="tablet">About PDi-TAB\u00AE2</string>
+    <string name="about_settings" product="tablet">About PDi-TAB\u00AE</string>
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
     <string name="about_settings" product="default">About phone</string>
     <!-- Main settings screen, setting summary for the user to go into the About phone screen-->
@@ -2819,9 +2819,9 @@
     <!-- Applications settings screen, setting check box summary.  This is the summary for "Unknown sources" checkbox  -->
     <string name="install_unknown_applications">Allow installation of apps from unknown sources</string>
     <!-- Applications settings screen, message text of alert that appears if user selects the "Unknown sources" check box -->
-    <string name="install_all_warning" product="tablet">Your PDi-TAB\u00AE2 and personal data are more vulnerable to attack by apps
+    <string name="install_all_warning" product="tablet">Your PDi-TAB\u00AE and personal data are more vulnerable to attack by apps
  from unknown sources. You agree that you are solely responsible for any
- damage to your PDi-TAB\u00AE2 or loss of data that may result from using
+ damage to your PDi-TAB\u00AE or loss of data that may result from using
  these apps.</string>
     <!-- Applications settings screen, message text of alert that appears if user selects the "Unknown sources" check box -->
     <string name="install_all_warning" product="default">Your phone and personal data are more vulnerable to attack by apps
@@ -2979,13 +2979,13 @@
     <!-- Manage applications, text for dialog if clear data fails-->
     <string name="clear_failed_dlg_text">Couldn\'t clear data for app.</string>
     <!-- Manage applications, individual application info screen, text that appears under the "Permissions" heading. This describes the permissions that the application has. -->
-    <string name="security_settings_desc" product="tablet">This app can access the following on your PDi-TAB\u00AE2:</string>
+    <string name="security_settings_desc" product="tablet">This app can access the following on your PDi-TAB\u00AE:</string>
     <!-- Manage applications, individual application info screen, text that appears under the "Permissions" heading. This describes the permissions that the application has. -->
     <string name="security_settings_desc" product="default">This app can access the following on your phone:</string>
     <!-- [CHAR_LIMIT=NONE] Manage applications, individual application info screen, text that appears under the "Permissions" heading.
          This describes the permissions that the application has.  It is used when multiple packages are contributing
          to the permissions and need to be listed here. -->
-    <string name="security_settings_desc_multi" product="tablet">This app can access the following on your PDi-TAB\u00AE2.
+    <string name="security_settings_desc_multi" product="tablet">This app can access the following on your PDi-TAB\u00AE.
          In order to improve performance and reduce memory usage, some of these permissions
          are available to <xliff:g id="base_app_name">%1$s</xliff:g>
          because it runs in the same process as <xliff:g id="additional_apps_list">%2$s</xliff:g>:</string>
@@ -3017,7 +3017,7 @@
     <!-- Manage applications, text for Move button -->
     <string name="move_app">Move</string>
     <!-- Manage applications, text for Move button to move app to internal storage -->
-    <string name="move_app_to_internal" product="tablet">Move to PDi-TAB\u00AE2</string>
+    <string name="move_app_to_internal" product="tablet">Move to PDi-TAB\u00AE</string>
     <!-- Manage applications, text for Move button to move app to internal storage -->
     <string name="move_app_to_internal" product="default">Move to phone</string>
     <!-- Manage applications, text for Move button  to move app to sdcard [CHAR LIMIT=25] -->
@@ -3174,7 +3174,7 @@
     <string name="runningservicedetails_stop_dlg_title">Stop system service?</string>
     <!-- Running service details, stop confirmation descriptive text. Displays when user selects selects to stop a system service. -->
     <string name="runningservicedetails_stop_dlg_text" product="tablet">If you stop this service, some
-        features of your PDi-TAB\u00AE2 may stop working correctly until you power it off
+        features of your PDi-TAB\u00AE may stop working correctly until you power it off
         and then on again.</string>
     <!-- Running service details, stop confirmation descriptive text. Displays when user selects selects to stop a system service. -->
     <string name="runningservicedetails_stop_dlg_text" product="default">If you stop this service, some
@@ -3300,7 +3300,7 @@
     <!-- This is for diagnostics screen. The title of a screen with various items realted to launching screens that will giev the user info. For example, it contains "Phone information" and "Battery information" -->
     <string name="testing">Testing</string>
     <!-- In the Testing screen.  The item title of the activity that shows a bunch of phone-related information.  -->
-    <string name="testing_phone_info" product="tablet">PDi-TAB\u00AE2 information</string>
+    <string name="testing_phone_info" product="tablet">PDi-TAB\u00AE information</string>
     <!-- In the Testing screen.  The item title of the activity that shows a bunch of phone-related information.  -->
     <string name="testing_phone_info" product="default">Phone information</string>
     <!-- In the Testing screen. The item title of the activity that shows a bunch of battery-related information.  -->
@@ -3894,7 +3894,7 @@
     <!-- Label for power consumed by Calling -->
     <string name="power_phone">Voice calls</string>
     <!-- Label for power consumed when Idle -->
-    <string name="power_idle" product="tablet">PDi-TAB\u00AE2 idle</string>
+    <string name="power_idle" product="tablet">PDi-TAB\u00AE idle</string>
     <!-- Label for power consumed when Idle -->
     <string name="power_idle" product="default">Phone idle</string>
     <!-- Label for power that we aren't able to account for -->
@@ -3913,7 +3913,7 @@
     <!-- [CHAR LIMIT=25] Label for WIFI usage time -->
     <string name="usage_type_wifi_running">Wi\u2011Fi running</string>
     <!-- Label for Phone usage time -->
-    <string name="usage_type_phone" product="tablet">PDi-TAB\u00AE2</string>
+    <string name="usage_type_phone" product="tablet">PDi-TAB\u00AE</string>
     <!-- Label for Phone usage time -->
     <string name="usage_type_phone" product="default">Phone</string>
     <!-- Label for mobile network data sent [CHAR LIMIT=32] -->
@@ -3958,7 +3958,7 @@
     <string name="battery_desc_voice">Battery used by voice calls</string>
 
     <!-- Description for standby detail -->
-    <string name="battery_desc_standby" product="tablet">Battery used when PDi-TAB\u00AE2 is idle</string>
+    <string name="battery_desc_standby" product="tablet">Battery used when PDi-TAB\u00AE is idle</string>
     <!-- Description for standby detail -->
     <string name="battery_desc_standby" product="default">Battery used when phone is idle</string>
 
@@ -4655,7 +4655,7 @@
     <!-- Title of remove message for remove account dialog -->
     <string name="really_remove_account_title">Remove account?</string>
     <!-- Remove account message in dialog [CHAR LIMIT=NONE] -->
-    <string name="really_remove_account_message" product="tablet">Removing this account will delete all of its messages, contacts, and other data from the PDi-TAB\u00AE2!</string>
+    <string name="really_remove_account_message" product="tablet">Removing this account will delete all of its messages, contacts, and other data from the PDi-TAB\u00AE!</string>
     <!-- Remove account message in dialog [CHAR LIMIT=NONE] -->
     <string name="really_remove_account_message" product="default">Removing this account will delete all of its messages, contacts, and other data from the phone!</string>
     <!-- This is shown if the autheticator for a given account fails to remove it. [CHAR LIMIT=NONE] -->
@@ -4973,7 +4973,7 @@
     <!--  Title of dialog shown when user enables global auto sync [CHAR LIMIT=32] -->
     <string name="data_usage_auto_sync_on_dialog_title">Turn auto-sync data on?</string>
     <!--  Body of dialog shown when user enables global auto sync, for tablet [CHAR LIMIT=none] -->
-    <string name="data_usage_auto_sync_on_dialog" product="tablet">Any changes you make to your accounts on the web will be automatically copied to your PDi-TAB\u00AE2.\n\nSome accounts may also automatically copy any changes you make on the PDi-TAB\u00AE2 to the web. A Google Account works this way.</string>
+    <string name="data_usage_auto_sync_on_dialog" product="tablet">Any changes you make to your accounts on the web will be automatically copied to your PDi-TAB\u00AE.\n\nSome accounts may also automatically copy any changes you make on the PDi-TAB\u00AE to the web. A Google Account works this way.</string>
     <!--  Body of dialog shown when user enables global auto sync [CHAR LIMIT=none] -->
     <string name="data_usage_auto_sync_on_dialog" product="default">Any changes you make to your accounts on the web will be automatically copied to your phone.\n\nSome accounts may also automatically copy any changes you make on the phone to the web. A Google Account works this way.</string>
     <!--  Title of dialog shown when user disables global auto sync [CHAR LIMIT=32] -->
@@ -4996,7 +4996,7 @@
     <!-- Title of dialog shown before user limits data usage. [CHAR LIMIT=48] -->
     <string name="data_usage_limit_dialog_title">Limiting data usage</string>
     <!-- Body of dialog shown before user limits mobile data usage. [CHAR LIMIT=NONE] -->
-    <string name="data_usage_limit_dialog_mobile" product="tablet">Your PDi-TAB\u00AE2 will turn off cellular data once it reaches the limit you set.\n\nSince data usage is measured by your PDi-TAB\u00AE2, and your carrier may account for usage differently, consider setting a conservative limit.</string>
+    <string name="data_usage_limit_dialog_mobile" product="tablet">Your PDi-TAB\u00AE will turn off cellular data once it reaches the limit you set.\n\nSince data usage is measured by your PDi-TAB\u00AE, and your carrier may account for usage differently, consider setting a conservative limit.</string>
     <!-- Body of dialog shown before user limits mobile data usage. [CHAR LIMIT=NONE] -->
     <string name="data_usage_limit_dialog_mobile" product="default">Your phone will turn off cellular data once it reaches the limit you set.\n\nSince data usage is measured by your phone, and your carrier may account for usage differently, consider setting a conservative limit.</string>
 
@@ -5005,7 +5005,7 @@
     <!-- Body of dialog shown before user restricts background data usage. [CHAR LIMIT=NONE] -->
     <string name="data_usage_restrict_background">If you restrict background cellular data, some apps and services won\'t work unless you\'re connected to Wi\u2011Fi.</string>
     <!-- Body of dialog shown before user restricts background data usage. This is for multiuser tablets. [CHAR LIMIT=NONE] -->
-    <string name="data_usage_restrict_background_multiuser" product="tablet">If you restrict background cellular data, some apps and services won\'t work unless you\'re connected to Wi\u2011Fi.\n\nThis setting affects all users on this PDi-TAB\u00AE2.</string>
+    <string name="data_usage_restrict_background_multiuser" product="tablet">If you restrict background cellular data, some apps and services won\'t work unless you\'re connected to Wi\u2011Fi.\n\nThis setting affects all users on this PDi-TAB\u00AE.</string>
     <!-- Body of dialog shown before user restricts background data usage. This is for multiuser phones. [CHAR LIMIT=NONE] -->
     <string name="data_usage_restrict_background_multiuser" product="default">If you restrict background cellular data, some apps and services won\'t work unless you\'re connected to Wi\u2011Fi.\n\nThis setting affects all users on this phone.</string>
 
@@ -5024,7 +5024,7 @@
     <string name="data_usage_total_during_range"><xliff:g id="range" example="Jul 1 - Jul 31">%2$s</xliff:g>: about <xliff:g id="total" example="128KB">%1$s</xliff:g> used.</string>
 
     <!-- Label displaying total network data transferred during a specific time period, including a disclaimer that contrasts device versus carrier reporting. [CHAR LIMIT=80] -->
-    <string name="data_usage_total_during_range_mobile" product="tablet"><xliff:g id="range" example="Jul 1 - Jul 31">%2$s</xliff:g>: about <xliff:g id="total" example="128KB">%1$s</xliff:g> used, as measured by your PDi-TAB\u00AE2. Your carrier\'s data usage accounting may differ.</string>
+    <string name="data_usage_total_during_range_mobile" product="tablet"><xliff:g id="range" example="Jul 1 - Jul 31">%2$s</xliff:g>: about <xliff:g id="total" example="128KB">%1$s</xliff:g> used, as measured by your PDi-TAB\u00AE. Your carrier\'s data usage accounting may differ.</string>
     <!-- Label displaying total network data transferred during a specific time period, including a disclaimer that contrasts device versus carrier reporting. [CHAR LIMIT=80] -->
     <string name="data_usage_total_during_range_mobile" product="default"><xliff:g id="range" example="Jul 1 - Jul 31">%2$s</xliff:g>: about <xliff:g id="total" example="128KB">%1$s</xliff:g> used, as measured by your phone. Your carrier\'s data usage accounting may differ.</string>
 
@@ -5236,7 +5236,7 @@
     <!-- Button text to setup the new user later [CHAR LIMIT=25] -->
     <string name="user_setup_button_setup_later">Not now</string>
     <!-- Message to secondary users that only owner can manage users [CHAR LIMIT=none] -->
-    <string name="user_cannot_manage_message" product="tablet">Only the PDi-TAB\u00AE2\'s owner can manage users.</string>
+    <string name="user_cannot_manage_message" product="tablet">Only the PDi-TAB\u00AE\'s owner can manage users.</string>
     <!-- Message to secondary users that only owner can manage users [CHAR LIMIT=none] -->
     <string name="user_cannot_manage_message" product="default">Only the phone\'s owner can manage users.</string>
     <!-- Message to limited users that they cannot add accounts [CHAR LIMIT=100] -->
@@ -5259,7 +5259,7 @@
     <!-- Work profile removal confirmation title [CHAR LIMIT=25] -->
     <string name="work_profile_confirm_remove_title">Remove work profile?</string>
     <!-- User (self) removal confirmation message [CHAR LIMIT=none] -->
-    <string name="user_confirm_remove_self_message" product="tablet">You will lose your space and data on this PDi-TAB\u00AE2. You can\'t undo this action.</string>
+    <string name="user_confirm_remove_self_message" product="tablet">You will lose your space and data on this PDi-TAB\u00AE. You can\'t undo this action.</string>
     <!-- User (self) removal confirmation message [CHAR LIMIT=none] -->
     <string name="user_confirm_remove_self_message" product="default">You will lose your space and data on this phone. You can\'t undo this action.</string>
     <!-- User removal confirmation message [CHAR LIMIT=none] -->
@@ -5313,7 +5313,7 @@
     <string name="only_one_home_message">Home settings will be hidden until you install another home application.</string>
 
     <!-- Warning message when changing a global setting for a tablet.[CHAR LIMIT=none] -->
-    <string name="global_change_warning" product="tablet">This setting affects all users on this PDi-TAB\u00AE2.</string>
+    <string name="global_change_warning" product="tablet">This setting affects all users on this PDi-TAB\u00AE.</string>
     <!-- Warning message when changing a global setting for a phone.[CHAR LIMIT=none] -->
     <string name="global_change_warning" product="default">This setting affects all users on this phone.</string>
     <!-- Warning message title for global locale change [CHAR LIMIT=40] -->
@@ -5463,7 +5463,7 @@
     <!-- Restrictions summary for allowing NFC transfers (tablet) [CHAR LIMIT=100] -->
     <string name="restriction_nfc_enable_summary_config">Allow data exchange when this <xliff:g id="device_name">%1$s</xliff:g> touches another NFC device</string>
     <!-- Restrictions summary for allowing NFC transfers (tablet) [CHAR LIMIT=100] -->
-    <string name="restriction_nfc_enable_summary" product="tablet">Allow data exchange when the PDi-TAB\u00AE2 touches another device</string>
+    <string name="restriction_nfc_enable_summary" product="tablet">Allow data exchange when the PDi-TAB\u00AE touches another device</string>
     <!-- Restrictions summary for allowing NFC transfers (phone) [CHAR LIMIT=100] -->
     <string name="restriction_nfc_enable_summary" product="default">Allow data exchange when the phone touches another device</string>
     <!-- Restrictions title for allowing location sharing [CHAR LIMIT=35] -->
