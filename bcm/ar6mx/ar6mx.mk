@@ -229,7 +229,7 @@ PRODUCT_PACKAGES += com.allentek.medtv \
                     com.marketjs.wordfinderallentek \
                     com.marketjs.wordhunter \
                     com.marketjs.zombiegemsallentek \
-                    Kwyzzislands-release.apk \
+                    com.Retouchable.Kwyzzislands \
                     de.fgerbig.spacepeng \
                     libxwalkcore.so \
                     libxwalkdummy.so
