@@ -147,12 +147,12 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-overlay  						\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
-		    PicoLangInstaller						\
-		    alphavnc                                                    \
-                    com.pdiarm.pdicore                 				\
-		    pdiarm.com.camerapreview					\
-		    libccitv							\
-		    jniccitvLib	
+		    PicoLangInstaller					\
+		    alphavnc                            \
+            com.pdiarm.pdicore                 	\
+			pdiarm.com.pditv                    \
+			libjniccitvLib.so					\
+			libpdi_directdisp_jni.so
 		    
 
 # for Compat driver
