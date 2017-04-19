@@ -25,6 +25,9 @@ on boot
     # reference to property ConnectivityService constructor
     setprop ro.radio.noril true
 
+    # Color property
+     write /sys/class/video4linux/video0/fsl_fg_property 1
+
     # emmulate battery property
     setprop sys.emulated.battery 1
 
@@ -69,6 +72,9 @@ on boot
 
     # Set extsd access permission
     setprop persist.sampling_profiler 1
+
+    # Set sys.camera.fps
+    setprop sys.camera.fps 1
 
 # change for FSL specific service
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
