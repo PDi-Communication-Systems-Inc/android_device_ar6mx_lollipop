@@ -230,6 +230,8 @@ PRODUCT_PACKAGES += com.allentek.medtv \
                     com.marketjs.wordhunter \
                     com.marketjs.zombiegemsallentek \
                     de.fgerbig.spacepeng \
+                    com.Retouchable.Kwyzzislands \
+                    com.marketjs.klondikesolitaire \
                     libxwalkcore.so \
                     libxwalkdummy.so
 
