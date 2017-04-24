@@ -234,7 +234,8 @@ PRODUCT_PACKAGES += com.allentek.medtv \
                     com.marketjs.klondikesolitaire \
                     libxwalkcore.so \
                     libxwalkdummy.so \
-                    libcocos2dcpp.so
+                    libcocos2dcpp.so \
+                    libgdx.so
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
