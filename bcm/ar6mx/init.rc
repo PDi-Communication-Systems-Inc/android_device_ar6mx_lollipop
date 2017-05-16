@@ -255,7 +255,7 @@ on fs
 
 # change serial port permissions
     chmod 0660 /dev/ttymxc0
-    chmod 0660 /dev/ttymxc1
+    chmod 0666 /dev/ttymxc1
     chmod 0660 /dev/ttymxc3
     chown root system /dev/ttymxc0
     chown root system /dev/ttymxc1
