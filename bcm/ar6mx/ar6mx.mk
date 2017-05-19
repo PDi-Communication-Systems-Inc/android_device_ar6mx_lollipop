@@ -12,7 +12,7 @@ PRODUCT_BRAND := PDi-Tab
 
 # Set MODEL by firmware part number
 # Replace fake part numbers in model when assigned
-PRODUCT_MODEL := PD403-998
+PRODUCT_MODEL := PD403-024
 
 $(warning Given BUILD_BRANCH being $(BUILD_BRANCH), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
