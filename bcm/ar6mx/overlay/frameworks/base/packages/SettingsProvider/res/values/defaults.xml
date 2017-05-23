@@ -27,8 +27,8 @@
     <bool name="def_stay_on_while_plugged_in">true</bool>
 
     <!-- Default for Settings.Secure.USER_SETUP_COMPLETE -->
-    <bool name="def_auto_time">true</bool>
-    <bool name="def_auto_time_zone">true</bool>
+    <bool name="def_auto_time">false</bool>
+    <bool name="def_auto_time_zone">false</bool>
 
     <!-- no way to give user tactile feedback as no vibration component exists -->
     <bool name="def_haptic_feedback">false</bool>
