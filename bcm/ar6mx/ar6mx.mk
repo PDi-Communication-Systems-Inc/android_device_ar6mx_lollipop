@@ -140,7 +140,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoLangInstaller
 
 # TVRC Branch Specific Packages
-PRODUCT_PACKAGES += omicron-V1_2_4                                         
+PRODUCT_PACKAGES += launchicron-V1_0_7
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
