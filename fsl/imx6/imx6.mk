@@ -350,7 +350,8 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # for property
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp \
+	persist.sys.timezone=America/New_York
 
 # include a google recommand heap config file.
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
