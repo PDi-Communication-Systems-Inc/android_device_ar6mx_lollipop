@@ -218,24 +218,23 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 
 
 # Add medTV on standard product medTV branch
-PRODUCT_PACKAGES += com.allentek.medtv \
-                    com.allentek.medtvregister \
-                    com.marketjs.bingoworld \
-                    com.marketjs.carparkpuzzle \
-                    com.marketjs.millionairequizallentek \
-                    com.marketjs.monstermahjong \
-                    com.marketjs.spotthedifference \
-                    com.marketjs.sudokuvillage \
-                    com.marketjs.wordfinderallentek \
-                    com.marketjs.wordhunter \
-                    com.marketjs.zombiegemsallentek \
-                    de.fgerbig.spacepeng \
-                    com.Retouchable.Kwyzzislands \
-                    com.marketjs.klondikesolitaire \
-                    libxwalkcore.so \
-                    libxwalkdummy.so \
-                    libcocos2dcpp.so \
-                    libgdx.so
+ PRODUCT_PACKAGES += com.allentek.medtv \
+                     com.marketjs.bingoworld \
+                     com.marketjs.carparkpuzzle \
+                     com.marketjs.millionairequizallentek \
+                     com.marketjs.monstermahjong \
+                     com.marketjs.spotthedifference \
+                     com.marketjs.sudokuvillage \
+                     com.marketjs.wordfinderallentek \
+                     com.marketjs.wordhunter \
+                     com.marketjs.zombiegemsallentek \
+                     de.fgerbig.spacepeng \
+                     com.Retouchable.Kwyzzislands \
+                     com.marketjs.klondikesolitaire \
+                     libxwalkcore.so \
+                     libxwalkdummy.so \
+                     libcocos2dcpp.so \
+                     libgdx.so
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
