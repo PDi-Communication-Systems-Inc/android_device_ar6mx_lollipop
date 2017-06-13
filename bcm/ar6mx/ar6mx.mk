@@ -8,13 +8,15 @@ $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 PRODUCT_NAME := ar6mx
 PRODUCT_DEVICE := ar6mx
 PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
-PRODUCT_BRAND := PDi-Tab
+PRODUCT_BRAND := medTAB
 
 # Set MODEL by firmware part number
-# Replace fake part numbers in model when assigned
-PRODUCT_MODEL := PD403-997
-
-$(warning Given BUILD_BRANCH being $(BUILD_BRANCH), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
+ifeq ($(AIO_CONFIGURATION),T)
+	PRODUCT_MODEL := PD403-026
+else
+	PRODUCT_MODEL := PD403-025
+endif
+$(warning Given AIO_CONFIGURATION being $(AIO_CONFIGURATION), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
 PRODUCT_PROPERTY_OVERRIDES += \
 			hw.nobattery=true \
