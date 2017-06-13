@@ -11,10 +11,12 @@ PRODUCT_MANUFACTURER := PDi Communication Systems, Inc.
 PRODUCT_BRAND := PDi-Tab
 
 # Set MODEL by firmware part number
-# Replace fake part numbers in model when assigned
-PRODUCT_MODEL := PD403-022
-
-$(warning Given BUILD_BRANCH being $(BUILD_BRANCH), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
+ifeq ($(AIO_CONFIGURATION),T)
+	PRODUCT_MODEL := PD403-???
+else
+	PRODUCT_MODEL := PD403-022
+endif
+$(warning Given AIO_CONFIGURATION being $(AIO_CONFIGURATION), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
 PRODUCT_PROPERTY_OVERRIDES += \
 			hw.nobattery=true \
