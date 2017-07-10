@@ -60,7 +60,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue="build.prop"
+		android:defaultValue="lollipop.build.prop"
 
 		android:summary="@string/ota_config_summary"
 	    />
@@ -75,7 +75,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue=".ota.zip"
+		android:defaultValue=".lollipop.ota.zip"
 
 		android:summary="@string/ota_archive_summary"
 	    />
