@@ -89,6 +89,11 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Freescale.std.video_decoder.vpx.hw-based" type="video/x-vnd.on2.vp8" >
             <Quirk name="requires-allocate-on-output-ports" />
         </MediaCodec>
+        <MediaCodec name="OMX.Freescale.std.video_decoder.mpeg2.hw-based" type="video/mpeg2" > <!-- JTS 8/2/2017 -->
+            <Limit name="size" min="64x64" max="1920x1088" />
+            <Quirk name="requires-allocate-on-output-ports" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
     </Decoders>
 
     <Encoders>
