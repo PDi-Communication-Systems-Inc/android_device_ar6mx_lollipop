@@ -82,6 +82,9 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Freescale.std.video_decoder.avc.sw-based" type="video/avc" />
         <MediaCodec name="OMX.Freescale.std.video_decoder.vp8.sw-based" type="video/x-vnd.on2.vp8" />
         <MediaCodec name="OMX.Freescale.std.video_decoder.vp9.sw-based" type="video/x-vnd.on2.vp9" />
+
+        <MediaCodec name="OMX.Freescale.std.audio_decoder.ac3.sw-based" type="audio/ac3" /> <!-- JTS 8/2/2017 -->
+        <MediaCodec name="OMX.Freescale.std.audio_decoder.mp3.sw-based" type="audio/mpeg" /> <!-- JTS 8/2/2017 -->
     </Decoders>
     <Include href="media_codecs_google_audio.xml" />
     <Include href="media_codecs_google_video.xml" />
