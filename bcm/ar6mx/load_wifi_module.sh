@@ -4,6 +4,15 @@
     insmod /system/lib/modules/cfg80211.ko
     insmod /system/lib/modules/mac80211.ko
 
+    # atheros 
+     insmod /system/lib/modules/ath.ko 
+
+    # ath9k 
+     insmod /system/lib/modules/ath9k_hw.ko 
+     insmod /system/lib/modules/ath9k_common.ko 
+     /system/bin/busybox sleep 2 
+     insmod /system/lib/modules/ath9k.ko 
+
     # intel wifi
     insmod /system/lib/modules/iwlwifi.ko
     /system/bin/busybox sleep 2
