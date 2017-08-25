@@ -14,7 +14,7 @@ PRODUCT_BRAND := PDi-Tab
 ifeq ($(AIO_CONFIGURATION),T)
 	PRODUCT_MODEL := PD403-???
 else
-	PRODUCT_MODEL := PD403-022
+	PRODUCT_MODEL := PD403-???
 endif
 $(warning Given AIO_CONFIGURATION being $(AIO_CONFIGURATION), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
@@ -145,19 +145,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
-			PDI_mxc-v4l2-tvin                       \
-		    mxc-v4l2-capture  						\
-		    mxc-v4l2-overlay  						\
-		    mxc-v4l2-output  						\
-		    mxc-v4l2-tvin  						\
-		    PicoLangInstaller					\
-		    alphavnc                            \
-            com.pdiarm.pdicore                 	\
-			pdiarm.com.pditv                    \
-			libjniccitvLib.so					\
-			libpdi_directdisp_jni.so			\
-			libccitv							\
-			jniccitvLib
+		    PicoLangInstaller						\
+		    alphavnc                            			
 		    
 
 # for Compat driver
@@ -186,7 +175,7 @@ $(warning Engineering build...including Koush superuser package)
 		       devregs_imx6dls.dat \
 		       inputRead \
 		       su		\
-			   fbconfig
+		       fbconfig
 
    PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc
 else
