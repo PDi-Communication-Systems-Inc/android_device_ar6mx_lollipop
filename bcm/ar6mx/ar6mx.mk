@@ -140,17 +140,17 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
-			PDI_mxc-v4l2-tvin                       \
+		    PDI_mxc-v4l2-tvin                       \
 		    mxc-v4l2-capture  						\
 		    mxc-v4l2-overlay  						\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller					\
 		    alphavnc                            \
-            com.pdiarm.pdicore                 	\
+                    com.pdiarm.pdicore                 	\
 		    jniccitvLib							\
-			pdiarm.com.pditv					\
-			libpdi_directdisp_jni.so 
+		    pdiarm.com.pditv 					\
+	            libpdi_directdisp_jni.so 
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
@@ -220,24 +220,10 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 
 
 # Add medTV on standard product medTV branch
- PRODUCT_PACKAGES += com.allentek.medtv \
-                     com.marketjs.bingoworld \
-                     com.marketjs.carparkpuzzle \
-                     com.marketjs.millionairequizallentek \
-                     com.marketjs.monstermahjong \
-                     com.marketjs.spotthedifference \
-                     com.marketjs.sudokuvillage \
-                     com.marketjs.wordfinderallentek \
-                     com.marketjs.wordhunter \
-                     com.marketjs.zombiegemsallentek \
-                     de.fgerbig.spacepeng \
-                     com.Retouchable.Kwyzzislands \
-                     com.marketjs.klondikesolitaire \
-                     libxwalkcore.so \
-                     libxwalkdummy.so \
-                     libcocos2dcpp.so \
-                     libgdx.so
+PRODUCT_PACKAGES += com.allentek.medtv 
 
+PRODUCT_PACKAGES += net.mobicontrol.pdi.shared \
+                    
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
 #copy iwlwifi wpa config files
