@@ -172,6 +172,25 @@ PRODUCT_PACKAGES += devregs   \
 PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
 		      device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
 
+ifeq ($(ANDROID_BUILD_MODE),engr)
+$(warning Engineering build...including ssh)
+# Add packages and files for ssh
+   PRODUCT_PACKAGES += ssh \
+                       sftp \
+		       scp \
+		       sshd \
+		       sftp-server \
+		       ssh-keygen \
+		       sshd_config \
+		       start-ssh \
+		       init-ssh \
+		       stop-ssh
+   PRODUCT_COPY_FILES += \
+	vendor/pdi/ssh/authorized_keys.default.main:system/etc/security/authorized_keys.default
+else
+$(warning Not an engineering build, not including ssh package)
+endif
+
 # Wireless packages
 PRODUCT_PACKAGES += IWLWIFI 			\
 	            iwlwifi.ko			\
