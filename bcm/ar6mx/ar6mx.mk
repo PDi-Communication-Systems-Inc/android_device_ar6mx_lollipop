@@ -219,8 +219,6 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    org.wso2.emm.agent
 
 
-# Add medTV on standard product medTV branch
-PRODUCT_PACKAGES += com.allentek.medtv 
 
 PRODUCT_PACKAGES += net.mobicontrol.pdi.shared \
                     
