@@ -168,7 +168,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
 ifeq ($(ANDROID_BUILD_MODE),engr)
-$(warning Engineering build...including Koush superuser package)
+$(warning Engineering build...including Koush superuser package and ssh)
    SUPERUSER_PACKAGE := com.bcm.superuser
    SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
    SUPERUSER_EMBEDDED := true
@@ -179,6 +179,20 @@ $(warning Engineering build...including Koush superuser package)
 
    PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc	\
 			 device/bcm/ar6mx/devregs_imx6x.dat:/system/etc/devregs_imx6x.dat
+
+# Add packages and files for ssh
+   PRODUCT_PACKAGES += ssh \
+                       sftp \
+		       scp \
+		       sshd \
+		       sftp-server \
+		       ssh-keygen \
+		       sshd_config \
+		       start-ssh \
+		       init-ssh \
+		       stop-ssh
+   PRODUCT_COPY_FILES += \
+	vendor/pdi/ssh/authorized_keys.default.main:system/etc/security/authorized_keys.default
 else
 $(warning Not an engineering build, not including Koush superuser package)
 endif

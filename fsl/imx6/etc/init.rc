@@ -354,6 +354,11 @@ on post-fs-data
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /data
 
+    # Make ssh folders
+    mkdir /data/ssh 0750 root root
+    mkdir /data/ssh/empty 0740 root root
+    mkdir /data/.ssh 0740 root root
+    
     # If there is no fs-post-data action in the init.<device>.rc file, you
     # must uncomment this line, otherwise encrypted filesystems
     # won't work.
@@ -544,6 +549,13 @@ on property:vold.decrypt=trigger_encryption
 on property:sys.init_log_level=*
     loglevel ${sys.init_log_level}
 
+on property:vold.post_fs_data_done=1
+   setprop sshd.ready 0
+   start initssh
+   setprop sshd.ready 1
+
+on property:sshd.ready=1
+   start openssh
 
 on charger
     class_start charger
@@ -784,4 +796,18 @@ service wifi_mac /system/bin/sh /system/etc/check_wifi_mac.sh
 # default 4 threads have better performance to 2 threads.
     service sdcard /system/bin/sdcard -l -t4 /data/media /mnt/shell/emulated 1023 1023
     class late_start
+
+# Start openssh service
+service openssh /system/bin/sshd -f /system/etc/ssh/sshd_config -D
+    class core
+    user root
+    group root
+    disabled
+
+service initssh /system/bin/sh /system/bin/init-ssh
+   class late_start
+   user root
+   group root
+   disabled
+   oneshot
 
