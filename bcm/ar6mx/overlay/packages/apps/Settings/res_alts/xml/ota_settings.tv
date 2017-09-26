@@ -60,7 +60,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue="lollipop.nobb.build.prop"
+		android:defaultValue="lollipop.pers.build.prop"
 
 		android:summary="@string/ota_config_summary"
 	    />
@@ -75,7 +75,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue=".lollipop.nobb.ota.zip"
+		android:defaultValue=".lollipop.pers.ota.zip"
 
 		android:summary="@string/ota_archive_summary"
 	    />

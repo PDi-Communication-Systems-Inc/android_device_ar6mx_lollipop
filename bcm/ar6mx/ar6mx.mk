@@ -12,7 +12,7 @@ PRODUCT_BRAND := PDi-Tab
 
 # Set MODEL by firmware part number
 ifeq ($(AIO_CONFIGURATION),T)
-	PRODUCT_MODEL := PD403-???
+	PRODUCT_MODEL := PD403-027
 else
 	PRODUCT_MODEL := PD403-???
 endif
@@ -178,20 +178,6 @@ $(warning Engineering build...including Koush superuser package and ssh)
 		       fbconfig
 
    PRODUCT_COPY_FILES += device/bcm/init.superuser.rc:root/init.superuser.rc
-
-# Add packages and files for ssh
-   PRODUCT_PACKAGES += ssh \
-                       sftp \
-		       scp \
-		       sshd \
-		       sftp-server \
-		       ssh-keygen \
-		       sshd_config \
-		       start-ssh \
-		       init-ssh \
-		       stop-ssh
-   PRODUCT_COPY_FILES += \
-	vendor/pdi/ssh/authorized_keys.default.main:system/etc/security/authorized_keys.default
 else
 $(warning Not an engineering build, not including Koush superuser package)
 endif
@@ -237,3 +223,17 @@ PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 PRODUCT_COPY_FILES += \
         device/bcm/common/wlan/wpa_supplicant-common.conf:system/etc/wifi/wpa_supplicant.conf \
         device/bcm/common/wlan/iwlwifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+# Add packages and files for Perseitech (Dolfin)
+PRODUCT_PACKAGES += ssh \
+                    sftp \
+		    scp \
+		    sshd \
+		    sftp-server \
+		    ssh-keygen \
+		    sshd_config \
+		    start-ssh \
+                    init-ssh \
+		    stop-ssh
+PRODUCT_COPY_FILES += \
+	vendor/pdi/ssh/authorized_keys.default.pers:system/etc/security/authorized_keys.default
