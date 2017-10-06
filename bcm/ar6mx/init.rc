@@ -244,6 +244,15 @@ service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.
     class core
     oneshot
 
+# Modules and Android-only devices:
+# Launch the pillow speaker reader (connects to TV over CCI then converts
+# pillow speaker buttons to keystrokes)
+service psreader /system/bin/psreader
+    user root
+    group root
+    class core
+    oneshot
+
 # Allow root daemon to run on engineering builds only, not on production user 
 # builds
 on property:ro.build.type=eng

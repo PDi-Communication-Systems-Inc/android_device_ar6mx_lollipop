@@ -234,6 +234,7 @@ PRODUCT_PACKAGES += ssh \
 		    sshd_config \
 		    start-ssh \
                     init-ssh \
-		    stop-ssh
+		    stop-ssh \
+		    psreader
 PRODUCT_COPY_FILES += \
 	vendor/pdi/ssh/authorized_keys.default.pers:system/etc/security/authorized_keys.default
