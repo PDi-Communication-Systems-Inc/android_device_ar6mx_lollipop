@@ -234,8 +234,6 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 
 
 
-PRODUCT_PACKAGES += net.mobicontrol.pdi.shared \
-                    
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
 #copy iwlwifi wpa config files
