@@ -12,7 +12,7 @@ PRODUCT_BRAND := PDi-Tab
 
 # Set MODEL by firmware part number
 ifeq ($(AIO_CONFIGURATION),T)
-	PRODUCT_MODEL := PD403-???
+	PRODUCT_MODEL := PD403-029
 else
 	PRODUCT_MODEL := PD403-022
 endif
