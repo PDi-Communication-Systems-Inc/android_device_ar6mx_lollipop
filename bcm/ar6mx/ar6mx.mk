@@ -34,7 +34,9 @@ PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/bcm/ar6mx/device_policies.xml:system/etc/device_policies.xml \
 	device/bcm/ar6mx/copy_device_policies.sh:system/etc/copy_device_policies.sh \
-	device/bcm/ar6mx/gps.conf:system/etc/gps.conf
+	device/bcm/ar6mx/gps.conf:system/etc/gps.conf  
+        
+
 
 PRODUCT_COPY_FILES +=	\
 	external/linux-firmware-imx/firmware/vpu/vpu_fw_imx6d.bin:system/lib/firmware/vpu/vpu_fw_imx6d.bin 	\
@@ -77,13 +79,16 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml \
 	device/bcm/ar6mx/ota.conf:system/etc/ota.conf \
-	device/bcm/ar6mx/ota.conf:data/system/ota.conf
+	device/bcm/ar6mx/ota.conf:data/system/ota.conf \
+        device/bcm/ar6mx/audio_pass_through_pref:system/etc/audio_pass_through_pref \
+        device/bcm/ar6mx/audio_pass_through_pref:data/system/audio_pass_through_pref
 
 #PDi additions
 PRODUCT_COPY_FILES += \
  	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
         device/bcm/ar6mx/process_cmdline.sh:system/etc/process_cmdline.sh \
 	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh \
+        device/bcm/ar6mx/audio_pref.sh:system/etc/audio_pref.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \

@@ -195,3 +195,4 @@ service load_wifi_module /system/bin/sh /system/etc/load_wifi_module.sh
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
+
