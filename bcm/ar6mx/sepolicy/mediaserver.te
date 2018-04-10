@@ -1,0 +1,2 @@
+#================mediaserver ==============
+allow mediaserver system_data_file:file open;
