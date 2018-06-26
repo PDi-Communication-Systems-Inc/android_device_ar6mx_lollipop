@@ -234,7 +234,7 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 
 
 # Add medTV on standard product medTV branch
- PRODUCT_PACKAGES += com.allentek.medtv \
+ PRODUCT_PACKAGES += com.pdi.medtv \
                      com.marketjs.bingoworld \
                      com.marketjs.carparkpuzzle \
                      com.marketjs.millionairequizallentek \
