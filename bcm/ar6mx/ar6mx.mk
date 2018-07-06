@@ -108,13 +108,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    i2cdump							\
 		    NoiseField							\
 		    PhaseBeam							\
-		    WebViewDream						\
 		    todoTxtTouch						\
-		    jackpal.androidterm 					\
-		    libjackpal-termexec2					\
-		    libjackpal-androidterm5					\
 		    alogcat							\
-		    com.uberspot.a2048						\
 		    org.petero.droidfish-1.61-69 				\
 		    frozenbubble						\
 		    libmodplug-1.0						\
@@ -130,11 +125,10 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller					\
-		    alphavnc                            \
-            com.pdiarm.pdicore                 	\
+                    com.pdiarm.pdicore                 	\
 		    jniccitvLib							\
-			pdiarm.com.pditv					\
-			libpdi_directdisp_jni.so 
+		    pdiarm.com.pditv					\
+	            libpdi_directdisp_jni.so 
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
