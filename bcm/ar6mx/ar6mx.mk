@@ -95,30 +95,20 @@ PRODUCT_COPY_FILES += \
 # PDi Core Packages
 PRODUCT_PACKAGES += AudioRoute							\
 		    AdobeReader 						\
-		    org.jtb.alogcat_43						\
-		    org.wikipedia						\
-		    net.micode.fileexplorer 					\
 		    maxtouch							\
 		    libmaxtouch-jni						\
 		    libusbdroid							\
 		    mxt-app							\
 		    usbreset							\
-                    org.wso2.emm.agent                                          \
                     libusb1.0							\
                     i2c-tools							\
 		    i2cdetect							\
 		    i2cget							\
 		    i2cset							\
 		    i2cdump							\
-		    HoloSpiralWallpaper						\
-		    Galaxy4							\
-		    MagicSmokeWallpapers					\
-		    VisualizationWallpapers					\
 		    NoiseField							\
 		    PhaseBeam							\
 		    WebViewDream						\
-		    org.androidappdev.wifiwidget				\
-		    org.tomdroid						\
 		    todoTxtTouch						\
 		    jackpal.androidterm 					\
 		    libjackpal-termexec2					\
@@ -126,18 +116,12 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    alogcat							\
 		    com.uberspot.a2048						\
 		    org.petero.droidfish-1.61-69 				\
-		    fbreader							\
 		    frozenbubble						\
 		    libmodplug-1.0						\
-		    ghostcommander						\
-		    k9								\
-		    hn-android							\
 		    com.kmagic.solitaire_450					\
-		    VLC								\
 		    raidl							\
 		    iperf							\
 		    iperf3							\
-		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
 			PDI_mxc-v4l2-tvin                       \
@@ -225,12 +209,6 @@ PRODUCT_PACKAGES += librank			\
 		    showmap                     \
 		    latencytop			\
 		    strace
-
-# Add PDi internal closed source packages
-PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
-		    com.pdiarm.pdicinchwidgets.pdixplain \
-		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
-		    org.wso2.emm.agent
 
 
 # Add medTV on standard product medTV branch
