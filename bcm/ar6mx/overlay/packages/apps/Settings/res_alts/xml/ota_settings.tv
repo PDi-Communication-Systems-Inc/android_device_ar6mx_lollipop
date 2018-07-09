@@ -60,7 +60,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue="lollipop.MEDTV.build.prop"
+		android:defaultValue="lollipop.pdiMEDTV.build.prop"
 
 		android:summary="@string/ota_config_summary"
 	    />
@@ -75,7 +75,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue=".lollipop.MEDTV.ota.zip"
+		android:defaultValue=".lollipop.pdiMEDTV.ota.zip"
 
 		android:summary="@string/ota_archive_summary"
 	    />
