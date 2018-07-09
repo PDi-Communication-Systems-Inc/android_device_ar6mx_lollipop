@@ -209,11 +209,7 @@ PRODUCT_PACKAGES += librank			\
  PRODUCT_PACKAGES += com.pdi.medtv \
                      com.marketjs.bingoworld \
                      com.marketjs.carparkpuzzle \
-                     com.marketjs.millionairequizallentek \
-                     com.marketjs.monstermahjong \
-                     com.marketjs.spotthedifference \
                      com.marketjs.sudokuvillage \
-                     com.marketjs.wordfinderallentek \
                      com.marketjs.wordhunter \
                      com.marketjs.zombiegemsallentek \
                      de.fgerbig.spacepeng \
