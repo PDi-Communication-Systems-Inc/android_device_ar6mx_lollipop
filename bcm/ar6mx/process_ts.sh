@@ -85,7 +85,7 @@ if [ $COUNT -ge "1" ];
        if [ $DEVICEID == "a04d" ];
           then
              (sleep 15; usbreset 0eef:$DEVICEID) &
-       elif [ $DEVICEID == "0xc000" ] 
+       elif [ $DEVICEID == "c000" ] 
            then
               log -p i "$TAG" "$DEVICEID does not like to reset after bus, not doing reset"
        else
