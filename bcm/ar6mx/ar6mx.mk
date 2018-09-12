@@ -215,6 +215,7 @@ PRODUCT_PACKAGES += librank			\
                      de.fgerbig.spacepeng \
                      com.Retouchable.Kwyzzislands \
                      com.marketjs.klondikesolitaire \
+                     com.homeseer.hstouch \
                      libxwalkcore.so \
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
