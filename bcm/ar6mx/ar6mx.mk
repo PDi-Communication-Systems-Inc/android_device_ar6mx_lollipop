@@ -146,7 +146,13 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
 		    PicoLangInstaller						\
-		    alphavnc                            			
+		    alphavnc                            			\
+  com.pdiarm.pdicore                  \
+                    jniccitvLib                                                 \
+                        pdiarm.com.pditv                                        \
+                        libpdi_directdisp_jni.so
+
+
 		    
 
 # for Compat driver
@@ -234,7 +240,7 @@ PRODUCT_PACKAGES += ssh \
 		    sshd_config \
 		    start-ssh \
                     init-ssh \
-		    stop-ssh \
-		    psreader
+		    stop-ssh 
+
 PRODUCT_COPY_FILES += \
 	vendor/pdi/ssh/authorized_keys.default.pers:system/etc/security/authorized_keys.default
