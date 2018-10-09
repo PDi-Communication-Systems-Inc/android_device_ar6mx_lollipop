@@ -71,11 +71,14 @@ fi
 COUNT=`$BIN/lsusb | $BIN/grep -i egalax | $BIN/busybox wc -l`
 if [ $COUNT -ge "1" ];
    then
-       log -p i "$TAG" "$COUNT eGalax Touchscreen discovered, resetting usb controller"
-       echo -e "$COUNT eGalax Touchscreen discovered, resetting usb controller\n"
+       #log -p i "$TAG" "$COUNT eGalax Touchscreen discovered, resetting usb controller"
+       #echo -e "$COUNT eGalax Touchscreen discovered, resetting usb controller\n"
+       log -p i "$TAG" "$COUNT eGalax Touchscreen discovered"
+       echo -e "$COUNT eGalax Touchscreen discovered\n"
+       # Removed the usb reset because it caused locked touch screens on Allentek build -- JTS 10/9/2018
        # Reset entire controller touchscreen is connected to
        # vid=0x58f Alcor Micro controller, pid=6254 -- generic USB Hub
-       (sleep 10; usbreset 058f:6254) &
+#       (sleep 10; usbreset 058f:6254) &
 
        log -p i "$TAG" "Resetting touchscreen device"
        echo -e "Resetting touchscreen device\n"
