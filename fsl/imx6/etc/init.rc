@@ -599,6 +599,14 @@ on property:sys.sysctl.tcp_def_init_rwnd=*
 
 ## Daemon processes to be run by init.
 ##
+
+
+service initgpios /system/bin/logwrapper -k /system/etc/initgpios.sh
+    user root
+    group root
+    class core
+    oneshot
+
 service ueventd /sbin/ueventd
     class core
     critical
@@ -740,6 +748,13 @@ service keystore /system/bin/keystore /data/misc/keystore
     user keystore
     group keystore drmrpc
 
+service gpioinits  /system/bin/internalSpeakers
+    user root
+    group root
+    class core
+    disabled
+    oneshot
+
 service dumpstate /system/bin/dumpstate -s
     class main
     socket dumpstate stream 0660 shell log
@@ -810,4 +825,3 @@ service initssh /system/bin/sh /system/bin/init-ssh
    group root
    disabled
    oneshot
-
