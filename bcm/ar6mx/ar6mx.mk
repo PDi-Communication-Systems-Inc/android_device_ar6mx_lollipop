@@ -84,6 +84,7 @@ PRODUCT_COPY_FILES += \
  	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
         device/bcm/ar6mx/process_cmdline.sh:system/etc/process_cmdline.sh \
 	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh \
+        device/bcm/ar6mx/initgpios.sh:system/etc/initgpios.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
@@ -125,10 +126,15 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller					\
+		    alphavnc                            \
+                    internalSpeakers                    \
                     com.pdiarm.pdicore                 	\
-		    jniccitvLib							\
-		    pdiarm.com.pditv					\
-	            libpdi_directdisp_jni.so 
+		    pdiarm.com.pditv                    \
+           	    libjniccitvLib.so					\
+		    libpdi_directdisp_jni.so			\
+		    libccitv							\
+		    jniccitvLib
+		    
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
