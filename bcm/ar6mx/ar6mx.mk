@@ -148,18 +148,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoTtsLangInstaller  					\
 		    PicoLangInstaller						\
 		    alphavnc                            			
-	            PDI_mxc-v4l2-tvin                       \
-		    mxc-v4l2-capture  						\
-		    mxc-v4l2-overlay  						\
-		    mxc-v4l2-output  						\
-		    mxc-v4l2-tvin  						\
-                    internalSpeakers                    \
-                    com.pdiarm.pdicore                 	\
-		    pdiarm.com.pditv                    \
-           	    libjniccitvLib.so					\
-		    libpdi_directdisp_jni.so			\
-		    libccitv							\
-		    jniccitvLib
+                    internalSpeakers                    
 		    
 
 # for Compat driver
