@@ -31,4 +31,5 @@ chmod 777 /sys/class/gpio/gpio200/direction
 chown root system /sys/class/gpio/gpio200/value
 chown root system /sys/class/gpio/gpio200/direction
 
+
 /system/bin/internalSpeakers
