@@ -601,6 +601,8 @@ on property:sys.sysctl.tcp_def_init_rwnd=*
 ##
 
 
+chmod 0660 /system/etc/initgpios.sh
+
 service initgpios /system/bin/logwrapper -k /system/etc/initgpios.sh
     user root
     group root
