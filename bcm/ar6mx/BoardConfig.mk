@@ -197,6 +197,7 @@ BOARD_SEPOLICY_UNION := \
        pdi_cmdline_script.te \
        pdi_ota_script.te \
        pdi_audiopref_script.te \
+       initgpios.te \
        eGTouchD.te \
        platform_app.te \
        drmserver.te \
