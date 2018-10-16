@@ -1,0 +1,10 @@
+type initgpios, domain;
+type initgpios_exec, exec_type, file_type;
+
+allow initgpios self:capability sys_module;
+allow initgpios self:capability { setuid setgid };
+allow initgpios self:capability sys_admin;
+allow initgpios shell_exec:file rx_file_perms;;
+init_daemon_domain(initgpios)
+
+permissive_or_unconfined(initgpios)
