@@ -79,9 +79,9 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	device/bcm/ar6mx/required_hardware.xml:system/etc/permissions/required_hardware.xml \
 	device/bcm/ar6mx/ota.conf:system/etc/ota.conf \
-	device/bcm/ar6mx/ota.conf:data/system/ota.conf \
         device/bcm/ar6mx/audio_pass_through_pref:system/etc/audio_pass_through_pref \
         device/bcm/ar6mx/audio_pass_through_pref:data/system/audio_pass_through_pref
+#	device/bcm/ar6mx/ota.conf:data/system/ota.conf	  # removed file from data partition since partition is no longer part of the release image -- JTS 11/1/2018
 
 #PDi additions
 PRODUCT_COPY_FILES += \
@@ -92,12 +92,12 @@ PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/audio_pref.sh:system/etc/audio_pref.sh \
         device/bcm/ar6mx/initgpios.sh:system/etc/initgpios.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
-        device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
 	kernel_imx/drivers/input/touchscreen/atmel_mxt_ts.ko:/system/lib/modules/atmel_mxt_ts.ko \
 	device/bcm/ar6mx/common/input/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc \
 	device/bcm/ar6mx/common/input/touchscreen.xcfg:/system/etc/touchscreen.xcfg \
 	vendor/pdi/data/bootanimation.zip:system/media/bootanimation.zip
+#       device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \  # removed file from data partition since partition is no longer part of the release image -- JTS 11/1/2018
 
 # PDi Core Packages
 PRODUCT_PACKAGES += AudioRoute							\
