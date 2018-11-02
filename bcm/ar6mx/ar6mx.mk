@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += librank			\
                      com.Retouchable.Kwyzzislands \
                      com.marketjs.klondikesolitaire \
                      com.homeseer.hstouch \
+                     org.mozilla.firefox \
                      libxwalkcore.so \
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
