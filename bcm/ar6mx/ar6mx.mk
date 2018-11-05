@@ -140,6 +140,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    hn-android							\
 		    com.kmagic.solitaire_450					\
 		    VLC								\
+		    firefox                                                     \
 		    raidl							\
 		    iperf							\
 		    iperf3							\
