@@ -231,7 +231,7 @@ PRODUCT_PACKAGES += librank			\
                      libcocos2dcpp.so \
                      libgdx.so \
                      libchrome.so \
-                     libchromium_android_linker
+                     libchromium_android_linker.so
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
