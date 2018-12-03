@@ -230,7 +230,7 @@ PRODUCT_PACKAGES += librank			\
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
                      libgdx.so \
-                     libchrome.so \
+                     crazy.libchrome.so \
                      libchromium_android_linker.so
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
