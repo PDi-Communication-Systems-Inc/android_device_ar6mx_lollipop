@@ -225,13 +225,13 @@ PRODUCT_PACKAGES += librank			\
                      com.Retouchable.Kwyzzislands \
                      com.marketjs.klondikesolitaire \
                      com.homeseer.hstouch \
-                     org.chromium.chrome \
+                     org.mozilla.firefox \
                      libxwalkcore.so \
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
                      libgdx.so \
-                     libchrome.so \
-                     libchromium_android_linker.so
+                     libmozglue.so \
+                     libplugin-container.so
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
