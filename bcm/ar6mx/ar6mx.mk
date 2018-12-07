@@ -229,9 +229,7 @@ PRODUCT_PACKAGES += librank			\
                      libxwalkcore.so \
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
-                     libgdx.so \
-                     libmozglue.so \
-                     libplugin-container.so
+                     libgdx.so 
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
