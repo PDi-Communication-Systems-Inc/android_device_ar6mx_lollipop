@@ -201,6 +201,13 @@ service magd /system/bin/magd
 service charger /charger
     class charger
 
+# Start the CCI test command.  This will display a message on screen if it communicates with TV board.
+service test_cci /system/bin/cci-test
+    user root
+    group root
+    class main
+    oneshot
+
 # Start the egalax dameon for USB touchscreen, may be disabled later
 service eGTouchD /system/bin/eGTouchD
     class core
