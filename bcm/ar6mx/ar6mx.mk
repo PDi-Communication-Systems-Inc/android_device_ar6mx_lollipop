@@ -12,9 +12,9 @@ PRODUCT_BRAND := medTAB
 
 # Set MODEL by firmware part number
 ifeq ($(AIO_CONFIGURATION),T)
-	PRODUCT_MODEL := PD403-033
+	PRODUCT_MODEL := PD403-034
 else
-	PRODUCT_MODEL := PD403-033
+	PRODUCT_MODEL := PD403-034
 endif
 $(warning Given AIO_CONFIGURATION being $(AIO_CONFIGURATION), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
@@ -214,22 +214,8 @@ PRODUCT_PACKAGES += librank			\
 		    strace
 
 
-# Add medTV on standard product medTV branch
- PRODUCT_PACKAGES += com.pdi.medtv \
-                     com.marketjs.bingoworld \
-                     com.marketjs.carparkpuzzle \
-                     com.marketjs.sudokuvillage \
-                     com.marketjs.wordhunter \
-                     com.marketjs.zombiegemsallentek \
-                     de.fgerbig.spacepeng \
-                     com.Retouchable.Kwyzzislands \
-                     com.marketjs.klondikesolitaire \
-                     com.homeseer.hstouch \
-                     org.mozilla.firefox \
-                     libxwalkcore.so \
-                     libxwalkdummy.so \
-                     libcocos2dcpp.so \
-                     libgdx.so 
+# Add journey for MDM branch
+ PRODUCT_PACKAGES += journey \
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
