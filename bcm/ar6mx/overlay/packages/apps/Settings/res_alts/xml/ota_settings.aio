@@ -60,7 +60,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue="lollipop.aio.pdiMEDTV_Alaris.build.prop"
+		android:defaultValue="lollipop.aio.pdiMEDTV_Zoom.build.prop"
 
 		android:summary="@string/ota_config_summary"
 	    />
@@ -75,7 +75,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue=".lollipop.aio.pdiMEDTV_Alaris.ota.zip"
+		android:defaultValue=".lollipop.aio.pdiMEDTV_Zoom.ota.zip"
 
 		android:summary="@string/ota_archive_summary"
 	    />

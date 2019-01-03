@@ -12,9 +12,9 @@ PRODUCT_BRAND := medTAB
 
 # Set MODEL by firmware part number
 ifeq ($(AIO_CONFIGURATION),T)
-	PRODUCT_MODEL := PD403-033
+	PRODUCT_MODEL := PD403-035
 else
-	PRODUCT_MODEL := PD403-033
+	PRODUCT_MODEL := PD403-035
 endif
 $(warning Given AIO_CONFIGURATION being $(AIO_CONFIGURATION), Setting PRODUCT_MODEL to $(PRODUCT_MODEL))
 
@@ -224,12 +224,44 @@ PRODUCT_PACKAGES += librank			\
                      de.fgerbig.spacepeng \
                      com.Retouchable.Kwyzzislands \
                      com.marketjs.klondikesolitaire \
-                     com.homeseer.hstouch \
-                     org.mozilla.firefox \
+                     zoom \
                      libxwalkcore.so \
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
-                     libgdx.so 
+                     libgdx.so \
+                     libannotate.so \
+                     libbdpush_V2_7.so \
+                     libcmmlib.so \
+                     libcptshare.so \
+                     libcrypto_sb.so \
+                     libmcm_neon.so \
+                     libmcm.so \
+                     libnydus.so \
+                     libresiprocate.so \
+                     libsipsdk.so \
+                     libsrtp.so \
+                     libssb_sdk.so \
+                     libssl_sb.so \
+                     libviper_neon.so \
+                     libviper.so \
+                     libzAutoUpdate.so \
+                     libzChatApp.so \
+                     libzChatUI.so \
+                     libzData.so \
+                     libzLoader.so \
+                     libzlt.so \
+                     libzoom_pdfium.so \
+                     libzoom.so \
+                     libzoom_stlport.so \
+                     libzoom_tp.so \
+                     libzoom_util.so \
+                     libzSipApp.so \
+                     libzSipCallApp.so \
+                     libzSipUI.so \
+                     libzVideoApp.so \
+                     libzVideoUI.so \
+                     libzWebService.so
+
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
