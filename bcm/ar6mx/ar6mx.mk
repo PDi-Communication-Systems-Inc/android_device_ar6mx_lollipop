@@ -156,13 +156,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller					\
 		    alphavnc                            \
-                    internalSpeakers                    \
-                    com.pdiarm.pdicore                 	\
-		    pdiarm.com.pditv                    \
-           	    libjniccitvLib.so					\
-		    libpdi_directdisp_jni.so			\
-		    libccitv							\
-		    jniccitvLib
+                    internalSpeakers                    
 		    
 
 # for Compat driver
