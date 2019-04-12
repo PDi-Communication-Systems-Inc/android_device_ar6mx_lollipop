@@ -244,6 +244,12 @@ service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.
     class core
     oneshot
 
+service pdi_wake_lock /system/bin/logwrapper -k /system/etc/wake_lock.sh
+    user root
+    group root
+    class core
+    oneshot
+
 # Allow root daemon to run on engineering builds only, not on production user 
 # builds
 on property:ro.build.type=eng
