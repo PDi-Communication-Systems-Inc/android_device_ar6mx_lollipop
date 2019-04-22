@@ -29,7 +29,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 
-		android:defaultValue="ota.pdiarm.com"
+		android:defaultValue="ota.appserver.tigr"
 
 		android:summary="@string/ota_server_summary"
 
@@ -75,7 +75,7 @@
 		android:singleLine="true"
 		android:inputType="text"
 		
-		android:defaultValue=".lollipop.at.ota.zip"
+		android:defaultValue=".lollipop.th.ota.zip"
 
 		android:summary="@string/ota_archive_summary"
 	    />

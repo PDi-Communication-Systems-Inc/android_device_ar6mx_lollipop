@@ -260,7 +260,8 @@ service pdi_wake_lock /system/bin/logwrapper -k /system/etc/wake_lock.sh
 
 # Allow root daemon to run on engineering builds only, not on production user 
 # builds
-on property:ro.build.type=eng
+#root access to user build and engineering builds
+
     setprop persist.sys.root_access 1
 
 on fs

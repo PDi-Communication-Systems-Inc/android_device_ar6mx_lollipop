@@ -95,7 +95,7 @@ PRODUCT_COPY_FILES += \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
 	device/bcm/ar6mx/common/input/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc \
 	device/bcm/ar6mx/common/input/touchscreen.xcfg:/system/etc/touchscreen.xcfg \
-	vendor/pdi/data/bootanimation.zip:system/media/bootanimation.zip
+	vendor/pdi/data/thbootanimation.zip:system/media/bootanimation.zip
 #       device/bcm/EETI/eGTouchA.ini:data/eGTouchA.ini \  # removed file from data partition since partition is no longer part of the release image -- JTS 11/1/2018
 
 #PDi additions
