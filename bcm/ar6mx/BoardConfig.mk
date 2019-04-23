@@ -104,6 +104,9 @@ endif
 
 BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init vmalloc=400M androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale
 
+# For TELEHEALTH builds, turn off selinux so that superuser can run
+BOARD_KERNEL_CMDLINE += androidboot.selinux=disabled androidboot.dm_verity=disabled
+
 ifeq ($(TARGET_USERIMAGES_USE_UBIFS),true)
 #UBI boot command line.
 # Note: this NAND partition table must align with MFGTool's config.
