@@ -199,9 +199,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 		       stop-ssh
    PRODUCT_COPY_FILES += \
 	vendor/pdi/ssh/authorized_keys.default.main:system/etc/security/authorized_keys.default
-else
-$(warning Not an engineering build, not including Koush superuser package)
-endif
 
 # Wireless packages
 PRODUCT_PACKAGES += IWLWIFI 			\
