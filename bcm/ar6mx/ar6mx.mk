@@ -175,8 +175,6 @@ $(call inherit-product,$(LOCAL_PATH)/firmware.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
         wifi.interface=wlan0
 
-ifeq ($(ANDROID_BUILD_MODE),engr)
-$(warning Engineering build...including Koush superuser package and ssh)
    SUPERUSER_PACKAGE := com.bcm.superuser
    SUPERUSER_PACKAGE_PREFIX := .cyanogenmod.superuser
    SUPERUSER_EMBEDDED := true
