@@ -137,7 +137,8 @@ PRODUCT_PACKAGES += AudioRoute							\
            	    libjniccitvLib.so					\
 		    libpdi_directdisp_jni.so			\
 		    libccitv							\
-		    jniccitvLib
+		    jniccitvLib \
+                    com.pdiarm.managemyaccount
 		    
 
 # for Compat driver
