@@ -151,7 +151,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoTtsLangInstaller  					\
 		    PicoLangInstaller						\
 		    alphavnc  				                        \
-                    internalSpeakers                    
+                    internalSpeakers                                            \
+                    com.pdiarm.managemyaccount
 		    
 
 # for Compat driver
