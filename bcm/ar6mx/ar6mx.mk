@@ -221,8 +221,8 @@ PRODUCT_PACKAGES += librank			\
                      com.marketjs.bingoworld \
                      com.marketjs.carparkpuzzle \
                      com.marketjs.sudokuvillage \
-                     com.marketjs.wordhunter \
-                     com.marketjs.zombiegemsallentek \
+                     com.marketjs.spotthedifference \
+                     com.marketjs.monstermahjong \
                      de.fgerbig.spacepeng \
                      com.Retouchable.Kwyzzislands \
                      com.marketjs.klondikesolitaire \
