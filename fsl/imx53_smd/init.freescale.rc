@@ -115,6 +115,3 @@ service ing /system/bin/ingsvcd -c /system/etc/gps/Orion.ini
 
 on fs
     mount_all /fstab.freescale
-
-svc power stayon true
-echo test > /sys/power/wake_lock
