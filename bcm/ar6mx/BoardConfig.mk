@@ -158,8 +158,8 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # which configuration should be used for the quad, dual, and solo boards
 # Upgraded to u-boot 2015.4 which uses the SPL to detect 1GB or 2GB RAM so the config changes to quad only --JTS 11/8/2018
-#TARGET_BOOTLOADER_CONFIG := 6q:ar6mxqandroid_config 6dl:ar6mxdlandroid_config 6solo:ar6mxsandroid_config
-TARGET_BOOTLOADER_CONFIG := 6q:ar6mxandroid_defconfig
+TARGET_BOOTLOADER_CONFIG := 6q:ar6mxqandroid_config 6dl:ar6mxdlandroid_config 6solo:ar6mxsandroid_config
+#TARGET_BOOTLOADER_CONFIG := 6q:ar6mxandroid_defconfig
 
 # which device tree binary blob should be used with the quad and dual boards
 TARGET_BOARD_DTS_CONFIG := 6q:imx6q-ar6mx.dtb 6dl:imx6dl-ar6mx.dtb
