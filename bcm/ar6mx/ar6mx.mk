@@ -132,7 +132,6 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    alphavnc                            \
                     internalSpeakers                    \
                     com.pdiarm.pdicore                 	\
-		    pdiarm.com.pditv                    \
            	    libjniccitvLib.so					\
 		    libpdi_directdisp_jni.so			\
 		    libccitv							\
@@ -215,7 +214,7 @@ PRODUCT_PACKAGES += librank			\
 
 
 # Add journey for MDM branch
- PRODUCT_PACKAGES += journey \
+PRODUCT_PACKAGES += journey 
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
