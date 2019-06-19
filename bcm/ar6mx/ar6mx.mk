@@ -133,6 +133,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    alphavnc                            \
                     internalSpeakers                    \
                     com.pdiarm.pdicore                 	\
+                    pdiarm.com.pditv                    \
            	    libjniccitvLib.so					\
 		    libpdi_directdisp_jni.so			\
 		    libccitv							\
