@@ -150,8 +150,11 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
 		    PicoLangInstaller						\
+                    ethernet                                                    \
 		    alphavnc  				                        \
                     internalSpeakers                                            \
+                    com.eeti.android.egalaxupdateauto                           \
+                    com.eeti.android.egalaxsensortester                         \
                     com.pdiarm.managemyaccount
 		    
 
@@ -236,6 +239,9 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    com.pdiarm.pdicinchwidgets.pdixplain \
 		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 		    org.wso2.emm.agent
+
+# Add medTV on standard product medTV branch
+ PRODUCT_PACKAGES += libegalaxapijni.so
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
