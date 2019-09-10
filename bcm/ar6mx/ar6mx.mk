@@ -156,6 +156,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller					\
+                    ethernet                            \
 		    alphavnc                            \
                     internalSpeakers                    \
                     com.pdiarm.pdicore                 	\
@@ -164,6 +165,8 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libpdi_directdisp_jni.so			\
 		    libccitv							\
 		    jniccitvLib \
+                    com.eeti.android.egalaxupdateauto \
+                    com.eeti.android.egalaxsensortester \
                     com.pdiarm.managemyaccount
 		    
 
