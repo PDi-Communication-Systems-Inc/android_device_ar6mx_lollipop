@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libpdi_directdisp_jni.so			\
 		    libccitv							\
 		    jniccitvLib \
-                    net.micode.fileexplorer
+                    net.micode.fileexplorer \
                     com.eeti.android.egalaxsensortester \
                     com.pdiarm.managemyaccount
 		    
