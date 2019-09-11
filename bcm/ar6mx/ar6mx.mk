@@ -139,7 +139,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    libpdi_directdisp_jni.so			\
 		    libccitv							\
 		    jniccitvLib \
-                    com.eeti.android.egalaxupdateauto \
+                    net.micode.fileexplorer
                     com.eeti.android.egalaxsensortester \
                     com.pdiarm.managemyaccount
 		    
@@ -232,8 +232,7 @@ PRODUCT_PACKAGES += librank			\
                      libxwalkcore.so \
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
-                     libgdx.so \
-                     libegalaxapijni.so
+                     libgdx.so
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
