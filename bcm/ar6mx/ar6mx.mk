@@ -240,6 +240,9 @@ PRODUCT_PACKAGES += com.pdiarm.managemyaccount \
 		    pdicinchwidget.apps.android.pdiarm.com.pdicinchwidget \
 		    org.wso2.emm.agent
 
+# Add medTV on standard product medTV branch
+ PRODUCT_PACKAGES += libegalaxapijni.so
+
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
 				vendor/pdi/security/ar6mx/releasekey
 #copy iwlwifi wpa config files
