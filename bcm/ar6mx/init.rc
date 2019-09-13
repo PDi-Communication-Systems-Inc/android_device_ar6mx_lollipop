@@ -9,9 +9,6 @@ on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
 
-    mkdir /mnt/media_rw/udisk1 0755 system system
-    symlink /mnt/media_rw/udisk1 /storage/udisk1
-
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
