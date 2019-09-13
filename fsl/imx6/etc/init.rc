@@ -85,6 +85,9 @@ on init
     mkdir /mnt/media_rw/udisk 0755 system system
     symlink /mnt/media_rw/udisk /storage/udisk
 
+    mkdir /mnt/media_rw/udisk1 0755 system system
+    symlink /mnt/media_rw/udisk1 /storage/udisk1
+
     # Directory for putting things only root should see.
     mkdir /mnt/secure 0700 root root
 
