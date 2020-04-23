@@ -150,7 +150,7 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
 		    PicoLangInstaller						\
-		    alphavnc  				                        \                          			
+		    alphavnc  				                        \
                     internalSpeakers                    
 		    
 
