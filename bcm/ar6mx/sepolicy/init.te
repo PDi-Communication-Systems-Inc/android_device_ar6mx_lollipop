@@ -5,3 +5,5 @@ userdebug_or_eng(`
 allow init self:capability sys_module;
 allow init_shell self:capability sys_module;
 allow init default_prop:property_service set;
+allow init sdcardd:process signull;
+

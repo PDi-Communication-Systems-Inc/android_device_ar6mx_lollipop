@@ -84,6 +84,7 @@ PRODUCT_COPY_FILES += \
  	device/bcm/ar6mx/process_ts.sh:system/etc/process_ts.sh \
         device/bcm/ar6mx/process_cmdline.sh:system/etc/process_cmdline.sh \
 	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh \
+        device/bcm/ar6mx/wake_lock.sh:system/etc/wake_lock.sh \
         device/bcm/ar6mx/initgpios.sh:system/etc/initgpios.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
@@ -123,20 +124,24 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    iperf3							\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
-			PDI_mxc-v4l2-tvin                       \
+		    PDI_mxc-v4l2-tvin                   			\
 		    mxc-v4l2-capture  						\
 		    mxc-v4l2-overlay  						\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
-		    PicoLangInstaller					\
-		    alphavnc                            \
-                    internalSpeakers                    \
-                    com.pdiarm.pdicore                 	\
-		    pdiarm.com.pditv                    \
-           	    libjniccitvLib.so					\
-		    libpdi_directdisp_jni.so			\
+		    PicoLangInstaller						\
+                    ethernet                            			\
+		    alphavnc                            			\
+                    internalSpeakers                    			\
+                    com.pdiarm.pdicore                 				\
+		    pdiarm.com.pditv                    			\
+           	    libjniccitvLib.so						\
+		    libpdi_directdisp_jni.so					\
 		    libccitv							\
-		    jniccitvLib
+		    jniccitvLib 						\
+                    net.micode.fileexplorer 					\
+                    com.eeti.android.egalaxsensortester 			\
+                    com.pdiarm.managemyaccount
 		    
 
 # for Compat driver
@@ -219,8 +224,8 @@ PRODUCT_PACKAGES += librank			\
                      com.marketjs.bingoworld \
                      com.marketjs.carparkpuzzle \
                      com.marketjs.sudokuvillage \
-                     com.marketjs.wordhunter \
-                     com.marketjs.zombiegemsallentek \
+                     com.marketjs.spotthedifference \
+                     com.marketjs.monstermahjong \
                      de.fgerbig.spacepeng \
                      com.Retouchable.Kwyzzislands \
                      com.marketjs.klondikesolitaire \
@@ -229,6 +234,7 @@ PRODUCT_PACKAGES += librank			\
                      libxwalkdummy.so \
                      libcocos2dcpp.so \
                      libgdx.so \
+                     libegalaxapijni.so \
                      libannotate.so \
                      libbdpush_V2_7.so \
                      libcmmlib.so \
