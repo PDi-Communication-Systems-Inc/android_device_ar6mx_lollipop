@@ -150,23 +150,19 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    com.pdiarm.newuserconfirmation 				\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
-			PDI_mxc-v4l2-tvin                       \
+		    PDI_mxc-v4l2-tvin                                           \
 		    mxc-v4l2-capture  						\
 		    mxc-v4l2-overlay  						\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
-		    PicoLangInstaller					\
-                    ethernet                            \
-		    alphavnc                            \
-                    internalSpeakers                    \
-                    com.pdiarm.pdicore                 	\
-		    pdiarm.com.pditv                    \
-           	    libjniccitvLib.so					\
-		    libpdi_directdisp_jni.so			\
-		    libccitv							\
-		    jniccitvLib \
-                    com.eeti.android.egalaxupdateauto \
-                    com.eeti.android.egalaxsensortester \
+		    PicoLangInstaller					        \
+                    ethernet                                                    \
+		    alphavnc                                                    \
+                    internalSpeakers                                            \
+                    com.pdiarm.pdicore                 	                        \
+		    pdiarm.com.pditv                                            \
+                    com.eeti.android.egalaxupdateauto                           \
+                    com.eeti.android.egalaxsensortester                         \
                     com.pdiarm.managemyaccount
 		    
 
