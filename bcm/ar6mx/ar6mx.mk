@@ -135,10 +135,6 @@ PRODUCT_PACKAGES += AudioRoute							\
                     internalSpeakers                    			\
                     com.pdiarm.pdicore                 				\
 		    pdiarm.com.pditv                    			\
-           	    libjniccitvLib.so						\
-		    libpdi_directdisp_jni.so					\
-		    libccitv							\
-		    jniccitvLib 						\
                     net.micode.fileexplorer 					\
                     com.eeti.android.egalaxsensortester 			\
                     com.pdiarm.managemyaccount
@@ -220,53 +216,16 @@ PRODUCT_PACKAGES += librank			\
 
 
 # Add medTV on standard product medTV branch
- PRODUCT_PACKAGES += com.pdi.medtv \
-                     com.marketjs.bingoworld \
-                     com.marketjs.carparkpuzzle \
-                     com.marketjs.sudokuvillage \
-                     com.marketjs.spotthedifference \
-                     com.marketjs.monstermahjong \
-                     de.fgerbig.spacepeng \
-                     com.Retouchable.Kwyzzislands \
-                     com.marketjs.klondikesolitaire \
-                     zoom \
-                     libxwalkcore.so \
-                     libxwalkdummy.so \
-                     libcocos2dcpp.so \
-                     libgdx.so \
-                     libegalaxapijni.so \
-                     libannotate.so \
-                     libbdpush_V2_7.so \
-                     libcmmlib.so \
-                     libcptshare.so \
-                     libcrypto_sb.so \
-                     libmcm_neon.so \
-                     libmcm.so \
-                     libnydus.so \
-                     libresiprocate.so \
-                     libsipsdk.so \
-                     libsrtp.so \
-                     libssb_sdk.so \
-                     libssl_sb.so \
-                     libviper_neon.so \
-                     libviper.so \
-                     libzAutoUpdate.so \
-                     libzChatApp.so \
-                     libzChatUI.so \
-                     libzData.so \
-                     libzLoader.so \
-                     libzlt.so \
-                     libzoom_pdfium.so \
-                     libzoom.so \
-                     libzoom_stlport.so \
-                     libzoom_tp.so \
-                     libzoom_util.so \
-                     libzSipApp.so \
-                     libzSipCallApp.so \
-                     libzSipUI.so \
-                     libzVideoApp.so \
-                     libzVideoUI.so \
-                     libzWebService.so
+PRODUCT_PACKAGES += com.pdi.medtv \
+                    com.marketjs.bingoworld \
+                    com.marketjs.carparkpuzzle \
+                    com.marketjs.sudokuvillage \
+                    com.marketjs.spotthedifference \
+                    com.marketjs.monstermahjong \
+                    de.fgerbig.spacepeng \
+                    com.Retouchable.Kwyzzislands \
+                    com.marketjs.klondikesolitaire \
+                    zoom
 
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := \
