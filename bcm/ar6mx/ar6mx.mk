@@ -124,19 +124,19 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    iperf3							\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
-		    PDI_mxc-v4l2-tvin                   			\
+		    PDI_mxc-v4l2-tvin                                           \
 		    mxc-v4l2-capture  						\
 		    mxc-v4l2-overlay  						\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
-		    PicoLangInstaller						\
-                    ethernet                            			\
-		    alphavnc                            			\
-                    internalSpeakers                    			\
-                    com.pdiarm.pdicore                 				\
-		    pdiarm.com.pditv                    			\
-                    net.micode.fileexplorer 					\
-                    com.eeti.android.egalaxsensortester 			\
+		    PicoLangInstaller					        \
+                    ethernet                                                    \
+		    alphavnc                                                    \
+                    internalSpeakers                                            \
+                    com.pdiarm.pdicore                 	                        \
+		    pdiarm.com.pditv                                            \
+                    net.micode.fileexplorer                                     \
+                    com.eeti.android.egalaxsensortester                         \
                     com.pdiarm.managemyaccount
 		    
 
