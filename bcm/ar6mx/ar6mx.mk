@@ -151,8 +151,12 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    PicoTts							\
 		    PicoTtsLangInstaller  					\
 		    PicoLangInstaller						\
-                    alphavnc                                                    \
-                    internalSpeakers
+                    ethernet                                                    \
+		    alphavnc  				                        \
+                    internalSpeakers                                            \
+                    net.micode.fileexplorer					\
+                    com.eeti.android.egalaxsensortester                         \
+                    com.pdiarm.managemyaccount
 		    
 
 # for Compat driver

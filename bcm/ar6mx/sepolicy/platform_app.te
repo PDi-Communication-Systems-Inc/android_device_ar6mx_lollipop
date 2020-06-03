@@ -8,3 +8,4 @@ allow platform_app usb_device:dir { search open };
 allow platform_app device:sock_file write;
 allow platform_app app_data_file:file execute;
 allow platform_app video_device:chr_file { read write open ioctl };
+allow platform_app system_data_file:fifo_file { read write open };
