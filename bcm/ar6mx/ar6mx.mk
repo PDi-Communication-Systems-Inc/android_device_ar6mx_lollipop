@@ -156,15 +156,13 @@ PRODUCT_PACKAGES += AudioRoute							\
 		    mxc-v4l2-output  						\
 		    mxc-v4l2-tvin  						\
 		    PicoLangInstaller					        \
-                    ethernet                                                    \
 		    alphavnc                                                    \
                     internalSpeakers                                            \
                     com.pdiarm.pdicore                 	                        \
 		    pdiarm.com.pditv                                            \
                     com.eeti.android.egalaxupdateauto                           \
                     com.eeti.android.egalaxsensortester                         \
-                    com.pdiarm.managemyaccount
-		    
+                    firefox
 
 # for Compat driver
 PRODUCT_COPY_FILES += \
