@@ -119,6 +119,14 @@ on boot
     # Set WiFi Display Source VideoBitRate Adaptive
     setprop media.wfd.video-bitrate 3000000
 
+
+service initgpios /system/bin/logwrapper -k /system/etc/initgpios.sh
+    user root
+    group root
+    class core
+    oneshot
+
+
 # Program the Atmel Touchscreen with configuration file
 service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     class core
@@ -130,7 +138,7 @@ service mxt-app /system/bin/mxt-app --load /system/etc/touchscreen.xcfg
     mount debugfs none /sys/kernel/debug/
 
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
-    service watchdogd /sbin/watchdogd 10 20
+service watchdogd /sbin/watchdogd 10 20
     class core
     seclabel u:r:watchdogd:s0
 
