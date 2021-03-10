@@ -1,0 +1,8 @@
+type psreader, domain;
+type psreader_exec, exec_type, file_type;
+
+allow psreader self:capability dac_override;
+allow psreader sysfs:file write;
+allow psreader uhid_device:chr_file { open write ioctl };
+
+init_daemon_domain(psreader)

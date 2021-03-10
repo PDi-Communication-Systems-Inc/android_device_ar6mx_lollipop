@@ -1,2 +1,5 @@
 /dev/hci_tty                    u:object_r:hci_attach_dev:s0
 /system/bin/uim-sysfs           u:object_r:hci_attach_exec:s0
+
+/system/bin/psreader            u:object_r:psreader_exec:s0
+

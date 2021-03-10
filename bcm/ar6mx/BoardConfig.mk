@@ -206,8 +206,9 @@ BOARD_SEPOLICY_UNION := \
        radio.te \
        surfaceflinger.te \
        pdi_copy_device_policies.te \
-       keystore.te       \
-       installd.te
+       keystore.te \
+       installd.te \
+       psreader.te
 
 # Recovery Options
 TARGET_NO_RECOVERY                      := false
