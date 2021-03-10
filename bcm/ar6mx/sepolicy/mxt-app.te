@@ -1,0 +1,8 @@
+type mxt-app, domain;
+type mxt-app_exec, exec_type, file_type;
+
+allow mxt-app usb_device:dir { read open };
+allow mxt-app self:netlink_kobject_uevent_socket { create bind read };
+
+init_daemon_domain(mxt-app)
+
