@@ -172,6 +172,7 @@ BOARD_SEPOLICY_DIRS := \
        device/fsl/imx6/sepolicy
 
 BOARD_SEPOLICY_UNION := \
+       mxt-app.te \
        domain.te \
        system_app.te \
        system_server.te \
