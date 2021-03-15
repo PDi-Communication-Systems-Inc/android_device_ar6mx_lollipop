@@ -1,10 +1,11 @@
 type pdi_ota_script, domain;
 type pdi_ota_script_exec, exec_type, file_type;
 
-allow pdi_ota_script self:capability sys_module;
-allow pdi_ota_script self:capability { setuid setgid };
-allow pdi_ota_script self:capability sys_admin;
-allow pdi_ota_script shell_exec:file rx_file_perms;
+allow pdi_ota_script system_file:file execute_no_trans;
+
+# The following 2 lines allow logwrapper to run this script from init
+allow pdi_ota_script devpts:chr_file { read write open ioctl getattr };
+allow pdi_ota_script shell_exec:file { read };
+
 init_daemon_domain(pdi_ota_script)
 
-permissive_or_unconfined(pdi_ota_script)
