@@ -1,10 +1,11 @@
 type initgpios, domain;
 type initgpios_exec, exec_type, file_type;
 
-allow initgpios self:capability sys_module;
-allow initgpios self:capability { setuid setgid };
-allow initgpios self:capability sys_admin;
-allow initgpios shell_exec:file rx_file_perms;;
-init_daemon_domain(initgpios)
+# The following 5 lines allow logwrapper to run this script from init
+allow initgpios devpts:chr_file { read write open ioctl getattr };
+allow initgpios shell_exec:file { execute execute_no_trans read open getattr };
+allow initgpios sysfs:file { write setattr };
+allow initgpios system_file:file { execute_no_trans };
+allow initgpios self:capability { dac_read_search dac_override };
 
-permissive_or_unconfined(initgpios)
+init_daemon_domain(initgpios)
