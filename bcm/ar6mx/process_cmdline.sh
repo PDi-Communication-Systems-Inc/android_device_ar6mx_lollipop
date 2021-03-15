@@ -9,25 +9,25 @@
 
 CMDLINE=`cat /proc/cmdline`
 TAG=PROCESS_CMDLINE
-log -p i "$TAG" "cmdline=$CMDLINE"
-echo -e "cmdline=$CMDLINE\n"
+log -p i -t "$TAG" "cmdline=$CMDLINE"
+echo -e "cmdline=$CMDLINE  \n"
 for bootarg in $CMDLINE;
    do
       BOOTARG_VALUE=$bootarg
-      log -p i "$TAG" "BOOTARG VALUE is $BOOTARG_VALUE"
-      echo -e "BOOTARG value is $BOOTARG_VALUE\n"
+      log -p i -t "$TAG" "BOOTARG VALUE is $BOOTARG_VALUE"
+      echo -e "BOOTARG value is $BOOTARG_VALUE  \n"
       (IFS='=';
        KEY='' 
        for kv in $BOOTARG_VALUE;
           do
-	     log -p i "$TAG" "key is $kv"
-             echo -e "key is $kv\n";
+	     log -p i -t "$TAG" "key is $kv"
+             echo -e "key is $kv  \n";
              if [ -z $KEY]; then
                 KEY=pdiarm.cmdline.$kv
              else
                 VALUE=$kv
-		log -p i "$TAG" "setting property $KEY=$VALUE"
-                echo -e "setting property $KEY=$VALUE\n"
+		log -p i -t "$TAG" "setting property $KEY=$VALUE"
+                echo -e "setting property $KEY=$VALUE  \n"
                 setprop $KEY $VALUE
                 break
              fi

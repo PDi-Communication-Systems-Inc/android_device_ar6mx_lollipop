@@ -1,10 +1,14 @@
 type pdi_cl_script, domain;
 type pdi_cl_script_exec, exec_type, file_type;
 
-allow pdi_cl_script self:capability sys_module;
-allow pdi_cl_script self:capability { setuid setgid };
-allow pdi_cl_script self:capability sys_admin;
-allow pdi_cl_script shell_exec:file rx_file_perms;
-init_daemon_domain(pdi_cl_script)
+allow pdi_cl_script default_prop:property_service set;
 
-permissive_or_unconfined(pdi_cl_script)
+# The following 6 lines allow logwrapper to run this script from init
+allow pdi_cl_script devpts:chr_file { read write open ioctl getattr };
+allow pdi_cl_script init:unix_stream_socket { connectto };
+allow pdi_cl_script pdi_cl_script_exec:file execute_no_trans;
+allow pdi_cl_script property_socket:sock_file write;
+allow pdi_cl_script shell_exec:file { execute execute_no_trans read open getattr };
+allow pdi_cl_script system_file:file execute_no_trans;
+
+init_daemon_domain(pdi_cl_script)

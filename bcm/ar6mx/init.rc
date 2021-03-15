@@ -237,6 +237,7 @@ service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
 
 # Process command line values to get values needed in Settings App
 service pdi_cl_script /system/bin/logwrapper -k /system/etc/process_cmdline.sh
+    seclabel u:r:init:s0
     user root
     group root
     class core
