@@ -229,6 +229,7 @@ service eGTouchD /system/bin/eGTouchD
 
 # Configure the touchscreen
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh
+    seclabel u:r:init:s0
     user root
     group root
     class core
