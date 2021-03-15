@@ -3,5 +3,7 @@
 
 /system/bin/psreader            u:object_r:psreader_exec:s0
 /system/bin/mxt-app             u:object_r:mxt-app_exec:s0
-/system/bin/eGTouchD		    u:object_r:eGTouchD_exec:s0
+/system/bin/eGTouchD            u:object_r:eGTouchD_exec:s0
+
+/system/etc/initgpios.sh        u:object_r:initgpios_exec:s0
 

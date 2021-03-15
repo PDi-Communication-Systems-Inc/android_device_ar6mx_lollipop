@@ -1,3 +1,4 @@
+#!/system/bin/sh
 
 cd /sys/class/gpio
 echo 36 > export

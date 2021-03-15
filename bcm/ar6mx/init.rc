@@ -121,7 +121,14 @@ on boot
     setprop media.wfd.video-bitrate 3000000
 
 
+# How to add services with SELinux:
+# https://source.android.com/security/selinux/device-policy
+# https://source.android.com/security/selinux/customize
+# Jon's hints to create an "allow" policy from an "avc denial".  This goes in a .te file.
+#   allow scontext tcontext:tclass { the action or actions shown in the braces of the denial };
+
 service initgpios /system/bin/logwrapper -k /system/etc/initgpios.sh
+    seclabel u:r:init:s0
     user root
     group root
     class core
