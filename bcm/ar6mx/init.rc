@@ -245,6 +245,7 @@ service pdi_cl_script /system/bin/logwrapper -k /system/etc/process_cmdline.sh
 
 # On reset, copy over base ota configuration
 service pdi_ota_script /system/bin/logwrapper -k /system/etc/otasetup.sh
+    seclabel u:r:init:s0
     user root
     group root
     class core
