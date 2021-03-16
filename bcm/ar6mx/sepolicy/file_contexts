@@ -5,6 +5,7 @@
 /system/bin/mxt-app             u:object_r:mxt-app_exec:s0
 /system/bin/eGTouchD            u:object_r:eGTouchD_exec:s0
 
+/system/etc/copy_device_policies.sh u:object_r:copy_policy_exec:s0
 /system/etc/initgpios.sh        u:object_r:initgpios_exec:s0
 /system/etc/otasetup.sh         u:object_r:pdi_ota_script_exec:s0
 /system/etc/process_cmdline.sh  u:object_r:pdi_cl_script_exec:s0

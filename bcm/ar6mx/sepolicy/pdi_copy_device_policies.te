@@ -1,10 +1,13 @@
-type pdi_copy_device_policies, domain;
-type pdi_copy_device_policies_exec, exec_type, file_type;
+type copy_policy, domain;
+type copy_policy_exec, exec_type, file_type;
 
-allow pdi_copy_device_policies self:capability sys_module;
-allow pdi_copy_device_policies self:capability { setuid setgid };
-allow pdi_copy_device_policies self:capability sys_admin;
-allow pdi_copy_device_policies shell_exec:file rx_file_perms;
-init_daemon_domain(pdi_copy_device_policies)
+allow copy_policy system_file:file execute_no_trans;
+allow copy_policy self:capability { dac_override chown };
 
-permissive_or_unconfined(pdi_copy_device_policies)
+# The following 4 lines allow logwrapper to run this script from init
+allow copy_policy shell_exec:file { read };
+allow copy_policy devpts:chr_file { read write open ioctl getattr };
+allow copy_policy system_data_file:dir { write add_name create setattr remove_name };
+allow copy_policy system_data_file:file { create write open setattr };
+
+init_daemon_domain(copy_policy)
