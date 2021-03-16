@@ -173,6 +173,7 @@ BOARD_SEPOLICY_DIRS := \
 
 BOARD_SEPOLICY_UNION := \
        mxt-app.te \
+       pdi_copy_device_policies.te \
        domain.te \
        system_app.te \
        system_server.te \
@@ -206,7 +207,6 @@ BOARD_SEPOLICY_UNION := \
        healthd.te \
        radio.te \
        surfaceflinger.te \
-       pdi_copy_device_policies.te \
        keystore.te \
        installd.te \
        psreader.te

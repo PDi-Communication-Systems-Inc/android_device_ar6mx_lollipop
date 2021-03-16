@@ -258,6 +258,7 @@ service load_wifi_module /system/bin/sh /system/etc/load_wifi_module.sh
 
 #copy the default admin policy file
 service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.sh
+    seclabel u:r:init:s0
     user root
     group root
     class core
