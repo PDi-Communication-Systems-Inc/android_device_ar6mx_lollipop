@@ -174,6 +174,7 @@ BOARD_SEPOLICY_DIRS := \
 BOARD_SEPOLICY_UNION := \
        mxt-app.te \
        pdi_copy_device_policies.te \
+       wifi.te \
        domain.te \
        system_app.te \
        system_server.te \
