@@ -1,0 +1,19 @@
+type pdi_install_apk, domain;
+type pdi_install_apk_exec, exec_type, file_type;
+
+allow pdi_install_apk dalvikcache_data_file:file { write execute };
+allow pdi_install_apk dalvikcache_data_file:dir { write };
+allow pdi_install_apk shell_exec:file { open read getattr execute execute_no_trans };
+allow pdi_install_apk system_file:file { execute_no_trans };
+allow pdi_install_apk system_data_file:dir { write add_name };
+allow pdi_install_apk system_data_file:file { create write open };
+allow pdi_install_apk self:capability { dac_override };
+allow pdi_install_apk self:process { ptrace };
+allow pdi_install_apk servicemanager:binder { call };
+allow pdi_install_apk system_server:binder { call transfer };
+allow pdi_install_apk zygote_exec:file { execute getattr read open execute_no_trans };
+
+# The following 1 lines allow logwrapper to run this script from init
+allow pdi_install_apk devpts:chr_file { read write open ioctl getattr };
+
+init_daemon_domain(pdi_install_apk)

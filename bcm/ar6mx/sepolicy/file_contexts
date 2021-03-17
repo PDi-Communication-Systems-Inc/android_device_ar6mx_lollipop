@@ -9,6 +9,7 @@
 /system/etc/initgpios.sh        u:object_r:initgpios_exec:s0
 /system/etc/load_wifi_module.sh u:object_r:load_wifi_module_exec:s0
 /system/etc/otasetup.sh         u:object_r:pdi_ota_script_exec:s0
+/system/etc/pdi_install_apk.sh  u:object_r:pdi_install_apk_exec:s0
 /system/etc/process_cmdline.sh  u:object_r:pdi_cl_script_exec:s0
 /system/etc/process_ts.sh       u:object_r:pdi_ts_script_exec:s0
 

@@ -264,6 +264,14 @@ service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.
     class core
     oneshot
 
+# On first boot, install any APK that does not work correctly as a system app
+service pdi_install_apk  /system/bin/logwrapper -k  /system/etc/pdi_install_apk.sh
+    seclabel u:r:init:s0
+    user root
+    group root
+    class late_start
+    oneshot
+
 # Allow root daemon to run on engineering builds only, not on production user 
 # builds
 on property:ro.build.type=eng
