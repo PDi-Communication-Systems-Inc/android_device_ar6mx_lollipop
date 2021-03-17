@@ -85,6 +85,7 @@ PRODUCT_COPY_FILES += \
         device/bcm/ar6mx/process_cmdline.sh:system/etc/process_cmdline.sh \
 	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh \
         device/bcm/ar6mx/initgpios.sh:system/etc/initgpios.sh \
+        device/bcm/ar6mx/pdi_install_apk.sh:system/etc/pdi_install_apk.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
 	device/bcm/ar6mx/common/input/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc \
@@ -247,4 +248,5 @@ PRODUCT_PACKAGES += ssh \
 		    stop-ssh \
 		    psreader
 PRODUCT_COPY_FILES += \
-	vendor/pdi/ssh/authorized_keys.default.pers:system/etc/security/authorized_keys.default
+	vendor/pdi/ssh/authorized_keys.default.pers:system/etc/security/authorized_keys.default \
+	packages/apps/pdi_packages_apps/dolfin/dolfin.apk:system/preinstall/dolfin_apk

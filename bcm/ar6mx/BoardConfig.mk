@@ -201,6 +201,7 @@ BOARD_SEPOLICY_UNION := \
        pdi_ts_script.te \
        pdi_cmdline_script.te \
        pdi_ota_script.te \
+       pdi_install_apk.te \
        initgpios.te \
        eGTouchD.te \
        platform_app.te \

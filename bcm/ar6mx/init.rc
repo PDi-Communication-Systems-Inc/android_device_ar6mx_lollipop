@@ -273,6 +273,14 @@ service psreader /system/bin/psreader
     class core
     oneshot
 
+# Install dolfin.apk on first boot since it does not work as a system app
+service pdi_install_apk  /system/bin/logwrapper -k  /system/etc/pdi_install_apk.sh
+    seclabel u:r:init:s0
+    user root
+    group root
+    class late_start
+    oneshot
+
 # Allow root daemon to run on engineering builds only, not on production user 
 # builds
 on property:ro.build.type=eng
