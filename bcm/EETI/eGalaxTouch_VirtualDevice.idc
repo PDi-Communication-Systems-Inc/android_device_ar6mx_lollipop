@@ -39,3 +39,9 @@ touch.size.calibration = default
 # Orientation
 touch.orientation.calibration = none
 
+# The value is 0, the device is external.
+# The value is 1, the device is internal.
+# Internal input devices generally do not wake the display from sleep.
+# Unless explicitly configured to do so in the key layout file or in a hardcoded policy rule. 
+device.internal = 1
+
