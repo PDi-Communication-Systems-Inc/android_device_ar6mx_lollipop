@@ -362,6 +362,9 @@ on post-fs-data
     mkdir /data/ssh/empty 0740 root root
     mkdir /data/.ssh 0740 root root
     
+    # for eGTouchD
+    mkdir /data/eGalax 0700 root root
+
     # If there is no fs-post-data action in the init.<device>.rc file, you
     # must uncomment this line, otherwise encrypted filesystems
     # won't work.

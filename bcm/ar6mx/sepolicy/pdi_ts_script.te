@@ -3,6 +3,9 @@ type pdi_ts_script_exec, exec_type, file_type;
 
 allow pdi_ts_script system_file:file execute_no_trans;
 allow pdi_ts_script device:dir read;
+allow pdi_ts_script property_socket:sock_file write;
+allow pdi_ts_script init:unix_stream_socket { connectto };
+allow pdi_ts_script default_prop:property_service { set };
 
 # The following 5 lines allow logwrapper to run this script from init
 allow pdi_ts_script devpts:chr_file { read write open ioctl getattr };

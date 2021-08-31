@@ -1,14 +1,18 @@
 type eGTouchD, domain;
 type eGTouchD_exec, exec_type, file_type;
 
-allow eGTouchD device:chr_file { open read write ioctl };
-allow eGTouchD device:dir { read };
+allow eGTouchD device:chr_file { open read write ioctl getattr };
+allow eGTouchD device:dir { open read write };
+allow eGTouchD input_device:chr_file { setattr };
+allow eGTouchD input_device:dir { search read open };
 allow eGTouchD kernel:process { signull };
+allow eGTouchD self:capability { dac_override fsetid };
 allow eGTouchD shell_exec:file { execute execute_no_trans read open };
-allow eGTouchD self:capability dac_override;
 allow eGTouchD system_file:file { execute_no_trans };
 allow eGTouchD system_data_file:dir { read write open add_name remove_name };
 allow eGTouchD system_data_file:file { create write open unlink };
+allow eGTouchD system_data_file:fifo_file { create getattr setattr read write open };
+allow eGTouchD uhid_device:chr_file { write open ioctl };
 allow eGTouchD usb_device:dir { open read search };
 allow eGTouchD usb_device:chr_file { open read write ioctl };
 
