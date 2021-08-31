@@ -1,0 +1,10 @@
+# the following lines are to allow iperf/iperf3 to run from the console
+allow init_shell node:tcp_socket { node_bind name_connect} ;
+allow init_shell node:udp_socket node_bind;
+allow init_shell port:tcp_socket { name_bind name_connect };
+allow init_shell port:udp_socket { name_bind };
+allow init_shell self:tcp_socket { listen accept getopt setopt connect getattr read write };
+allow init_shell self:udp_socket { bind getopt setopt connect getattr read write };
+allow init_shell shell_data_file:dir { write add_name remove_name };
+allow init_shell shell_data_file:file { create read write open unlink };
+
