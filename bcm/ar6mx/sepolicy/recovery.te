@@ -1,1 +1,2 @@
 allow recovery rootfs:dir write;
+allow recovery kernel:system syslog_read;
