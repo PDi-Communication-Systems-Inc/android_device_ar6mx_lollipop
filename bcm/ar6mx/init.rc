@@ -281,14 +281,6 @@ service pdi_install_apk  /system/bin/logwrapper -k  /system/etc/pdi_install_apk.
     class late_start
     oneshot
 
-# Force ethernet flow control on, even if link partner does not advertise it.
-service flowcontrol /system/bin/logwrapper -k  /system/etc/pdi_eth_flow_on.sh
-    seclabel u:r:init:s0
-    user root
-    group root
-    class core
-    oneshot
-
 # Allow root daemon to run on engineering builds only, not on production user 
 # builds
 on property:ro.build.type=eng

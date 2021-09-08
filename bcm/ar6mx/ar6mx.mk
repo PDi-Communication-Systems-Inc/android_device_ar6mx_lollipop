@@ -86,7 +86,6 @@ PRODUCT_COPY_FILES += \
 	device/bcm/ar6mx/otasetup.sh:system/etc/otasetup.sh \
         device/bcm/ar6mx/initgpios.sh:system/etc/initgpios.sh \
         device/bcm/ar6mx/pdi_install_apk.sh:system/etc/pdi_install_apk.sh \
-        device/bcm/ar6mx/pdi_eth_flow_on.sh:system/etc/pdi_eth_flow_on.sh \
         device/bcm/EETI/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
         device/bcm/EETI/eGTouchD:system/bin/eGTouchD \
 	device/bcm/ar6mx/common/input/Atmel_maXTouch_Touchscreen.idc:system/usr/idc/Atmel_maXTouch_Touchscreen.idc \
