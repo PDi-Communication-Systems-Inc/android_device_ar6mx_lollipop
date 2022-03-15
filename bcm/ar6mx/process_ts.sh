@@ -1,12 +1,12 @@
 #!/system/bin/sh
 
-# Test for Atmel or EETI touchscreen
+# Configure Atmel or EETI touchscreen
 BIN=/system/bin
-COUNT=`$BIN/lsusb | $BIN/grep -i atmel | $BIN/busybox wc -l`
 DONE=false
 TAG=PROCESS_TOUCHSCREEN
 
 # Atmel touchscreen handling
+COUNT=`$BIN/lsusb | $BIN/grep -i atmel | $BIN/busybox wc -l`
 if [ $COUNT -ge "1" ];
   then
       # try to reset Atmel MXT1664S1 up to five times
@@ -52,17 +52,6 @@ if [ $COUNT -ge "1" ];
             log -p i -t "$TAG" "Atmel initalized okay with result code $RESULT"
 	    echo -e "Atmel initalized okay with result code $RESULT  \n"
       fi  
-      # For Atmel touchscreens we need to disable the egalax touchscreen 
-      PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
-      if [ $PROCESS -gt "0" ];
-         then
-             log -p i -t "$TAG" "killing process $PROCESS"
-             echo -e "killing process $PROCESS  \n"
-             kill $PROCESS 
-      else
-          log -p e -t "$TAG" "No process to call the kill command on"
-          echo -e "No process to call the kill command on  \n"
-      fi
 
       DONE=true
 fi
@@ -75,6 +64,8 @@ if [ $COUNT -ge "1" ];
        #echo -e "$COUNT eGalax Touchscreen discovered, resetting usb controller  \n"
        log -p i -t "$TAG" "$COUNT eGalax Touchscreen discovered"
        echo -e "$COUNT eGalax Touchscreen discovered  \n"
+       # Launch the egalax driver
+       $BIN/eGTouchD &
        # Removed the usb reset because it caused locked touch screens on Allentek build -- JTS 10/9/2018
        # Reset entire controller touchscreen is connected to
        # vid=0x58f Alcor Micro controller, pid=6254 -- generic USB Hub
@@ -96,14 +87,15 @@ if [ $COUNT -ge "1" ];
        fi
        setprop pdiarm.touchscreen eGalax-$DEVICEID
        DONE=true
+
 fi
 
-# Indicate completion of touchscreen processing
+# Indicate completion of USB touchscreen processing
 if [ $DONE == "true" ];
    then
       PROP="$("$BIN"/getprop pdiarm.touchscreen)"
-      log -p i -t "$TAG" "Done with touchscreen processing $PROP"
-      echo -e "Done with touchscreen processing $PROP  \n"
+      log -p i -t "$TAG" "Done with USB touchscreen processing $PROP"
+      echo -e "Done with USB touchscreen processing $PROP  \n"
       exit 0
 fi
 
@@ -121,12 +113,6 @@ if [ $I2CDETECTCMD == "4a" ];
          echo -e "Driver failed to load properly, trying to remove  \n"
          rmmod atmel_mxt_ts.ko
       fi
-
-      # remove eGalax USB Touch Daemon process 
-      PROCESS=`$BIN/ps | $BIN/grep eGTouchD | $BIN/busybox tr -s " " | $BIN/busybox cut -d " " -f 2`
-      log -p i -t "$TAG" "killing process $PROCESS"
-      echo -e "killing process $PROCESS  \n"
-      kill $PROCESS
 
       # indicate the i2c touchscreen has been setup via properties
       NAME=`cat /sys/bus/i2c/devices/1-004a/name`
@@ -159,7 +145,7 @@ fi
 if [ $DONE == "true" ];
    then
       PROP="$("$BIN"/getprop pdiarm.touchscreen)"
-      log -p i -t "$TAG" "Done with touchscreen processing $PROP"
-      echo -e "Done with touchscreen processing $PROP  \n"
+      log -p i -t "$TAG" "Done with I2C touchscreen processing $PROP"
+      echo -e "Done with I2C touchscreen processing $PROP  \n"
       exit 0
 fi

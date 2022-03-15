@@ -220,12 +220,13 @@ service magd /system/bin/magd
 service charger /charger
     class charger
 
-# Start the egalax dameon for USB touchscreen, may be disabled later
-service eGTouchD /system/bin/eGTouchD
-    class main
-    user root
-    group root
-    oneshot
+# 2/15/2022 eGTouchD now called in process_ts.sh
+## Start the egalax dameon for USB touchscreen, may be disabled later
+#service eGTouchD /system/bin/eGTouchD
+#    class main
+#    user root
+#    group root
+#    oneshot
 
 # Configure the touchscreen
 service pdi_ts_script /system/bin/logwrapper -k /system/etc/process_ts.sh

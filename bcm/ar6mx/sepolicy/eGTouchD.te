@@ -1,8 +1,9 @@
 type eGTouchD, domain;
 type eGTouchD_exec, exec_type, file_type;
 
-allow eGTouchD device:chr_file { open read write ioctl getattr };
-allow eGTouchD device:dir { open read write };
+allow eGTouchD device:chr_file { open read write ioctl getattr unlink };
+allow eGTouchD device:dir { open read write remove_name };
+allow eGTouchD init:process { signal };
 allow eGTouchD input_device:chr_file { setattr };
 allow eGTouchD input_device:dir { search read open };
 allow eGTouchD kernel:process { signull };

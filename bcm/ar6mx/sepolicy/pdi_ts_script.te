@@ -14,5 +14,25 @@ allow pdi_ts_script usb_device:chr_file { read write open ioctl };
 allow pdi_ts_script device:chr_file { read create write open ioctl };
 allow pdi_ts_script shell_exec:file { read };
 
+# The following is copied from eGTouchD.te to allow the pdi_ts_script to run eGTouchD
+allow pdi_ts_script device:chr_file { open read write ioctl getattr unlink };
+allow pdi_ts_script device:dir { open read write remove_name };
+allow pdi_ts_script init:process { signal };
+allow pdi_ts_script input_device:chr_file { setattr };
+allow pdi_ts_script input_device:dir { search read open };
+allow pdi_ts_script kernel:process { signull };
+allow pdi_ts_script self:capability { dac_override fsetid };
+allow pdi_ts_script shell_exec:file { execute execute_no_trans read open };
+allow pdi_ts_script system_file:file { execute_no_trans };
+allow pdi_ts_script system_data_file:dir { read write open add_name remove_name };
+allow pdi_ts_script system_data_file:file { create write open unlink };
+allow pdi_ts_script system_data_file:fifo_file { create getattr setattr read write open };
+allow pdi_ts_script uhid_device:chr_file { write open ioctl };
+allow pdi_ts_script usb_device:dir { open read search };
+allow pdi_ts_script usb_device:chr_file { open read write ioctl };
+
+# Extra lines to allow the eGTouchD from the pdi_ts_script
+allow pdi_ts_script eGTouchD_exec:file { getattr execute read open execute_no_trans};
+
 init_daemon_domain(pdi_ts_script)
 
