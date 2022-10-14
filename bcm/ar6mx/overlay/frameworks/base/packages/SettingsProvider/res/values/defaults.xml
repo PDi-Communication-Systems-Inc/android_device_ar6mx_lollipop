@@ -27,7 +27,7 @@
     <!-- TAB products lack an accelerometer -->
     <bool name="def_accelerometer_rotation">false</bool>
 
-    <!-- This will eventually set the correct data and minutes after the hour
+    <!-- This will eventually set the correct date and minutes-after-the-hour
          but without any location service, the correct timezone and hour
          cannot be set -->
     <bool name="def_auto_time">true</bool>
@@ -57,11 +57,6 @@
    <!-- do not allow side loaded apps by default, facillity owner can still
         turn this on (should be just for the install) to install an app -->
    <bool name="def_install_non_market_apps">false</bool>
-
-   <!-- allow backups for now, may want to disable if we want to 
-        emphasize use of the cloning app, not sure if disabling
-        would interfere with cloning -->
-   <bool name="def_backup_enabled">true</bool>
 
    <!-- allow passwords to be spoken -->
    <bool name="def_accessibility_speak_password">true</bool>
