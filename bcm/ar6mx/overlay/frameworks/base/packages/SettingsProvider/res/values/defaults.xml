@@ -74,4 +74,10 @@
    <!-- do not allow a guest user to be set up only patient or 
         restricted profile accounts should be allowed -->
    <bool name="def_guest_user_enabled">false</bool>
+
+   <!-- Initial value for the Settings.Secure.IMMERSIVE_MODE_CONFIRMATIONS setting,
+        which is a comma separated list of packages that no longer need confirmation
+        for immersive mode.
+        Override to disable immersive mode confirmation for certain packages. -->
+   <string name="def_immersive_mode_confirmations" translatable="false">confirmed</string>
 </resources>
