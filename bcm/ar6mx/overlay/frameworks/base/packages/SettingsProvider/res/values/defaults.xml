@@ -41,7 +41,7 @@
 
     <!-- TAB products are always AC powered, so it would be annoying to
          the patient and use extra power -->
-    <bool name="def_stay_on_while_plugged_in">true</bool>
+    <bool name="def_stay_on_while_plugged_in">false</bool>
 
    <!-- Modify the default screen display timeout to 10 minutes this is line with 
         HIPAA best practice defined at 
