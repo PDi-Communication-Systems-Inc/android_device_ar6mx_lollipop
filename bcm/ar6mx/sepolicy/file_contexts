@@ -12,5 +12,6 @@
 /system/etc/pdi_install_apk.sh  u:object_r:pdi_install_apk_exec:s0
 /system/etc/process_cmdline.sh  u:object_r:pdi_cl_script_exec:s0
 /system/etc/process_ts.sh       u:object_r:pdi_ts_script_exec:s0
+/system/etc/wake_lock.sh        u:object_r:pdi_wl_script_exec:s0
 
 

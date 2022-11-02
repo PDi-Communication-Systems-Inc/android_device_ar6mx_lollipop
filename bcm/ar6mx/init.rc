@@ -265,6 +265,12 @@ service copy_policy  /system/bin/logwrapper -k /system/etc/copy_device_policies.
     class core
     oneshot
 
+service pdi_wake_lock /system/bin/logwrapper -k /system/etc/wake_lock.sh
+    user root
+    group root
+    class core
+    oneshot
+
 # Modules and Android-only devices:
 # Launch the pillow speaker reader (connects to TV over CCI then converts
 # pillow speaker buttons to keystrokes)

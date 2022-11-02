@@ -1,0 +1,15 @@
+type pdi_wl_script, domain;
+type pdi_wl_script_exec, exec_type, file_type;
+
+allow pdi_wl_script self:capability { dac_override };
+allow pdi_wl_script sysfs_wake_lock:file { open write };
+
+# The following 5 lines allow logwrapper to run this script from init
+allow pdi_wl_script devpts:chr_file { read write open ioctl getattr };
+allow pdi_wl_script usb_device:dir { read search add_name remove_name open };
+allow pdi_wl_script usb_device:chr_file { read write open ioctl };
+allow pdi_wl_script device:chr_file { read create write open ioctl };
+allow pdi_wl_script shell_exec:file { read };
+
+init_daemon_domain(pdi_wl_script)
+
